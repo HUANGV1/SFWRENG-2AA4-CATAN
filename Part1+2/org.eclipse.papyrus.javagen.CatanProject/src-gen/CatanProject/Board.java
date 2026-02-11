@@ -56,6 +56,7 @@ public class Board {
 	 * @return 
 	 */
 	public Node getNode(int nodeID) {
+		return null;
 	}
 
 	/**
@@ -64,5 +65,6 @@ public class Board {
 	 * @return 
 	 */
 	public Edge getEdge(int edgeID) {
+		return null;
 	}
 }

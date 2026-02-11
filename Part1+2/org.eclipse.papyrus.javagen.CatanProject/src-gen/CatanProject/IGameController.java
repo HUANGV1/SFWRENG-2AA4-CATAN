@@ -37,5 +37,5 @@ public interface IGameController {
 	 * @param edgeID 
 	 * @param Parameter1 
 	 */
-	public void requestBuildRoad(int playerID, int edgeID, boolean Parameter1);
+	public boolean requestBuildRoad(int playerID, int edgeID);
 }

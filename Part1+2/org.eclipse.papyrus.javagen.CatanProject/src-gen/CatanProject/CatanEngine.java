@@ -60,4 +60,9 @@ public class CatanEngine implements IGameController {
 	 */
 	public void deductResources(int playerID, Map<ResourceType, Integer> cost) {
 	}
+
+	public boolean requestBuildRoat(int playerID, int edgeID) {
+		
+	}
+
 }
