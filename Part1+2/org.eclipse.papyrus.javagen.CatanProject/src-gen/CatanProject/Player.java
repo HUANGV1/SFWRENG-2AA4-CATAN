@@ -4,6 +4,8 @@
 
 package CatanProject;
 
+import java.util.Map;
+
 /************************************************************/
 /**
  * 
@@ -20,7 +22,7 @@ public abstract class Player {
 	/**
 	 * 
 	 */
-	protected EMap resources;
+	protected Map<ResourceType, Integer> resources;
 
 	/**
 	 * 

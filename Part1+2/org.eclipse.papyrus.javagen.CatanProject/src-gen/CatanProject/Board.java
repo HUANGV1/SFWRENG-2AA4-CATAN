@@ -3,6 +3,7 @@
 // --------------------------------------------------------
 
 package CatanProject;
+import java.util.*;
 
 /************************************************************/
 /**
@@ -12,15 +13,15 @@ public class Board {
 	/**
 	 * 
 	 */
-	private EMap tiles;
+	private Map<Integer, HexTile> tiles;
 	/**
 	 * 
 	 */
-	private EMap nodes;
+	private Map<Integer, Node>  nodes;
 	/**
 	 * 
 	 */
-	private EMap edges;
+	private Map<Integer, Edge> edges;
 	/**
 	 * 
 	 */

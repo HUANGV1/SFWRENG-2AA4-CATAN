@@ -3,6 +3,7 @@
 // --------------------------------------------------------
 
 package CatanProject;
+import java.util.*;
 
 /************************************************************/
 /**
@@ -40,6 +41,7 @@ public class CatanEngine implements IGameController {
 	 * @return 
 	 */
 	public int[] getValidSettlementLocations(int playerID) {
+		return null;
 	}
 
 	/**
@@ -56,6 +58,6 @@ public class CatanEngine implements IGameController {
 	 * @param playerID 
 	 * @param cost 
 	 */
-	public void deductResources(int playerID, EMap cost) {
+	public void deductResources(int playerID, Map<ResourceType, Integer> cost) {
 	}
 }
