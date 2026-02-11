@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - viho-sonar-build-test'
+      - viho-sonar-build-test
   pull_request:
     types: [opened, synchronize, reopened]
 
