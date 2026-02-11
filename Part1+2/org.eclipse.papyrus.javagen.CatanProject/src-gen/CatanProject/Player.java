@@ -29,6 +29,7 @@ public abstract class Player {
 	 * @return 
 	 */
 	public int getPlayerID() {
+		return 0;
 	}
 
 	/**

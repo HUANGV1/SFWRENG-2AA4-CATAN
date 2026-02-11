@@ -51,6 +51,7 @@ public class CatanEngine implements IGameController {
 	 * @return 
 	 */
 	public boolean requestBuildSettlement(int playerID, int nodeID) {
+		return false;
 	}
 
 	/**
@@ -61,8 +62,13 @@ public class CatanEngine implements IGameController {
 	public void deductResources(int playerID, Map<ResourceType, Integer> cost) {
 	}
 
-	public boolean requestBuildRoat(int playerID, int edgeID) {
-		
+	public boolean requestBuildRoad(int playerID, int edgeID) {
+		return false;
 	}
+
+	public int[] getValidRoadLocations(int playerID) {
+		return null;
+	}
+
 
 }
