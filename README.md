@@ -2,8 +2,6 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HUANGV1_SFWRENG-2AA4-CATAN&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HUANGV1_SFWRENG-2AA4-CATAN)
 
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=HUANGV1_SFWRENG-2AA4-CATAN)](https://sonarcloud.io/summary/new_code?id=HUANGV1_SFWRENG-2AA4-CATAN)
-
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=HUANGV1_SFWRENG-2AA4-CATAN&metric=bugs)](https://sonarcloud.io/summary/new_code?id=HUANGV1_SFWRENG-2AA4-CATAN)
 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=HUANGV1_SFWRENG-2AA4-CATAN&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=HUANGV1_SFWRENG-2AA4-CATAN)
