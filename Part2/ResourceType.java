@@ -8,11 +8,11 @@ package UMLDesign.CatanProject.com.mycompany.app;
 /**
  * 
  */
-public enum TileType {
+public enum ResourceType {
 	/**
 	 * 
 	 */
-	WOOD,
+	LUMBER,
 	/**
 	 * 
 	 */
@@ -20,25 +20,13 @@ public enum TileType {
 	/**
 	 * 
 	 */
-	WHEAT,
+	GRAIN,
 	/**
 	 * 
 	 */
-	SHEEP,
+	WOOL,
 	/**
 	 * 
 	 */
-	ORE,
-	/**
-	 * 
-	 */
-	DESERT;
-
-	/**
-	 * Get the resource type produced by this tile type @return ResourceType, or null for DESERT
-	 * @return 
-	 */
-	public ResourceType getResourceType() {
-		
-	}
+	ORE;
 }
