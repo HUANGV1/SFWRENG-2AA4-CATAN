@@ -6,14 +6,12 @@ package UMLDesign.CatanProject.com.mycompany.app;
 
 /************************************************************/
 /**
- * Demonstrator class - Main entry point for the Catan simulator Runs a sample simulation demonstrating the game mechanics
+ * 
  */
-public class Demonstrator {
+public interface IRandomDice {
 	/**
-	 * Main entry point @param args Command line arguments (unused)
-	 * @param args 
+	 * @return
+	 * @return 
 	 */
-	public static void main(String[] args) {
-		
-	}
+	public Integer roll();
 }

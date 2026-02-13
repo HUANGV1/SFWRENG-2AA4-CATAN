@@ -8,10 +8,37 @@ package UMLDesign.CatanProject.com.mycompany.app;
 /**
  * 
  */
-public interface IRandomDice {
+public enum TileType {
 	/**
-	 * @return
+	 * 
+	 */
+	WOOD,
+	/**
+	 * 
+	 */
+	BRICK,
+	/**
+	 * 
+	 */
+	WHEAT,
+	/**
+	 * 
+	 */
+	SHEEP,
+	/**
+	 * 
+	 */
+	ORE,
+	/**
+	 * 
+	 */
+	DESERT;
+
+	/**
+	 * Get the resource type produced by this tile type @return ResourceType, or null for DESERT
 	 * @return 
 	 */
-	public Integer roll();
+	public ResourceType getResourceType() {
+		
+	}
 }

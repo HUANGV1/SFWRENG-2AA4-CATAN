@@ -57,44 +57,12 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.mycompany.app.Demonstrator</mainClass>
+                  <mainClass>com.mycompany.app</mainClass>
                 </transformer>
               </transformers>
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <!-- PlantUML Generator - Generates UML diagrams from Java code -->
-      <plugin>
-        <groupId>de.elnarion.maven</groupId>
-        <artifactId>plantuml-generator-maven-plugin</artifactId>
-        <version>1.6.0</version>
-        <executions>
-          <execution>
-            <id>generate-plantuml-diagrams</id>
-            <phase>process-classes</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <outputDirectory>${project.build.directory}/plantuml</outputDirectory>
-          <outputFilename>catan-class-diagram.puml</outputFilename>
-          <scanPackages>
-            <scanPackage>com.mycompany.app</scanPackage>
-          </scanPackages>
-          <!-- Generate a single diagram with all classes -->
-          <generateWholePackageAsOne>true</generateWholePackageAsOne>
-          <!-- Include fields and methods -->
-          <hideFields>false</hideFields>
-          <hideMethods>false</hideMethods>
-          <!-- Show relationships -->
-          <hideRelationships>false</hideRelationships>
-          <!-- Additional options -->
-          <withJavadoc>false</withJavadoc>
-          <addJPAAnnotations>false</addJPAAnnotations>
-        </configuration>
       </plugin>
     </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

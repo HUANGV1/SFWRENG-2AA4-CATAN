@@ -1,16 +1,14 @@
 name: Build and SonarQube
-
 on:
   push:
     branches:
       - main
-      - viho-sonar-build-test
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build-and-sonar:
-    name: Build All Parts and SonarQube
+  sonarqube:
+    name: Build and Scan
     runs-on: ubuntu-latest
     steps:
       # 1. Checkout code
@@ -18,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 2. Setup Java 21
+      # 2. Set up JDK 21
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -26,27 +24,25 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # 3. Build Part2
-      - name: Build Part2
-        working-directory: Part2/CatanProject
-        run: mvn clean verify
-
-      # 4. Build Part3
-      - name: Build Part3
+      # 3. Build Part3
+      - name: Build and Test Part3
         working-directory: Part3
         run: mvn clean verify
 
-      # 5. Build Part4
-      - name: Build Part4
+      # 4. Build Part4
+      - name: Build and Test Part4
         working-directory: Part4/CatanProject
         run: mvn clean verify
 
-      # 6. Run SonarQube scan
+      # 5. SonarQube Scan (ignores Part2)
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.sources=Part2/CatanProject/src/main/java,Part3/src/main/java,Part4/CatanProject/src/main/java
-            -Dsonar.java.binaries=Part2/CatanProject/target/classes,Part3/target/classes,Part4/CatanProject/target/classes
+            -Dsonar.sources=Part3/src/main/java,Part4/CatanProject/src/main/java
+            -Dsonar.tests=Part3/src/test/java,Part4/CatanProject/src/test/java
+            -Dsonar.java.binaries=Part3/target/classes,Part4/CatanProject/target/classes
+            -Dsonar.projectKey=catan-simulator
+            -Dsonar.organization=your-org-key
