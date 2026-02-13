@@ -28,7 +28,7 @@ jobs:
 
       # 3. Build Part2
       - name: Build Part2
-        working-directory: Part2
+        working-directory: Part2/CatanProject
         run: mvn clean verify
 
       # 4. Build Part3
@@ -38,7 +38,7 @@ jobs:
 
       # 5. Build Part4
       - name: Build Part4
-        working-directory: Part4
+        working-directory: Part4/CatanProject
         run: mvn clean verify
 
       # 6. Run SonarQube scan
@@ -48,5 +48,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.sources=Part2/src/main/java,Part3/src/main/java,Part4/src/main/java
-            -Dsonar.java.binaries=Part2/target/classes,Part3/target/classes,Part4/target/classes
+            -Dsonar.sources=Part2/CatanProject/src/main/java,Part3/src/main/java,Part4/CatanProject/src/main/java
+            -Dsonar.java.binaries=Part2/CatanProject/target/classes,Part3/target/classes,Part4/CatanProject/target/classes
