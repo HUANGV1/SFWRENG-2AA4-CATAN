@@ -1,40 +1,47 @@
-name: Build
+name: Build and Analyze
+
 on:
   push:
-    branches:
-      - main
-      - viho-sonar-build-test
+    branches: [ main ]
   pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
   sonarqube:
-    name: SonarQube
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 1. Setup Java (Required to run javac)
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      # 2. Compile (Windows/PowerShell version)
-      - name: Compile Java Code
+      # Compile Part2
+      - name: Compile Part2
         run: |
-          mkdir out
-          $javaFiles = Get-ChildItem -Recurse -Filter "*.java" | Select-Object -ExpandProperty FullName
-          javac -d out $javaFiles
+          mkdir -p Part2/out
+          javac -d Part2/out $(find Part2 -name "*.java")
 
-      # 3. Scan
+      # Build Part3
+      - name: Build Part3
+        working-directory: Part3
+        run: mvn clean verify
+
+      # Build Part4
+      - name: Build Part4
+        working-directory: Part4
+        run: mvn clean verify
+
+      # Sonar
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.java.binaries=out
+            -Dsonar.sources=Part2,Part3/src/main/java,Part4/src/main/java
+            -Dsonar.java.binaries=Part2/out,Part3/target/classes,Part4/target/classes
