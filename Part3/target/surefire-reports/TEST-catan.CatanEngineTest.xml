@@ -1,0 +1,3389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="catan.CatanEngineTest" time="0.073" tests="17" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="24"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/test-classes:/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/classes:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/akshaj/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/akshaj/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/akshaj/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="24"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/surefire/surefirebooter-20260213163117934_3.jar /Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/surefire 2026-02-13T16-31-17_900-jvmRun1 surefire-20260213163117934_1tmp surefire_0-20260213163117934_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/test-classes:/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/classes:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/akshaj/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/akshaj/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/akshaj/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/akshaj/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/akshaj"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3/target/surefire/surefirebooter-20260213163117934_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="24.0.2"/>
+    <property name="user.name" value="akshaj"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="26.2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/akshaj/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/qv/b495ltm905nc9bc4xl56sw_m0000gn/T/"/>
+    <property name="java.version" value="24.0.2"/>
+    <property name="user.dir" value="/Users/akshaj/Coding (on mac)/2AA4_Assignment1/SFWRENG-2AA4-CATAN/Part3"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/akshaj/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="24.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="68.0"/>
+  </properties>
+  <testcase name="testRoadValidatorDisconnected" classname="catan.CatanEngineTest" time="0.01"/>
+  <testcase name="testSimulatorCompletion" classname="catan.CatanEngineTest" time="0.027">
+    <system-out><![CDATA[0 / Player 0: Setup phase - Snake draft order (1-2-3-4-4-3-2-1)
+0 / Player 1: Placed settlement at node 48
+0 / Player 1: Placed road at edge 63
+0 / Player 2: Placed settlement at node 24
+0 / Player 2: Placed road at edge 28
+0 / Player 3: Placed settlement at node 47
+0 / Player 3: Placed road at edge 62
+0 / Player 4: Placed settlement at node 25
+0 / Player 4: Placed road at edge 30
+0 / Player 4: Placed settlement at node 7
+0 / Player 4: Placed road at edge 6
+0 / Player 3: Placed settlement at node 17
+0 / Player 3: Placed road at edge 19
+0 / Player 2: Placed settlement at node 1
+0 / Player 2: Placed road at edge 2
+0 / Player 1: Placed settlement at node 0
+0 / Player 1: Placed road at edge 0
+1 / Player 1: Rolled 7
+1 / Player 1: Robber activated (rolled 7) - no resources distributed
+1 / Player 2: Rolled 4
+1 / Player 3: Rolled 3
+1 / Player 4: Rolled 9
+1 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+2 / Player 1: Rolled 8
+2 / Player 2: Rolled 6
+2 / Player 3: Rolled 2
+2 / Player 4: Rolled 6
+2 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+3 / Player 1: Rolled 2
+3 / Player 2: Rolled 8
+3 / Player 3: Rolled 5
+3 / Player 4: Rolled 7
+3 / Player 4: Robber activated (rolled 7) - no resources distributed
+3 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+4 / Player 1: Rolled 10
+4 / Player 2: Rolled 10
+4 / Player 3: Rolled 3
+4 / Player 4: Rolled 6
+4 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+5 / Player 1: Rolled 9
+5 / Player 2: Rolled 12
+5 / Player 3: Rolled 3
+5 / Player 4: Rolled 3
+5 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+6 / Player 1: Rolled 8
+6 / Player 2: Rolled 8
+6 / Player 3: Rolled 7
+6 / Player 3: Robber activated (rolled 7) - no resources distributed
+6 / Player 2: Discarded 4 cards
+6 / Player 3: Discarded 7 cards
+6 / Player 4: Discarded 5 cards
+6 / Player 4: Rolled 8
+6 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+7 / Player 1: Rolled 4
+7 / Player 2: Rolled 5
+7 / Player 3: Rolled 8
+7 / Player 4: Rolled 8
+7 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+8 / Player 1: Rolled 4
+8 / Player 2: Rolled 8
+8 / Player 3: Rolled 8
+8 / Player 4: Rolled 5
+8 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+9 / Player 1: Rolled 6
+9 / Player 2: Rolled 5
+9 / Player 3: Rolled 8
+9 / Player 4: Rolled 11
+9 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+10 / Player 1: Rolled 4
+10 / Player 2: Rolled 8
+10 / Player 3: Rolled 8
+10 / Player 4: Rolled 10
+10 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+11 / Player 1: Rolled 6
+11 / Player 2: Rolled 9
+11 / Player 3: Rolled 6
+11 / Player 4: Rolled 5
+11 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+12 / Player 1: Rolled 5
+12 / Player 2: Rolled 5
+12 / Player 3: Rolled 8
+12 / Player 4: Rolled 10
+12 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+13 / Player 1: Rolled 5
+13 / Player 2: Rolled 8
+13 / Player 3: Rolled 6
+13 / Player 4: Rolled 3
+13 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+14 / Player 1: Rolled 8
+14 / Player 2: Rolled 7
+14 / Player 2: Robber activated (rolled 7) - no resources distributed
+14 / Player 2: Discarded 6 cards
+14 / Player 3: Discarded 10 cards
+14 / Player 4: Discarded 9 cards
+14 / Player 3: Rolled 5
+14 / Player 4: Rolled 8
+14 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+15 / Player 1: Rolled 6
+15 / Player 2: Rolled 5
+15 / Player 3: Rolled 7
+15 / Player 3: Robber activated (rolled 7) - no resources distributed
+15 / Player 2: Discarded 4 cards
+15 / Player 3: Discarded 6 cards
+15 / Player 4: Discarded 5 cards
+15 / Player 4: Rolled 7
+15 / Player 4: Robber activated (rolled 7) - no resources distributed
+15 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+16 / Player 1: Rolled 2
+16 / Player 2: Rolled 5
+16 / Player 3: Rolled 4
+16 / Player 4: Rolled 9
+16 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+17 / Player 1: Rolled 7
+17 / Player 1: Robber activated (rolled 7) - no resources distributed
+17 / Player 2: Rolled 8
+17 / Player 3: Rolled 10
+17 / Player 4: Rolled 4
+17 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+18 / Player 1: Rolled 7
+18 / Player 1: Robber activated (rolled 7) - no resources distributed
+18 / Player 2: Discarded 4 cards
+18 / Player 3: Discarded 4 cards
+18 / Player 4: Discarded 4 cards
+18 / Player 2: Rolled 8
+18 / Player 3: Rolled 12
+18 / Player 4: Rolled 8
+18 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+19 / Player 1: Rolled 9
+19 / Player 2: Rolled 7
+19 / Player 2: Robber activated (rolled 7) - no resources distributed
+19 / Player 3: Rolled 8
+19 / Player 4: Rolled 11
+19 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+20 / Player 1: Rolled 10
+20 / Player 2: Rolled 4
+20 / Player 3: Rolled 9
+20 / Player 4: Rolled 7
+20 / Player 4: Robber activated (rolled 7) - no resources distributed
+20 / Player 1: Discarded 4 cards
+20 / Player 3: Discarded 4 cards
+20 / Player 4: Discarded 4 cards
+20 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+21 / Player 1: Rolled 6
+21 / Player 2: Rolled 6
+21 / Player 3: Rolled 3
+21 / Player 4: Rolled 7
+21 / Player 4: Robber activated (rolled 7) - no resources distributed
+21 / Player 2: Discarded 4 cards
+21 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+22 / Player 1: Rolled 8
+22 / Player 2: Rolled 6
+22 / Player 3: Rolled 5
+22 / Player 4: Rolled 9
+22 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+23 / Player 1: Rolled 2
+23 / Player 2: Rolled 7
+23 / Player 2: Robber activated (rolled 7) - no resources distributed
+23 / Player 2: Discarded 4 cards
+23 / Player 3: Rolled 5
+23 / Player 4: Rolled 5
+23 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+24 / Player 1: Rolled 7
+24 / Player 1: Robber activated (rolled 7) - no resources distributed
+24 / Player 2: Rolled 5
+24 / Player 3: Rolled 5
+24 / Player 4: Rolled 7
+24 / Player 4: Robber activated (rolled 7) - no resources distributed
+24 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+25 / Player 1: Rolled 8
+25 / Player 2: Rolled 7
+25 / Player 2: Robber activated (rolled 7) - no resources distributed
+25 / Player 3: Discarded 4 cards
+25 / Player 4: Discarded 4 cards
+25 / Player 3: Rolled 12
+25 / Player 4: Rolled 3
+25 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+26 / Player 1: Rolled 7
+26 / Player 1: Robber activated (rolled 7) - no resources distributed
+26 / Player 2: Rolled 4
+26 / Player 3: Rolled 8
+26 / Player 4: Rolled 3
+26 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+27 / Player 1: Rolled 8
+27 / Player 2: Rolled 3
+27 / Player 3: Rolled 8
+27 / Player 4: Rolled 7
+27 / Player 4: Robber activated (rolled 7) - no resources distributed
+27 / Player 3: Discarded 5 cards
+27 / Player 4: Discarded 5 cards
+27 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+28 / Player 1: Rolled 12
+28 / Player 2: Rolled 8
+28 / Player 3: Rolled 12
+28 / Player 4: Rolled 8
+28 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+29 / Player 1: Rolled 10
+29 / Player 2: Rolled 7
+29 / Player 2: Robber activated (rolled 7) - no resources distributed
+29 / Player 3: Discarded 5 cards
+29 / Player 3: Rolled 7
+29 / Player 3: Robber activated (rolled 7) - no resources distributed
+29 / Player 4: Rolled 6
+29 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+30 / Player 1: Rolled 9
+30 / Player 2: Rolled 5
+30 / Player 3: Rolled 3
+30 / Player 4: Rolled 7
+30 / Player 4: Robber activated (rolled 7) - no resources distributed
+30 / Player 4: Discarded 4 cards
+30 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+31 / Player 1: Rolled 2
+31 / Player 2: Rolled 11
+31 / Player 3: Rolled 5
+31 / Player 4: Rolled 8
+31 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+32 / Player 1: Rolled 3
+32 / Player 2: Rolled 8
+32 / Player 3: Rolled 10
+32 / Player 4: Rolled 8
+32 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+33 / Player 1: Rolled 10
+33 / Player 2: Rolled 6
+33 / Player 3: Rolled 7
+33 / Player 3: Robber activated (rolled 7) - no resources distributed
+33 / Player 1: Discarded 4 cards
+33 / Player 2: Discarded 4 cards
+33 / Player 3: Discarded 6 cards
+33 / Player 4: Discarded 5 cards
+33 / Player 4: Rolled 6
+33 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+34 / Player 1: Rolled 7
+34 / Player 1: Robber activated (rolled 7) - no resources distributed
+34 / Player 2: Rolled 12
+34 / Player 3: Rolled 5
+34 / Player 4: Rolled 4
+34 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+35 / Player 1: Rolled 3
+35 / Player 2: Rolled 7
+35 / Player 2: Robber activated (rolled 7) - no resources distributed
+35 / Player 3: Discarded 4 cards
+35 / Player 3: Rolled 6
+35 / Player 4: Rolled 9
+35 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+36 / Player 1: Rolled 8
+36 / Player 2: Rolled 5
+36 / Player 3: Rolled 6
+36 / Player 4: Rolled 5
+36 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+37 / Player 1: Rolled 7
+37 / Player 1: Robber activated (rolled 7) - no resources distributed
+37 / Player 2: Discarded 5 cards
+37 / Player 2: Rolled 2
+37 / Player 3: Rolled 5
+37 / Player 4: Rolled 12
+37 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+38 / Player 1: Rolled 6
+38 / Player 2: Rolled 8
+38 / Player 3: Rolled 8
+38 / Player 4: Rolled 2
+38 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+39 / Player 1: Rolled 5
+39 / Player 2: Rolled 4
+39 / Player 3: Rolled 8
+39 / Player 4: Rolled 9
+39 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+40 / Player 1: Rolled 8
+40 / Player 2: Rolled 9
+40 / Player 3: Rolled 4
+40 / Player 4: Rolled 7
+40 / Player 4: Robber activated (rolled 7) - no resources distributed
+40 / Player 2: Discarded 6 cards
+40 / Player 3: Discarded 5 cards
+40 / Player 4: Discarded 6 cards
+40 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+41 / Player 1: Rolled 6
+41 / Player 2: Rolled 3
+41 / Player 3: Rolled 4
+41 / Player 4: Rolled 12
+41 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+42 / Player 1: Rolled 2
+42 / Player 2: Rolled 9
+42 / Player 3: Rolled 8
+42 / Player 4: Rolled 6
+42 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+43 / Player 1: Rolled 4
+43 / Player 2: Rolled 5
+43 / Player 3: Rolled 5
+43 / Player 4: Rolled 5
+43 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+44 / Player 1: Rolled 5
+44 / Player 2: Rolled 9
+44 / Player 3: Rolled 7
+44 / Player 3: Robber activated (rolled 7) - no resources distributed
+44 / Player 2: Discarded 6 cards
+44 / Player 3: Discarded 4 cards
+44 / Player 4: Discarded 5 cards
+44 / Player 4: Rolled 3
+44 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+45 / Player 1: Rolled 5
+45 / Player 2: Rolled 3
+45 / Player 3: Rolled 8
+45 / Player 4: Rolled 7
+45 / Player 4: Robber activated (rolled 7) - no resources distributed
+45 / Player 3: Discarded 4 cards
+45 / Player 4: Discarded 4 cards
+45 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+46 / Player 1: Rolled 12
+46 / Player 2: Rolled 6
+46 / Player 3: Rolled 6
+46 / Player 4: Rolled 7
+46 / Player 4: Robber activated (rolled 7) - no resources distributed
+46 / Player 2: Discarded 4 cards
+46 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+47 / Player 1: Rolled 6
+47 / Player 2: Rolled 8
+47 / Player 3: Rolled 9
+47 / Player 4: Rolled 8
+47 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+48 / Player 1: Rolled 5
+48 / Player 2: Rolled 11
+48 / Player 3: Rolled 4
+48 / Player 4: Rolled 3
+48 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+49 / Player 1: Rolled 7
+49 / Player 1: Robber activated (rolled 7) - no resources distributed
+49 / Player 2: Discarded 4 cards
+49 / Player 3: Discarded 4 cards
+49 / Player 4: Discarded 4 cards
+49 / Player 2: Rolled 5
+49 / Player 3: Rolled 10
+49 / Player 4: Rolled 8
+49 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+50 / Player 1: Rolled 9
+50 / Player 2: Rolled 5
+50 / Player 3: Rolled 7
+50 / Player 3: Robber activated (rolled 7) - no resources distributed
+50 / Player 4: Rolled 6
+50 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+51 / Player 1: Rolled 4
+51 / Player 2: Rolled 8
+51 / Player 3: Rolled 11
+51 / Player 4: Rolled 11
+51 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+52 / Player 1: Rolled 6
+52 / Player 2: Rolled 9
+52 / Player 3: Rolled 3
+52 / Player 4: Rolled 6
+52 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+53 / Player 1: Rolled 7
+53 / Player 1: Robber activated (rolled 7) - no resources distributed
+53 / Player 1: Discarded 4 cards
+53 / Player 2: Discarded 5 cards
+53 / Player 3: Discarded 4 cards
+53 / Player 4: Discarded 4 cards
+53 / Player 2: Rolled 5
+53 / Player 3: Rolled 3
+53 / Player 4: Rolled 10
+53 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+54 / Player 1: Rolled 5
+54 / Player 2: Rolled 7
+54 / Player 2: Robber activated (rolled 7) - no resources distributed
+54 / Player 3: Rolled 5
+54 / Player 4: Rolled 5
+54 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+55 / Player 1: Rolled 7
+55 / Player 1: Robber activated (rolled 7) - no resources distributed
+55 / Player 2: Rolled 9
+55 / Player 3: Rolled 12
+55 / Player 4: Rolled 6
+55 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+56 / Player 1: Rolled 4
+56 / Player 2: Rolled 10
+56 / Player 3: Rolled 2
+56 / Player 4: Rolled 5
+56 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+57 / Player 1: Rolled 5
+57 / Player 2: Rolled 2
+57 / Player 3: Rolled 8
+57 / Player 4: Rolled 8
+57 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+58 / Player 1: Rolled 7
+58 / Player 1: Robber activated (rolled 7) - no resources distributed
+58 / Player 2: Discarded 5 cards
+58 / Player 3: Discarded 5 cards
+58 / Player 4: Discarded 5 cards
+58 / Player 2: Rolled 7
+58 / Player 2: Robber activated (rolled 7) - no resources distributed
+58 / Player 3: Rolled 8
+58 / Player 4: Rolled 8
+58 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+59 / Player 1: Rolled 5
+59 / Player 2: Rolled 7
+59 / Player 2: Robber activated (rolled 7) - no resources distributed
+59 / Player 3: Rolled 5
+59 / Player 4: Rolled 5
+59 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+60 / Player 1: Rolled 3
+60 / Player 2: Rolled 4
+60 / Player 3: Rolled 5
+60 / Player 4: Rolled 9
+60 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+61 / Player 1: Rolled 9
+61 / Player 2: Rolled 7
+61 / Player 2: Robber activated (rolled 7) - no resources distributed
+61 / Player 2: Discarded 4 cards
+61 / Player 3: Discarded 4 cards
+61 / Player 4: Discarded 4 cards
+61 / Player 3: Rolled 5
+61 / Player 4: Rolled 4
+61 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+62 / Player 1: Rolled 3
+62 / Player 2: Rolled 7
+62 / Player 2: Robber activated (rolled 7) - no resources distributed
+62 / Player 3: Rolled 10
+62 / Player 4: Rolled 4
+62 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+63 / Player 1: Rolled 6
+63 / Player 2: Rolled 9
+63 / Player 3: Rolled 11
+63 / Player 4: Rolled 8
+63 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+64 / Player 1: Rolled 4
+64 / Player 2: Rolled 5
+64 / Player 3: Rolled 8
+64 / Player 4: Rolled 8
+64 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+65 / Player 1: Rolled 10
+65 / Player 2: Rolled 8
+65 / Player 3: Rolled 4
+65 / Player 4: Rolled 3
+65 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+66 / Player 1: Rolled 6
+66 / Player 2: Rolled 10
+66 / Player 3: Rolled 7
+66 / Player 3: Robber activated (rolled 7) - no resources distributed
+66 / Player 1: Discarded 5 cards
+66 / Player 2: Discarded 5 cards
+66 / Player 3: Discarded 6 cards
+66 / Player 4: Discarded 5 cards
+66 / Player 4: Rolled 7
+66 / Player 4: Robber activated (rolled 7) - no resources distributed
+66 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+67 / Player 1: Rolled 2
+67 / Player 2: Rolled 2
+67 / Player 3: Rolled 10
+67 / Player 4: Rolled 11
+67 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+68 / Player 1: Rolled 5
+68 / Player 2: Rolled 6
+68 / Player 3: Rolled 7
+68 / Player 3: Robber activated (rolled 7) - no resources distributed
+68 / Player 2: Discarded 4 cards
+68 / Player 3: Discarded 4 cards
+68 / Player 4: Discarded 4 cards
+68 / Player 4: Rolled 5
+68 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+69 / Player 1: Rolled 4
+69 / Player 2: Rolled 3
+69 / Player 3: Rolled 7
+69 / Player 3: Robber activated (rolled 7) - no resources distributed
+69 / Player 4: Rolled 6
+69 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+70 / Player 1: Rolled 9
+70 / Player 2: Rolled 6
+70 / Player 3: Rolled 5
+70 / Player 4: Rolled 4
+70 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+71 / Player 1: Rolled 5
+71 / Player 2: Rolled 7
+71 / Player 2: Robber activated (rolled 7) - no resources distributed
+71 / Player 2: Discarded 5 cards
+71 / Player 3: Rolled 8
+71 / Player 4: Rolled 5
+71 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+72 / Player 1: Rolled 7
+72 / Player 1: Robber activated (rolled 7) - no resources distributed
+72 / Player 2: Rolled 2
+72 / Player 3: Rolled 12
+72 / Player 4: Rolled 5
+72 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+73 / Player 1: Rolled 4
+73 / Player 2: Rolled 11
+73 / Player 3: Rolled 4
+73 / Player 4: Rolled 7
+73 / Player 4: Robber activated (rolled 7) - no resources distributed
+73 / Player 1: Discarded 4 cards
+73 / Player 2: Discarded 4 cards
+73 / Player 4: Discarded 4 cards
+73 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+74 / Player 1: Rolled 6
+74 / Player 2: Rolled 3
+74 / Player 3: Rolled 7
+74 / Player 3: Robber activated (rolled 7) - no resources distributed
+74 / Player 3: Discarded 4 cards
+74 / Player 4: Rolled 4
+74 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+75 / Player 1: Rolled 12
+75 / Player 2: Rolled 4
+75 / Player 3: Rolled 7
+75 / Player 3: Robber activated (rolled 7) - no resources distributed
+75 / Player 4: Rolled 7
+75 / Player 4: Robber activated (rolled 7) - no resources distributed
+75 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+76 / Player 1: Rolled 7
+76 / Player 1: Robber activated (rolled 7) - no resources distributed
+76 / Player 2: Rolled 10
+76 / Player 3: Rolled 8
+76 / Player 4: Rolled 5
+76 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+77 / Player 1: Rolled 4
+77 / Player 2: Rolled 9
+77 / Player 3: Rolled 12
+77 / Player 4: Rolled 6
+77 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+78 / Player 1: Rolled 9
+78 / Player 2: Rolled 8
+78 / Player 3: Rolled 7
+78 / Player 3: Robber activated (rolled 7) - no resources distributed
+78 / Player 2: Discarded 5 cards
+78 / Player 3: Discarded 4 cards
+78 / Player 4: Discarded 4 cards
+78 / Player 4: Rolled 6
+78 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+79 / Player 1: Rolled 8
+79 / Player 2: Rolled 7
+79 / Player 2: Robber activated (rolled 7) - no resources distributed
+79 / Player 3: Rolled 12
+79 / Player 4: Rolled 9
+79 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+80 / Player 1: Rolled 9
+80 / Player 2: Rolled 7
+80 / Player 2: Robber activated (rolled 7) - no resources distributed
+80 / Player 2: Discarded 4 cards
+80 / Player 3: Rolled 7
+80 / Player 3: Robber activated (rolled 7) - no resources distributed
+80 / Player 4: Rolled 7
+80 / Player 4: Robber activated (rolled 7) - no resources distributed
+80 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+81 / Player 1: Rolled 9
+81 / Player 2: Rolled 8
+81 / Player 3: Rolled 8
+81 / Player 4: Rolled 10
+81 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+82 / Player 1: Rolled 6
+82 / Player 2: Rolled 6
+82 / Player 3: Rolled 6
+82 / Player 4: Rolled 9
+82 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+83 / Player 1: Rolled 3
+83 / Player 2: Rolled 4
+83 / Player 3: Rolled 7
+83 / Player 3: Robber activated (rolled 7) - no resources distributed
+83 / Player 2: Discarded 5 cards
+83 / Player 3: Discarded 5 cards
+83 / Player 4: Discarded 4 cards
+83 / Player 4: Rolled 11
+83 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+84 / Player 1: Rolled 9
+84 / Player 2: Rolled 3
+84 / Player 3: Rolled 7
+84 / Player 3: Robber activated (rolled 7) - no resources distributed
+84 / Player 4: Rolled 8
+84 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+85 / Player 1: Rolled 9
+85 / Player 2: Rolled 7
+85 / Player 2: Robber activated (rolled 7) - no resources distributed
+85 / Player 2: Discarded 4 cards
+85 / Player 3: Discarded 4 cards
+85 / Player 3: Rolled 8
+85 / Player 4: Rolled 6
+85 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+86 / Player 1: Rolled 7
+86 / Player 1: Robber activated (rolled 7) - no resources distributed
+86 / Player 4: Discarded 4 cards
+86 / Player 2: Rolled 6
+86 / Player 3: Rolled 7
+86 / Player 3: Robber activated (rolled 7) - no resources distributed
+86 / Player 4: Rolled 10
+86 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+87 / Player 1: Rolled 4
+87 / Player 2: Rolled 5
+87 / Player 3: Rolled 3
+87 / Player 4: Rolled 8
+87 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+88 / Player 1: Rolled 4
+88 / Player 2: Rolled 7
+88 / Player 2: Robber activated (rolled 7) - no resources distributed
+88 / Player 1: Discarded 4 cards
+88 / Player 2: Discarded 4 cards
+88 / Player 3: Discarded 4 cards
+88 / Player 3: Rolled 12
+88 / Player 4: Rolled 9
+88 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+89 / Player 1: Rolled 7
+89 / Player 1: Robber activated (rolled 7) - no resources distributed
+89 / Player 2: Rolled 3
+89 / Player 3: Rolled 6
+89 / Player 4: Rolled 7
+89 / Player 4: Robber activated (rolled 7) - no resources distributed
+89 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+90 / Player 1: Rolled 10
+90 / Player 2: Rolled 5
+90 / Player 3: Rolled 9
+90 / Player 4: Rolled 12
+90 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+91 / Player 1: Rolled 8
+91 / Player 2: Rolled 3
+91 / Player 3: Rolled 3
+91 / Player 4: Rolled 6
+91 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+92 / Player 1: Rolled 4
+92 / Player 2: Rolled 11
+92 / Player 3: Rolled 3
+92 / Player 4: Rolled 8
+92 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+93 / Player 1: Rolled 3
+93 / Player 2: Rolled 6
+93 / Player 3: Rolled 11
+93 / Player 4: Rolled 6
+93 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+94 / Player 1: Rolled 5
+94 / Player 2: Rolled 7
+94 / Player 2: Robber activated (rolled 7) - no resources distributed
+94 / Player 2: Discarded 5 cards
+94 / Player 3: Discarded 7 cards
+94 / Player 4: Discarded 7 cards
+94 / Player 3: Rolled 9
+94 / Player 4: Rolled 6
+94 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+95 / Player 1: Rolled 10
+95 / Player 2: Rolled 8
+95 / Player 3: Rolled 10
+95 / Player 4: Rolled 6
+95 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+96 / Player 1: Rolled 11
+96 / Player 2: Rolled 9
+96 / Player 3: Rolled 9
+96 / Player 4: Rolled 8
+96 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+97 / Player 1: Rolled 9
+97 / Player 2: Rolled 5
+97 / Player 3: Rolled 7
+97 / Player 3: Robber activated (rolled 7) - no resources distributed
+97 / Player 1: Discarded 5 cards
+97 / Player 2: Discarded 6 cards
+97 / Player 3: Discarded 5 cards
+97 / Player 4: Discarded 5 cards
+97 / Player 4: Rolled 6
+97 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+98 / Player 1: Rolled 5
+98 / Player 2: Rolled 6
+98 / Player 3: Rolled 9
+98 / Player 4: Rolled 7
+98 / Player 4: Robber activated (rolled 7) - no resources distributed
+98 / Player 2: Discarded 4 cards
+98 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+99 / Player 1: Rolled 7
+99 / Player 1: Robber activated (rolled 7) - no resources distributed
+99 / Player 2: Rolled 10
+99 / Player 3: Rolled 9
+99 / Player 4: Rolled 4
+99 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+100 / Player 1: Rolled 6
+100 / Player 2: Rolled 5
+100 / Player 3: Rolled 11
+100 / Player 4: Rolled 2
+100 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+101 / Player 1: Rolled 6
+101 / Player 2: Rolled 9
+101 / Player 3: Rolled 7
+101 / Player 3: Robber activated (rolled 7) - no resources distributed
+101 / Player 2: Discarded 5 cards
+101 / Player 4: Discarded 4 cards
+101 / Player 4: Rolled 9
+101 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+102 / Player 1: Rolled 7
+102 / Player 1: Robber activated (rolled 7) - no resources distributed
+102 / Player 2: Rolled 5
+102 / Player 3: Rolled 7
+102 / Player 3: Robber activated (rolled 7) - no resources distributed
+102 / Player 4: Rolled 5
+102 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+103 / Player 1: Rolled 9
+103 / Player 2: Rolled 8
+103 / Player 3: Rolled 12
+103 / Player 4: Rolled 12
+103 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+104 / Player 1: Rolled 8
+104 / Player 2: Rolled 8
+104 / Player 3: Rolled 7
+104 / Player 3: Robber activated (rolled 7) - no resources distributed
+104 / Player 2: Discarded 4 cards
+104 / Player 3: Discarded 6 cards
+104 / Player 4: Rolled 7
+104 / Player 4: Robber activated (rolled 7) - no resources distributed
+104 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+105 / Player 1: Rolled 7
+105 / Player 1: Robber activated (rolled 7) - no resources distributed
+105 / Player 2: Rolled 7
+105 / Player 2: Robber activated (rolled 7) - no resources distributed
+105 / Player 3: Rolled 5
+105 / Player 4: Rolled 8
+105 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+106 / Player 1: Rolled 6
+106 / Player 2: Rolled 12
+106 / Player 3: Rolled 9
+106 / Player 4: Rolled 9
+106 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+107 / Player 1: Rolled 8
+107 / Player 2: Rolled 6
+107 / Player 3: Rolled 8
+107 / Player 4: Rolled 4
+107 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+108 / Player 1: Rolled 5
+108 / Player 2: Rolled 9
+108 / Player 3: Rolled 4
+108 / Player 4: Rolled 6
+108 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+109 / Player 1: Rolled 6
+109 / Player 2: Rolled 6
+109 / Player 3: Rolled 8
+109 / Player 4: Rolled 3
+109 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+110 / Player 1: Rolled 9
+110 / Player 2: Rolled 4
+110 / Player 3: Rolled 12
+110 / Player 4: Rolled 4
+110 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+111 / Player 1: Rolled 8
+111 / Player 2: Rolled 5
+111 / Player 3: Rolled 5
+111 / Player 4: Rolled 7
+111 / Player 4: Robber activated (rolled 7) - no resources distributed
+111 / Player 2: Discarded 8 cards
+111 / Player 3: Discarded 7 cards
+111 / Player 4: Discarded 6 cards
+111 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+112 / Player 1: Rolled 6
+112 / Player 2: Rolled 6
+112 / Player 3: Rolled 8
+112 / Player 4: Rolled 8
+112 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+113 / Player 1: Rolled 6
+113 / Player 2: Rolled 9
+113 / Player 3: Rolled 7
+113 / Player 3: Robber activated (rolled 7) - no resources distributed
+113 / Player 2: Discarded 6 cards
+113 / Player 3: Discarded 4 cards
+113 / Player 4: Discarded 4 cards
+113 / Player 4: Rolled 6
+113 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+114 / Player 1: Rolled 7
+114 / Player 1: Robber activated (rolled 7) - no resources distributed
+114 / Player 2: Discarded 4 cards
+114 / Player 2: Rolled 6
+114 / Player 3: Rolled 12
+114 / Player 4: Rolled 7
+114 / Player 4: Robber activated (rolled 7) - no resources distributed
+114 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+115 / Player 1: Rolled 8
+115 / Player 2: Rolled 6
+115 / Player 3: Rolled 2
+115 / Player 4: Rolled 10
+115 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+116 / Player 1: Rolled 8
+116 / Player 2: Rolled 12
+116 / Player 3: Rolled 6
+116 / Player 4: Rolled 3
+116 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+117 / Player 1: Rolled 6
+117 / Player 2: Rolled 8
+117 / Player 3: Rolled 8
+117 / Player 4: Rolled 7
+117 / Player 4: Robber activated (rolled 7) - no resources distributed
+117 / Player 1: Discarded 4 cards
+117 / Player 2: Discarded 4 cards
+117 / Player 3: Discarded 6 cards
+117 / Player 4: Discarded 5 cards
+117 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+118 / Player 1: Rolled 10
+118 / Player 2: Rolled 7
+118 / Player 2: Robber activated (rolled 7) - no resources distributed
+118 / Player 3: Discarded 4 cards
+118 / Player 3: Rolled 10
+118 / Player 4: Rolled 8
+118 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+119 / Player 1: Rolled 8
+119 / Player 2: Rolled 5
+119 / Player 3: Rolled 5
+119 / Player 4: Rolled 11
+119 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+120 / Player 1: Rolled 6
+120 / Player 2: Rolled 7
+120 / Player 2: Robber activated (rolled 7) - no resources distributed
+120 / Player 4: Discarded 4 cards
+120 / Player 3: Rolled 6
+120 / Player 4: Rolled 9
+120 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+121 / Player 1: Rolled 11
+121 / Player 2: Rolled 9
+121 / Player 3: Rolled 9
+121 / Player 4: Rolled 12
+121 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+122 / Player 1: Rolled 2
+122 / Player 2: Rolled 8
+122 / Player 3: Rolled 7
+122 / Player 3: Robber activated (rolled 7) - no resources distributed
+122 / Player 1: Discarded 4 cards
+122 / Player 2: Discarded 5 cards
+122 / Player 3: Discarded 4 cards
+122 / Player 4: Discarded 4 cards
+122 / Player 4: Rolled 8
+122 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+123 / Player 1: Rolled 3
+123 / Player 2: Rolled 10
+123 / Player 3: Rolled 8
+123 / Player 4: Rolled 2
+123 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+124 / Player 1: Rolled 6
+124 / Player 2: Rolled 5
+124 / Player 3: Rolled 8
+124 / Player 4: Rolled 7
+124 / Player 4: Robber activated (rolled 7) - no resources distributed
+124 / Player 2: Discarded 4 cards
+124 / Player 3: Discarded 5 cards
+124 / Player 4: Discarded 4 cards
+124 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+125 / Player 1: Rolled 4
+125 / Player 2: Rolled 10
+125 / Player 3: Rolled 7
+125 / Player 3: Robber activated (rolled 7) - no resources distributed
+125 / Player 4: Rolled 6
+125 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+126 / Player 1: Rolled 8
+126 / Player 2: Rolled 8
+126 / Player 3: Rolled 4
+126 / Player 4: Rolled 3
+126 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+127 / Player 1: Rolled 11
+127 / Player 2: Rolled 7
+127 / Player 2: Robber activated (rolled 7) - no resources distributed
+127 / Player 3: Discarded 4 cards
+127 / Player 4: Discarded 4 cards
+127 / Player 3: Rolled 5
+127 / Player 4: Rolled 4
+127 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+128 / Player 1: Rolled 2
+128 / Player 2: Rolled 4
+128 / Player 3: Rolled 7
+128 / Player 3: Robber activated (rolled 7) - no resources distributed
+128 / Player 2: Discarded 5 cards
+128 / Player 4: Rolled 2
+128 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+129 / Player 1: Rolled 7
+129 / Player 1: Robber activated (rolled 7) - no resources distributed
+129 / Player 2: Rolled 10
+129 / Player 3: Rolled 5
+129 / Player 4: Rolled 5
+129 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+130 / Player 1: Rolled 6
+130 / Player 2: Rolled 6
+130 / Player 3: Rolled 4
+130 / Player 4: Rolled 5
+130 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+131 / Player 1: Rolled 2
+131 / Player 2: Rolled 5
+131 / Player 3: Rolled 7
+131 / Player 3: Robber activated (rolled 7) - no resources distributed
+131 / Player 1: Discarded 4 cards
+131 / Player 2: Discarded 5 cards
+131 / Player 4: Discarded 4 cards
+131 / Player 4: Rolled 8
+131 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+132 / Player 1: Rolled 5
+132 / Player 2: Rolled 7
+132 / Player 2: Robber activated (rolled 7) - no resources distributed
+132 / Player 3: Rolled 5
+132 / Player 4: Rolled 7
+132 / Player 4: Robber activated (rolled 7) - no resources distributed
+132 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+133 / Player 1: Rolled 5
+133 / Player 2: Rolled 10
+133 / Player 3: Rolled 7
+133 / Player 3: Robber activated (rolled 7) - no resources distributed
+133 / Player 3: Discarded 4 cards
+133 / Player 4: Rolled 7
+133 / Player 4: Robber activated (rolled 7) - no resources distributed
+133 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+134 / Player 1: Rolled 4
+134 / Player 2: Rolled 9
+134 / Player 3: Rolled 12
+134 / Player 4: Rolled 10
+134 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+135 / Player 1: Rolled 4
+135 / Player 2: Rolled 9
+135 / Player 3: Rolled 8
+135 / Player 4: Rolled 9
+135 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+136 / Player 1: Rolled 3
+136 / Player 2: Rolled 10
+136 / Player 3: Rolled 11
+136 / Player 4: Rolled 5
+136 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+137 / Player 1: Rolled 5
+137 / Player 2: Rolled 7
+137 / Player 2: Robber activated (rolled 7) - no resources distributed
+137 / Player 1: Discarded 4 cards
+137 / Player 2: Discarded 5 cards
+137 / Player 3: Discarded 4 cards
+137 / Player 4: Discarded 4 cards
+137 / Player 3: Rolled 8
+137 / Player 4: Rolled 5
+137 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+138 / Player 1: Rolled 6
+138 / Player 2: Rolled 3
+138 / Player 3: Rolled 11
+138 / Player 4: Rolled 9
+138 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+139 / Player 1: Rolled 6
+139 / Player 2: Rolled 8
+139 / Player 3: Rolled 4
+139 / Player 4: Rolled 6
+139 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+140 / Player 1: Rolled 9
+140 / Player 2: Rolled 3
+140 / Player 3: Rolled 5
+140 / Player 4: Rolled 6
+140 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+141 / Player 1: Rolled 10
+141 / Player 2: Rolled 4
+141 / Player 3: Rolled 4
+141 / Player 4: Rolled 9
+141 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+142 / Player 1: Rolled 10
+142 / Player 2: Rolled 11
+142 / Player 3: Rolled 11
+142 / Player 4: Rolled 7
+142 / Player 4: Robber activated (rolled 7) - no resources distributed
+142 / Player 1: Discarded 4 cards
+142 / Player 2: Discarded 7 cards
+142 / Player 3: Discarded 5 cards
+142 / Player 4: Discarded 5 cards
+142 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+143 / Player 1: Rolled 8
+143 / Player 2: Rolled 7
+143 / Player 2: Robber activated (rolled 7) - no resources distributed
+143 / Player 2: Discarded 4 cards
+143 / Player 3: Rolled 10
+143 / Player 4: Rolled 4
+143 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+144 / Player 1: Rolled 11
+144 / Player 2: Rolled 4
+144 / Player 3: Rolled 9
+144 / Player 4: Rolled 3
+144 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+145 / Player 1: Rolled 5
+145 / Player 2: Rolled 6
+145 / Player 3: Rolled 8
+145 / Player 4: Rolled 9
+145 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+146 / Player 1: Rolled 10
+146 / Player 2: Rolled 4
+146 / Player 3: Rolled 9
+146 / Player 4: Rolled 12
+146 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+147 / Player 1: Rolled 6
+147 / Player 2: Rolled 4
+147 / Player 3: Rolled 8
+147 / Player 4: Rolled 4
+147 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+148 / Player 1: Rolled 7
+148 / Player 1: Robber activated (rolled 7) - no resources distributed
+148 / Player 1: Discarded 4 cards
+148 / Player 2: Discarded 7 cards
+148 / Player 3: Discarded 6 cards
+148 / Player 4: Discarded 5 cards
+148 / Player 2: Rolled 8
+148 / Player 3: Rolled 10
+148 / Player 4: Rolled 7
+148 / Player 4: Robber activated (rolled 7) - no resources distributed
+148 / Player 3: Discarded 4 cards
+148 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+149 / Player 1: Rolled 5
+149 / Player 2: Rolled 8
+149 / Player 3: Rolled 6
+149 / Player 4: Rolled 9
+149 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+150 / Player 1: Rolled 5
+150 / Player 2: Rolled 5
+150 / Player 3: Rolled 5
+150 / Player 4: Rolled 5
+150 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+151 / Player 1: Rolled 8
+151 / Player 2: Rolled 9
+151 / Player 3: Rolled 4
+151 / Player 4: Rolled 2
+151 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+152 / Player 1: Rolled 6
+152 / Player 2: Rolled 5
+152 / Player 3: Rolled 6
+152 / Player 4: Rolled 7
+152 / Player 4: Robber activated (rolled 7) - no resources distributed
+152 / Player 2: Discarded 7 cards
+152 / Player 4: Discarded 5 cards
+152 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+153 / Player 1: Rolled 9
+153 / Player 2: Rolled 6
+153 / Player 3: Rolled 7
+153 / Player 3: Robber activated (rolled 7) - no resources distributed
+153 / Player 2: Discarded 4 cards
+153 / Player 4: Rolled 9
+153 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+154 / Player 1: Rolled 10
+154 / Player 2: Rolled 5
+154 / Player 3: Rolled 3
+154 / Player 4: Rolled 3
+154 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+155 / Player 1: Rolled 4
+155 / Player 2: Rolled 8
+155 / Player 3: Rolled 6
+155 / Player 4: Rolled 7
+155 / Player 4: Robber activated (rolled 7) - no resources distributed
+155 / Player 2: Discarded 4 cards
+155 / Player 3: Discarded 5 cards
+155 / Player 4: Discarded 4 cards
+155 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+156 / Player 1: Rolled 8
+156 / Player 2: Rolled 8
+156 / Player 3: Rolled 9
+156 / Player 4: Rolled 8
+156 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+157 / Player 1: Rolled 12
+157 / Player 2: Rolled 5
+157 / Player 3: Rolled 7
+157 / Player 3: Robber activated (rolled 7) - no resources distributed
+157 / Player 3: Discarded 5 cards
+157 / Player 4: Rolled 9
+157 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+158 / Player 1: Rolled 4
+158 / Player 2: Rolled 8
+158 / Player 3: Rolled 7
+158 / Player 3: Robber activated (rolled 7) - no resources distributed
+158 / Player 4: Discarded 4 cards
+158 / Player 4: Rolled 2
+158 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+159 / Player 1: Rolled 8
+159 / Player 2: Rolled 8
+159 / Player 3: Rolled 9
+159 / Player 4: Rolled 6
+159 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+160 / Player 1: Rolled 2
+160 / Player 2: Rolled 2
+160 / Player 3: Rolled 7
+160 / Player 3: Robber activated (rolled 7) - no resources distributed
+160 / Player 2: Discarded 6 cards
+160 / Player 3: Discarded 4 cards
+160 / Player 4: Discarded 4 cards
+160 / Player 4: Rolled 7
+160 / Player 4: Robber activated (rolled 7) - no resources distributed
+160 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+161 / Player 1: Rolled 7
+161 / Player 1: Robber activated (rolled 7) - no resources distributed
+161 / Player 2: Rolled 5
+161 / Player 3: Rolled 4
+161 / Player 4: Rolled 5
+161 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+162 / Player 1: Rolled 7
+162 / Player 1: Robber activated (rolled 7) - no resources distributed
+162 / Player 2: Rolled 4
+162 / Player 3: Rolled 6
+162 / Player 4: Rolled 10
+162 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+163 / Player 1: Rolled 9
+163 / Player 2: Rolled 6
+163 / Player 3: Rolled 3
+163 / Player 4: Rolled 6
+163 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+164 / Player 1: Rolled 7
+164 / Player 1: Robber activated (rolled 7) - no resources distributed
+164 / Player 2: Discarded 6 cards
+164 / Player 2: Rolled 10
+164 / Player 3: Rolled 5
+164 / Player 4: Rolled 7
+164 / Player 4: Robber activated (rolled 7) - no resources distributed
+164 / Player 1: Discarded 4 cards
+164 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+165 / Player 1: Rolled 6
+165 / Player 2: Rolled 6
+165 / Player 3: Rolled 11
+165 / Player 4: Rolled 6
+165 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+166 / Player 1: Rolled 12
+166 / Player 2: Rolled 10
+166 / Player 3: Rolled 9
+166 / Player 4: Rolled 11
+166 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+167 / Player 1: Rolled 6
+167 / Player 2: Rolled 5
+167 / Player 3: Rolled 3
+167 / Player 4: Rolled 7
+167 / Player 4: Robber activated (rolled 7) - no resources distributed
+167 / Player 2: Discarded 5 cards
+167 / Player 3: Discarded 5 cards
+167 / Player 4: Discarded 4 cards
+167 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+168 / Player 1: Rolled 11
+168 / Player 2: Rolled 7
+168 / Player 2: Robber activated (rolled 7) - no resources distributed
+168 / Player 1: Discarded 4 cards
+168 / Player 3: Rolled 9
+168 / Player 4: Rolled 3
+168 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+169 / Player 1: Rolled 11
+169 / Player 2: Rolled 6
+169 / Player 3: Rolled 7
+169 / Player 3: Robber activated (rolled 7) - no resources distributed
+169 / Player 2: Discarded 4 cards
+169 / Player 4: Discarded 4 cards
+169 / Player 4: Rolled 10
+169 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+170 / Player 1: Rolled 8
+170 / Player 2: Rolled 6
+170 / Player 3: Rolled 10
+170 / Player 4: Rolled 6
+170 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+171 / Player 1: Rolled 3
+171 / Player 2: Rolled 2
+171 / Player 3: Rolled 5
+171 / Player 4: Rolled 5
+171 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+172 / Player 1: Rolled 5
+172 / Player 2: Rolled 4
+172 / Player 3: Rolled 6
+172 / Player 4: Rolled 10
+172 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+173 / Player 1: Rolled 10
+173 / Player 2: Rolled 7
+173 / Player 2: Robber activated (rolled 7) - no resources distributed
+173 / Player 1: Discarded 4 cards
+173 / Player 2: Discarded 4 cards
+173 / Player 3: Discarded 6 cards
+173 / Player 3: Rolled 6
+173 / Player 4: Rolled 7
+173 / Player 4: Robber activated (rolled 7) - no resources distributed
+173 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+174 / Player 1: Rolled 8
+174 / Player 2: Rolled 5
+174 / Player 3: Rolled 8
+174 / Player 4: Rolled 6
+174 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+175 / Player 1: Rolled 8
+175 / Player 2: Rolled 10
+175 / Player 3: Rolled 7
+175 / Player 3: Robber activated (rolled 7) - no resources distributed
+175 / Player 3: Discarded 5 cards
+175 / Player 4: Discarded 5 cards
+175 / Player 4: Rolled 4
+175 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+176 / Player 1: Rolled 6
+176 / Player 2: Rolled 8
+176 / Player 3: Rolled 9
+176 / Player 4: Rolled 12
+176 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+177 / Player 1: Rolled 12
+177 / Player 2: Rolled 7
+177 / Player 2: Robber activated (rolled 7) - no resources distributed
+177 / Player 2: Discarded 5 cards
+177 / Player 3: Discarded 4 cards
+177 / Player 3: Rolled 7
+177 / Player 3: Robber activated (rolled 7) - no resources distributed
+177 / Player 4: Rolled 8
+177 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+178 / Player 1: Rolled 5
+178 / Player 2: Rolled 8
+178 / Player 3: Rolled 5
+178 / Player 4: Rolled 4
+178 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+179 / Player 1: Rolled 5
+179 / Player 2: Rolled 11
+179 / Player 3: Rolled 3
+179 / Player 4: Rolled 6
+179 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+180 / Player 1: Rolled 9
+180 / Player 2: Rolled 2
+180 / Player 3: Rolled 8
+180 / Player 4: Rolled 7
+180 / Player 4: Robber activated (rolled 7) - no resources distributed
+180 / Player 2: Discarded 4 cards
+180 / Player 3: Discarded 4 cards
+180 / Player 4: Discarded 6 cards
+180 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+181 / Player 1: Rolled 7
+181 / Player 1: Robber activated (rolled 7) - no resources distributed
+181 / Player 2: Rolled 8
+181 / Player 3: Rolled 10
+181 / Player 4: Rolled 9
+181 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+182 / Player 1: Rolled 6
+182 / Player 2: Rolled 8
+182 / Player 3: Rolled 9
+182 / Player 4: Rolled 8
+182 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+183 / Player 1: Rolled 7
+183 / Player 1: Robber activated (rolled 7) - no resources distributed
+183 / Player 1: Discarded 4 cards
+183 / Player 2: Discarded 4 cards
+183 / Player 3: Discarded 4 cards
+183 / Player 4: Discarded 4 cards
+183 / Player 2: Rolled 8
+183 / Player 3: Rolled 6
+183 / Player 4: Rolled 6
+183 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+184 / Player 1: Rolled 7
+184 / Player 1: Robber activated (rolled 7) - no resources distributed
+184 / Player 2: Rolled 6
+184 / Player 3: Rolled 3
+184 / Player 4: Rolled 7
+184 / Player 4: Robber activated (rolled 7) - no resources distributed
+184 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+185 / Player 1: Rolled 8
+185 / Player 2: Rolled 6
+185 / Player 3: Rolled 10
+185 / Player 4: Rolled 8
+185 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+186 / Player 1: Rolled 8
+186 / Player 2: Rolled 10
+186 / Player 3: Rolled 6
+186 / Player 4: Rolled 9
+186 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+187 / Player 1: Rolled 8
+187 / Player 2: Rolled 4
+187 / Player 3: Rolled 9
+187 / Player 4: Rolled 7
+187 / Player 4: Robber activated (rolled 7) - no resources distributed
+187 / Player 2: Discarded 6 cards
+187 / Player 3: Discarded 6 cards
+187 / Player 4: Discarded 5 cards
+187 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+188 / Player 1: Rolled 8
+188 / Player 2: Rolled 5
+188 / Player 3: Rolled 2
+188 / Player 4: Rolled 6
+188 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+189 / Player 1: Rolled 6
+189 / Player 2: Rolled 7
+189 / Player 2: Robber activated (rolled 7) - no resources distributed
+189 / Player 2: Discarded 4 cards
+189 / Player 4: Discarded 4 cards
+189 / Player 3: Rolled 6
+189 / Player 4: Rolled 7
+189 / Player 4: Robber activated (rolled 7) - no resources distributed
+189 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+190 / Player 1: Rolled 5
+190 / Player 2: Rolled 2
+190 / Player 3: Rolled 8
+190 / Player 4: Rolled 10
+190 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+191 / Player 1: Rolled 10
+191 / Player 2: Rolled 9
+191 / Player 3: Rolled 11
+191 / Player 4: Rolled 5
+191 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+192 / Player 1: Rolled 10
+192 / Player 2: Rolled 6
+192 / Player 3: Rolled 7
+192 / Player 3: Robber activated (rolled 7) - no resources distributed
+192 / Player 1: Discarded 5 cards
+192 / Player 2: Discarded 4 cards
+192 / Player 3: Discarded 5 cards
+192 / Player 4: Rolled 7
+192 / Player 4: Robber activated (rolled 7) - no resources distributed
+192 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+193 / Player 1: Rolled 6
+193 / Player 2: Rolled 2
+193 / Player 3: Rolled 10
+193 / Player 4: Rolled 9
+193 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+194 / Player 1: Rolled 10
+194 / Player 2: Rolled 9
+194 / Player 3: Rolled 7
+194 / Player 3: Robber activated (rolled 7) - no resources distributed
+194 / Player 2: Discarded 4 cards
+194 / Player 3: Discarded 4 cards
+194 / Player 4: Discarded 4 cards
+194 / Player 4: Rolled 8
+194 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+195 / Player 1: Rolled 8
+195 / Player 2: Rolled 7
+195 / Player 2: Robber activated (rolled 7) - no resources distributed
+195 / Player 3: Rolled 10
+195 / Player 4: Rolled 7
+195 / Player 4: Robber activated (rolled 7) - no resources distributed
+195 / Player 1: Discarded 4 cards
+195 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+196 / Player 1: Rolled 7
+196 / Player 1: Robber activated (rolled 7) - no resources distributed
+196 / Player 2: Rolled 7
+196 / Player 2: Robber activated (rolled 7) - no resources distributed
+196 / Player 3: Rolled 6
+196 / Player 4: Rolled 3
+196 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+197 / Player 1: Rolled 2
+197 / Player 2: Rolled 12
+197 / Player 3: Rolled 4
+197 / Player 4: Rolled 3
+197 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+198 / Player 1: Rolled 11
+198 / Player 2: Rolled 5
+198 / Player 3: Rolled 10
+198 / Player 4: Rolled 3
+198 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+199 / Player 1: Rolled 8
+199 / Player 2: Rolled 9
+199 / Player 3: Rolled 7
+199 / Player 3: Robber activated (rolled 7) - no resources distributed
+199 / Player 2: Discarded 4 cards
+199 / Player 3: Discarded 6 cards
+199 / Player 4: Discarded 6 cards
+199 / Player 4: Rolled 3
+199 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+200 / Player 1: Rolled 6
+200 / Player 2: Rolled 5
+200 / Player 3: Rolled 5
+200 / Player 4: Rolled 5
+200 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+201 / Player 1: Rolled 5
+201 / Player 2: Rolled 7
+201 / Player 2: Robber activated (rolled 7) - no resources distributed
+201 / Player 3: Discarded 4 cards
+201 / Player 3: Rolled 8
+201 / Player 4: Rolled 7
+201 / Player 4: Robber activated (rolled 7) - no resources distributed
+201 / Player 4: Discarded 4 cards
+201 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+202 / Player 1: Rolled 8
+202 / Player 2: Rolled 5
+202 / Player 3: Rolled 8
+202 / Player 4: Rolled 6
+202 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+203 / Player 1: Rolled 8
+203 / Player 2: Rolled 7
+203 / Player 2: Robber activated (rolled 7) - no resources distributed
+203 / Player 3: Discarded 4 cards
+203 / Player 3: Rolled 6
+203 / Player 4: Rolled 7
+203 / Player 4: Robber activated (rolled 7) - no resources distributed
+203 / Player 2: Discarded 4 cards
+203 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+204 / Player 1: Rolled 10
+204 / Player 2: Rolled 9
+204 / Player 3: Rolled 9
+204 / Player 4: Rolled 3
+204 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+205 / Player 1: Rolled 10
+205 / Player 2: Rolled 7
+205 / Player 2: Robber activated (rolled 7) - no resources distributed
+205 / Player 1: Discarded 4 cards
+205 / Player 4: Discarded 4 cards
+205 / Player 3: Rolled 9
+205 / Player 4: Rolled 10
+205 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+206 / Player 1: Rolled 5
+206 / Player 2: Rolled 5
+206 / Player 3: Rolled 7
+206 / Player 3: Robber activated (rolled 7) - no resources distributed
+206 / Player 3: Discarded 4 cards
+206 / Player 4: Rolled 4
+206 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+207 / Player 1: Rolled 3
+207 / Player 2: Rolled 7
+207 / Player 2: Robber activated (rolled 7) - no resources distributed
+207 / Player 2: Discarded 4 cards
+207 / Player 3: Rolled 10
+207 / Player 4: Rolled 5
+207 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+208 / Player 1: Rolled 4
+208 / Player 2: Rolled 6
+208 / Player 3: Rolled 12
+208 / Player 4: Rolled 6
+208 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+209 / Player 1: Rolled 3
+209 / Player 2: Rolled 6
+209 / Player 3: Rolled 4
+209 / Player 4: Rolled 11
+209 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+210 / Player 1: Rolled 10
+210 / Player 2: Rolled 8
+210 / Player 3: Rolled 8
+210 / Player 4: Rolled 2
+210 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+211 / Player 1: Rolled 12
+211 / Player 2: Rolled 8
+211 / Player 3: Rolled 8
+211 / Player 4: Rolled 5
+211 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+212 / Player 1: Rolled 11
+212 / Player 2: Rolled 5
+212 / Player 3: Rolled 10
+212 / Player 4: Rolled 6
+212 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+213 / Player 1: Rolled 8
+213 / Player 2: Rolled 5
+213 / Player 3: Rolled 6
+213 / Player 4: Rolled 7
+213 / Player 4: Robber activated (rolled 7) - no resources distributed
+213 / Player 1: Discarded 5 cards
+213 / Player 2: Discarded 6 cards
+213 / Player 3: Discarded 8 cards
+213 / Player 4: Discarded 7 cards
+213 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+214 / Player 1: Rolled 9
+214 / Player 2: Rolled 8
+214 / Player 3: Rolled 5
+214 / Player 4: Rolled 7
+214 / Player 4: Robber activated (rolled 7) - no resources distributed
+214 / Player 3: Discarded 4 cards
+214 / Player 4: Discarded 4 cards
+214 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+215 / Player 1: Rolled 9
+215 / Player 2: Rolled 8
+215 / Player 3: Rolled 5
+215 / Player 4: Rolled 11
+215 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+216 / Player 1: Rolled 7
+216 / Player 1: Robber activated (rolled 7) - no resources distributed
+216 / Player 2: Discarded 4 cards
+216 / Player 2: Rolled 6
+216 / Player 3: Rolled 7
+216 / Player 3: Robber activated (rolled 7) - no resources distributed
+216 / Player 4: Rolled 4
+216 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+217 / Player 1: Rolled 4
+217 / Player 2: Rolled 11
+217 / Player 3: Rolled 10
+217 / Player 4: Rolled 6
+217 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+218 / Player 1: Rolled 7
+218 / Player 1: Robber activated (rolled 7) - no resources distributed
+218 / Player 1: Discarded 4 cards
+218 / Player 2: Discarded 4 cards
+218 / Player 2: Rolled 7
+218 / Player 2: Robber activated (rolled 7) - no resources distributed
+218 / Player 3: Rolled 8
+218 / Player 4: Rolled 7
+218 / Player 4: Robber activated (rolled 7) - no resources distributed
+218 / Player 3: Discarded 4 cards
+218 / Player 4: Discarded 4 cards
+218 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+219 / Player 1: Rolled 8
+219 / Player 2: Rolled 6
+219 / Player 3: Rolled 10
+219 / Player 4: Rolled 3
+219 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+220 / Player 1: Rolled 9
+220 / Player 2: Rolled 7
+220 / Player 2: Robber activated (rolled 7) - no resources distributed
+220 / Player 3: Rolled 12
+220 / Player 4: Rolled 9
+220 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+221 / Player 1: Rolled 2
+221 / Player 2: Rolled 6
+221 / Player 3: Rolled 7
+221 / Player 3: Robber activated (rolled 7) - no resources distributed
+221 / Player 2: Discarded 4 cards
+221 / Player 3: Discarded 4 cards
+221 / Player 4: Rolled 11
+221 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+222 / Player 1: Rolled 12
+222 / Player 2: Rolled 10
+222 / Player 3: Rolled 11
+222 / Player 4: Rolled 7
+222 / Player 4: Robber activated (rolled 7) - no resources distributed
+222 / Player 1: Discarded 4 cards
+222 / Player 4: Discarded 4 cards
+222 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+223 / Player 1: Rolled 7
+223 / Player 1: Robber activated (rolled 7) - no resources distributed
+223 / Player 2: Rolled 5
+223 / Player 3: Rolled 4
+223 / Player 4: Rolled 11
+223 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+224 / Player 1: Rolled 7
+224 / Player 1: Robber activated (rolled 7) - no resources distributed
+224 / Player 2: Rolled 10
+224 / Player 3: Rolled 4
+224 / Player 4: Rolled 11
+224 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+225 / Player 1: Rolled 8
+225 / Player 2: Rolled 7
+225 / Player 2: Robber activated (rolled 7) - no resources distributed
+225 / Player 3: Discarded 4 cards
+225 / Player 4: Discarded 4 cards
+225 / Player 3: Rolled 11
+225 / Player 4: Rolled 7
+225 / Player 4: Robber activated (rolled 7) - no resources distributed
+225 / Player 1: Discarded 4 cards
+225 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+226 / Player 1: Rolled 7
+226 / Player 1: Robber activated (rolled 7) - no resources distributed
+226 / Player 2: Rolled 7
+226 / Player 2: Robber activated (rolled 7) - no resources distributed
+226 / Player 3: Rolled 7
+226 / Player 3: Robber activated (rolled 7) - no resources distributed
+226 / Player 4: Rolled 7
+226 / Player 4: Robber activated (rolled 7) - no resources distributed
+226 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+227 / Player 1: Rolled 12
+227 / Player 2: Rolled 4
+227 / Player 3: Rolled 6
+227 / Player 4: Rolled 12
+227 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+228 / Player 1: Rolled 9
+228 / Player 2: Rolled 8
+228 / Player 3: Rolled 10
+228 / Player 4: Rolled 10
+228 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+229 / Player 1: Rolled 8
+229 / Player 2: Rolled 9
+229 / Player 3: Rolled 6
+229 / Player 4: Rolled 3
+229 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+230 / Player 1: Rolled 6
+230 / Player 2: Rolled 2
+230 / Player 3: Rolled 10
+230 / Player 4: Rolled 4
+230 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+231 / Player 1: Rolled 4
+231 / Player 2: Rolled 6
+231 / Player 3: Rolled 10
+231 / Player 4: Rolled 2
+231 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+232 / Player 1: Rolled 9
+232 / Player 2: Rolled 7
+232 / Player 2: Robber activated (rolled 7) - no resources distributed
+232 / Player 1: Discarded 4 cards
+232 / Player 2: Discarded 9 cards
+232 / Player 3: Discarded 6 cards
+232 / Player 4: Discarded 5 cards
+232 / Player 3: Rolled 6
+232 / Player 4: Rolled 5
+232 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+233 / Player 1: Rolled 9
+233 / Player 2: Rolled 5
+233 / Player 3: Rolled 5
+233 / Player 4: Rolled 4
+233 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+234 / Player 1: Rolled 11
+234 / Player 2: Rolled 9
+234 / Player 3: Rolled 6
+234 / Player 4: Rolled 7
+234 / Player 4: Robber activated (rolled 7) - no resources distributed
+234 / Player 2: Discarded 7 cards
+234 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+235 / Player 1: Rolled 3
+235 / Player 2: Rolled 7
+235 / Player 2: Robber activated (rolled 7) - no resources distributed
+235 / Player 2: Discarded 4 cards
+235 / Player 3: Discarded 4 cards
+235 / Player 3: Rolled 5
+235 / Player 4: Rolled 10
+235 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+236 / Player 1: Rolled 4
+236 / Player 2: Rolled 5
+236 / Player 3: Rolled 10
+236 / Player 4: Rolled 8
+236 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+237 / Player 1: Rolled 9
+237 / Player 2: Rolled 8
+237 / Player 3: Rolled 10
+237 / Player 4: Rolled 8
+237 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+238 / Player 1: Rolled 10
+238 / Player 2: Rolled 4
+238 / Player 3: Rolled 10
+238 / Player 4: Rolled 7
+238 / Player 4: Robber activated (rolled 7) - no resources distributed
+238 / Player 1: Discarded 5 cards
+238 / Player 3: Discarded 6 cards
+238 / Player 4: Discarded 5 cards
+238 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+239 / Player 1: Rolled 8
+239 / Player 2: Rolled 8
+239 / Player 3: Rolled 10
+239 / Player 4: Rolled 4
+239 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+240 / Player 1: Rolled 9
+240 / Player 2: Rolled 6
+240 / Player 3: Rolled 9
+240 / Player 4: Rolled 4
+240 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+241 / Player 1: Rolled 7
+241 / Player 1: Robber activated (rolled 7) - no resources distributed
+241 / Player 2: Discarded 6 cards
+241 / Player 3: Discarded 4 cards
+241 / Player 2: Rolled 7
+241 / Player 2: Robber activated (rolled 7) - no resources distributed
+241 / Player 3: Rolled 7
+241 / Player 3: Robber activated (rolled 7) - no resources distributed
+241 / Player 4: Rolled 6
+241 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+242 / Player 1: Rolled 7
+242 / Player 1: Robber activated (rolled 7) - no resources distributed
+242 / Player 2: Rolled 11
+242 / Player 3: Rolled 6
+242 / Player 4: Rolled 11
+242 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+243 / Player 1: Rolled 11
+243 / Player 2: Rolled 12
+243 / Player 3: Rolled 10
+243 / Player 4: Rolled 3
+243 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+244 / Player 1: Rolled 5
+244 / Player 2: Rolled 11
+244 / Player 3: Rolled 5
+244 / Player 4: Rolled 5
+244 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+245 / Player 1: Rolled 10
+245 / Player 2: Rolled 7
+245 / Player 2: Robber activated (rolled 7) - no resources distributed
+245 / Player 1: Discarded 6 cards
+245 / Player 2: Discarded 4 cards
+245 / Player 3: Discarded 4 cards
+245 / Player 4: Discarded 6 cards
+245 / Player 3: Rolled 6
+245 / Player 4: Rolled 7
+245 / Player 4: Robber activated (rolled 7) - no resources distributed
+245 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+246 / Player 1: Rolled 7
+246 / Player 1: Robber activated (rolled 7) - no resources distributed
+246 / Player 2: Rolled 2
+246 / Player 3: Rolled 9
+246 / Player 4: Rolled 5
+246 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+247 / Player 1: Rolled 3
+247 / Player 2: Rolled 8
+247 / Player 3: Rolled 7
+247 / Player 3: Robber activated (rolled 7) - no resources distributed
+247 / Player 4: Discarded 4 cards
+247 / Player 4: Rolled 4
+247 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+248 / Player 1: Rolled 5
+248 / Player 2: Rolled 6
+248 / Player 3: Rolled 7
+248 / Player 3: Robber activated (rolled 7) - no resources distributed
+248 / Player 2: Discarded 4 cards
+248 / Player 4: Rolled 8
+248 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+249 / Player 1: Rolled 11
+249 / Player 2: Rolled 5
+249 / Player 3: Rolled 4
+249 / Player 4: Rolled 5
+249 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+250 / Player 1: Rolled 9
+250 / Player 2: Rolled 7
+250 / Player 2: Robber activated (rolled 7) - no resources distributed
+250 / Player 3: Discarded 4 cards
+250 / Player 3: Rolled 5
+250 / Player 4: Rolled 6
+250 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+251 / Player 1: Rolled 6
+251 / Player 2: Rolled 7
+251 / Player 2: Robber activated (rolled 7) - no resources distributed
+251 / Player 2: Discarded 4 cards
+251 / Player 3: Rolled 8
+251 / Player 4: Rolled 7
+251 / Player 4: Robber activated (rolled 7) - no resources distributed
+251 / Player 4: Discarded 4 cards
+251 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+252 / Player 1: Rolled 11
+252 / Player 2: Rolled 2
+252 / Player 3: Rolled 9
+252 / Player 4: Rolled 7
+252 / Player 4: Robber activated (rolled 7) - no resources distributed
+252 / Player 1: Discarded 4 cards
+252 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+253 / Player 1: Rolled 6
+253 / Player 2: Rolled 12
+253 / Player 3: Rolled 6
+253 / Player 4: Rolled 12
+253 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+254 / Player 1: Rolled 6
+254 / Player 2: Rolled 6
+254 / Player 3: Rolled 8
+254 / Player 4: Rolled 4
+254 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+255 / Player 1: Rolled 5
+255 / Player 2: Rolled 8
+255 / Player 3: Rolled 11
+255 / Player 4: Rolled 5
+255 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+256 / Player 1: Rolled 8
+256 / Player 2: Rolled 5
+256 / Player 3: Rolled 6
+256 / Player 4: Rolled 7
+256 / Player 4: Robber activated (rolled 7) - no resources distributed
+256 / Player 2: Discarded 6 cards
+256 / Player 3: Discarded 5 cards
+256 / Player 4: Discarded 5 cards
+256 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+257 / Player 1: Rolled 7
+257 / Player 1: Robber activated (rolled 7) - no resources distributed
+257 / Player 2: Rolled 4
+257 / Player 3: Rolled 7
+257 / Player 3: Robber activated (rolled 7) - no resources distributed
+257 / Player 2: Discarded 4 cards
+257 / Player 4: Rolled 5
+257 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+258 / Player 1: Rolled 2
+258 / Player 2: Rolled 7
+258 / Player 2: Robber activated (rolled 7) - no resources distributed
+258 / Player 3: Rolled 7
+258 / Player 3: Robber activated (rolled 7) - no resources distributed
+258 / Player 4: Rolled 7
+258 / Player 4: Robber activated (rolled 7) - no resources distributed
+258 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+259 / Player 1: Rolled 8
+259 / Player 2: Rolled 8
+259 / Player 3: Rolled 9
+259 / Player 4: Rolled 8
+259 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+260 / Player 1: Rolled 10
+260 / Player 2: Rolled 9
+260 / Player 3: Rolled 10
+260 / Player 4: Rolled 6
+260 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+261 / Player 1: Rolled 7
+261 / Player 1: Robber activated (rolled 7) - no resources distributed
+261 / Player 2: Discarded 4 cards
+261 / Player 3: Discarded 5 cards
+261 / Player 4: Discarded 4 cards
+261 / Player 2: Rolled 7
+261 / Player 2: Robber activated (rolled 7) - no resources distributed
+261 / Player 3: Rolled 6
+261 / Player 4: Rolled 7
+261 / Player 4: Robber activated (rolled 7) - no resources distributed
+261 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+262 / Player 1: Rolled 4
+262 / Player 2: Rolled 4
+262 / Player 3: Rolled 7
+262 / Player 3: Robber activated (rolled 7) - no resources distributed
+262 / Player 4: Rolled 6
+262 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+263 / Player 1: Rolled 6
+263 / Player 2: Rolled 6
+263 / Player 3: Rolled 9
+263 / Player 4: Rolled 8
+263 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+264 / Player 1: Rolled 10
+264 / Player 2: Rolled 7
+264 / Player 2: Robber activated (rolled 7) - no resources distributed
+264 / Player 1: Discarded 4 cards
+264 / Player 2: Discarded 5 cards
+264 / Player 3: Rolled 8
+264 / Player 4: Rolled 5
+264 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+265 / Player 1: Rolled 7
+265 / Player 1: Robber activated (rolled 7) - no resources distributed
+265 / Player 3: Discarded 4 cards
+265 / Player 2: Rolled 9
+265 / Player 3: Rolled 9
+265 / Player 4: Rolled 9
+265 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+266 / Player 1: Rolled 6
+266 / Player 2: Rolled 12
+266 / Player 3: Rolled 10
+266 / Player 4: Rolled 9
+266 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+267 / Player 1: Rolled 6
+267 / Player 2: Rolled 7
+267 / Player 2: Robber activated (rolled 7) - no resources distributed
+267 / Player 2: Discarded 6 cards
+267 / Player 3: Rolled 4
+267 / Player 4: Rolled 5
+267 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+268 / Player 1: Rolled 10
+268 / Player 2: Rolled 8
+268 / Player 3: Rolled 10
+268 / Player 4: Rolled 4
+268 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+269 / Player 1: Rolled 5
+269 / Player 2: Rolled 8
+269 / Player 3: Rolled 7
+269 / Player 3: Robber activated (rolled 7) - no resources distributed
+269 / Player 2: Discarded 4 cards
+269 / Player 3: Discarded 5 cards
+269 / Player 4: Discarded 4 cards
+269 / Player 4: Rolled 6
+269 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+270 / Player 1: Rolled 10
+270 / Player 2: Rolled 10
+270 / Player 3: Rolled 9
+270 / Player 4: Rolled 8
+270 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+271 / Player 1: Rolled 7
+271 / Player 1: Robber activated (rolled 7) - no resources distributed
+271 / Player 1: Discarded 4 cards
+271 / Player 3: Discarded 4 cards
+271 / Player 2: Rolled 5
+271 / Player 3: Rolled 7
+271 / Player 3: Robber activated (rolled 7) - no resources distributed
+271 / Player 4: Rolled 6
+271 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+272 / Player 1: Rolled 4
+272 / Player 2: Rolled 8
+272 / Player 3: Rolled 6
+272 / Player 4: Rolled 6
+272 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+273 / Player 1: Rolled 12
+273 / Player 2: Rolled 4
+273 / Player 3: Rolled 6
+273 / Player 4: Rolled 9
+273 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+274 / Player 1: Rolled 6
+274 / Player 2: Rolled 6
+274 / Player 3: Rolled 8
+274 / Player 4: Rolled 5
+274 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+275 / Player 1: Rolled 10
+275 / Player 2: Rolled 5
+275 / Player 3: Rolled 5
+275 / Player 4: Rolled 9
+275 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+276 / Player 1: Rolled 6
+276 / Player 2: Rolled 6
+276 / Player 3: Rolled 8
+276 / Player 4: Rolled 8
+276 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+277 / Player 1: Rolled 9
+277 / Player 2: Rolled 4
+277 / Player 3: Rolled 8
+277 / Player 4: Rolled 7
+277 / Player 4: Robber activated (rolled 7) - no resources distributed
+277 / Player 2: Discarded 10 cards
+277 / Player 3: Discarded 5 cards
+277 / Player 4: Discarded 5 cards
+277 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+278 / Player 1: Rolled 6
+278 / Player 2: Rolled 4
+278 / Player 3: Rolled 11
+278 / Player 4: Rolled 4
+278 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+279 / Player 1: Rolled 7
+279 / Player 1: Robber activated (rolled 7) - no resources distributed
+279 / Player 2: Discarded 6 cards
+279 / Player 2: Rolled 11
+279 / Player 3: Rolled 8
+279 / Player 4: Rolled 6
+279 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+280 / Player 1: Rolled 2
+280 / Player 2: Rolled 8
+280 / Player 3: Rolled 5
+280 / Player 4: Rolled 6
+280 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+281 / Player 1: Rolled 6
+281 / Player 2: Rolled 8
+281 / Player 3: Rolled 9
+281 / Player 4: Rolled 4
+281 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+282 / Player 1: Rolled 8
+282 / Player 2: Rolled 6
+282 / Player 3: Rolled 2
+282 / Player 4: Rolled 10
+282 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+283 / Player 1: Rolled 2
+283 / Player 2: Rolled 7
+283 / Player 2: Robber activated (rolled 7) - no resources distributed
+283 / Player 1: Discarded 4 cards
+283 / Player 2: Discarded 8 cards
+283 / Player 3: Discarded 5 cards
+283 / Player 4: Discarded 7 cards
+283 / Player 3: Rolled 9
+283 / Player 4: Rolled 4
+283 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+284 / Player 1: Rolled 9
+284 / Player 2: Rolled 7
+284 / Player 2: Robber activated (rolled 7) - no resources distributed
+284 / Player 2: Discarded 5 cards
+284 / Player 4: Discarded 4 cards
+284 / Player 3: Rolled 6
+284 / Player 4: Rolled 5
+284 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+285 / Player 1: Rolled 11
+285 / Player 2: Rolled 3
+285 / Player 3: Rolled 5
+285 / Player 4: Rolled 5
+285 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+286 / Player 1: Rolled 11
+286 / Player 2: Rolled 8
+286 / Player 3: Rolled 10
+286 / Player 4: Rolled 6
+286 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+287 / Player 1: Rolled 2
+287 / Player 2: Rolled 4
+287 / Player 3: Rolled 11
+287 / Player 4: Rolled 5
+287 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+288 / Player 1: Rolled 3
+288 / Player 2: Rolled 7
+288 / Player 2: Robber activated (rolled 7) - no resources distributed
+288 / Player 1: Discarded 4 cards
+288 / Player 2: Discarded 5 cards
+288 / Player 3: Discarded 5 cards
+288 / Player 4: Discarded 5 cards
+288 / Player 3: Rolled 10
+288 / Player 4: Rolled 3
+288 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+289 / Player 1: Rolled 9
+289 / Player 2: Rolled 9
+289 / Player 3: Rolled 8
+289 / Player 4: Rolled 7
+289 / Player 4: Robber activated (rolled 7) - no resources distributed
+289 / Player 3: Discarded 4 cards
+289 / Player 4: Discarded 4 cards
+289 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+290 / Player 1: Rolled 7
+290 / Player 1: Robber activated (rolled 7) - no resources distributed
+290 / Player 2: Rolled 11
+290 / Player 3: Rolled 8
+290 / Player 4: Rolled 9
+290 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+291 / Player 1: Rolled 5
+291 / Player 2: Rolled 5
+291 / Player 3: Rolled 8
+291 / Player 4: Rolled 9
+291 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+292 / Player 1: Rolled 9
+292 / Player 2: Rolled 9
+292 / Player 3: Rolled 6
+292 / Player 4: Rolled 5
+292 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+293 / Player 1: Rolled 5
+293 / Player 2: Rolled 2
+293 / Player 3: Rolled 8
+293 / Player 4: Rolled 7
+293 / Player 4: Robber activated (rolled 7) - no resources distributed
+293 / Player 2: Discarded 6 cards
+293 / Player 4: Discarded 4 cards
+293 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+294 / Player 1: Rolled 9
+294 / Player 2: Rolled 5
+294 / Player 3: Rolled 8
+294 / Player 4: Rolled 9
+294 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+295 / Player 1: Rolled 6
+295 / Player 2: Rolled 6
+295 / Player 3: Rolled 9
+295 / Player 4: Rolled 5
+295 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+296 / Player 1: Rolled 3
+296 / Player 2: Rolled 8
+296 / Player 3: Rolled 8
+296 / Player 4: Rolled 6
+296 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+297 / Player 1: Rolled 9
+297 / Player 2: Rolled 6
+297 / Player 3: Rolled 11
+297 / Player 4: Rolled 8
+297 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+298 / Player 1: Rolled 8
+298 / Player 2: Rolled 5
+298 / Player 3: Rolled 5
+298 / Player 4: Rolled 7
+298 / Player 4: Robber activated (rolled 7) - no resources distributed
+298 / Player 1: Discarded 4 cards
+298 / Player 2: Discarded 7 cards
+298 / Player 3: Discarded 6 cards
+298 / Player 4: Discarded 6 cards
+298 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+299 / Player 1: Rolled 5
+299 / Player 2: Rolled 8
+299 / Player 3: Rolled 10
+299 / Player 4: Rolled 6
+299 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+300 / Player 1: Rolled 10
+300 / Player 2: Rolled 9
+300 / Player 3: Rolled 11
+300 / Player 4: Rolled 10
+300 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+301 / Player 1: Rolled 6
+301 / Player 2: Rolled 7
+301 / Player 2: Robber activated (rolled 7) - no resources distributed
+301 / Player 1: Discarded 4 cards
+301 / Player 2: Discarded 5 cards
+301 / Player 3: Discarded 5 cards
+301 / Player 4: Discarded 4 cards
+301 / Player 3: Rolled 6
+301 / Player 4: Rolled 7
+301 / Player 4: Robber activated (rolled 7) - no resources distributed
+301 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+302 / Player 1: Rolled 2
+302 / Player 2: Rolled 6
+302 / Player 3: Rolled 8
+302 / Player 4: Rolled 6
+302 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+303 / Player 1: Rolled 5
+303 / Player 2: Rolled 4
+303 / Player 3: Rolled 8
+303 / Player 4: Rolled 9
+303 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+304 / Player 1: Rolled 9
+304 / Player 2: Rolled 5
+304 / Player 3: Rolled 6
+304 / Player 4: Rolled 8
+304 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+305 / Player 1: Rolled 7
+305 / Player 1: Robber activated (rolled 7) - no resources distributed
+305 / Player 2: Discarded 7 cards
+305 / Player 3: Discarded 4 cards
+305 / Player 4: Discarded 4 cards
+305 / Player 2: Rolled 11
+305 / Player 3: Rolled 7
+305 / Player 3: Robber activated (rolled 7) - no resources distributed
+305 / Player 4: Rolled 10
+305 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+306 / Player 1: Rolled 12
+306 / Player 2: Rolled 9
+306 / Player 3: Rolled 7
+306 / Player 3: Robber activated (rolled 7) - no resources distributed
+306 / Player 2: Discarded 4 cards
+306 / Player 4: Rolled 7
+306 / Player 4: Robber activated (rolled 7) - no resources distributed
+306 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+307 / Player 1: Rolled 9
+307 / Player 2: Rolled 6
+307 / Player 3: Rolled 3
+307 / Player 4: Rolled 8
+307 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+308 / Player 1: Rolled 8
+308 / Player 2: Rolled 10
+308 / Player 3: Rolled 7
+308 / Player 3: Robber activated (rolled 7) - no resources distributed
+308 / Player 3: Discarded 5 cards
+308 / Player 4: Discarded 4 cards
+308 / Player 4: Rolled 4
+308 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+309 / Player 1: Rolled 6
+309 / Player 2: Rolled 6
+309 / Player 3: Rolled 2
+309 / Player 4: Rolled 8
+309 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+310 / Player 1: Rolled 4
+310 / Player 2: Rolled 3
+310 / Player 3: Rolled 11
+310 / Player 4: Rolled 4
+310 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+311 / Player 1: Rolled 7
+311 / Player 1: Robber activated (rolled 7) - no resources distributed
+311 / Player 1: Discarded 4 cards
+311 / Player 2: Discarded 6 cards
+311 / Player 3: Discarded 4 cards
+311 / Player 4: Discarded 4 cards
+311 / Player 2: Rolled 10
+311 / Player 3: Rolled 11
+311 / Player 4: Rolled 12
+311 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+312 / Player 1: Rolled 8
+312 / Player 2: Rolled 11
+312 / Player 3: Rolled 8
+312 / Player 4: Rolled 6
+312 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+313 / Player 1: Rolled 12
+313 / Player 2: Rolled 6
+313 / Player 3: Rolled 3
+313 / Player 4: Rolled 5
+313 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+314 / Player 1: Rolled 10
+314 / Player 2: Rolled 5
+314 / Player 3: Rolled 2
+314 / Player 4: Rolled 12
+314 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+315 / Player 1: Rolled 12
+315 / Player 2: Rolled 5
+315 / Player 3: Rolled 10
+315 / Player 4: Rolled 8
+315 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+316 / Player 1: Rolled 5
+316 / Player 2: Rolled 11
+316 / Player 3: Rolled 3
+316 / Player 4: Rolled 4
+316 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+317 / Player 1: Rolled 7
+317 / Player 1: Robber activated (rolled 7) - no resources distributed
+317 / Player 1: Discarded 5 cards
+317 / Player 2: Discarded 5 cards
+317 / Player 3: Discarded 8 cards
+317 / Player 4: Discarded 6 cards
+317 / Player 2: Rolled 3
+317 / Player 3: Rolled 6
+317 / Player 4: Rolled 7
+317 / Player 4: Robber activated (rolled 7) - no resources distributed
+317 / Player 3: Discarded 4 cards
+317 / Player 4: Discarded 4 cards
+317 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+318 / Player 1: Rolled 11
+318 / Player 2: Rolled 11
+318 / Player 3: Rolled 8
+318 / Player 4: Rolled 6
+318 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+319 / Player 1: Rolled 9
+319 / Player 2: Rolled 3
+319 / Player 3: Rolled 6
+319 / Player 4: Rolled 9
+319 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+320 / Player 1: Rolled 5
+320 / Player 2: Rolled 9
+320 / Player 3: Rolled 6
+320 / Player 4: Rolled 9
+320 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+321 / Player 1: Rolled 7
+321 / Player 1: Robber activated (rolled 7) - no resources distributed
+321 / Player 2: Discarded 6 cards
+321 / Player 4: Discarded 4 cards
+321 / Player 2: Rolled 4
+321 / Player 3: Rolled 7
+321 / Player 3: Robber activated (rolled 7) - no resources distributed
+321 / Player 2: Discarded 4 cards
+321 / Player 4: Rolled 9
+321 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+322 / Player 1: Rolled 6
+322 / Player 2: Rolled 3
+322 / Player 3: Rolled 4
+322 / Player 4: Rolled 7
+322 / Player 4: Robber activated (rolled 7) - no resources distributed
+322 / Player 3: Discarded 4 cards
+322 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+323 / Player 1: Rolled 10
+323 / Player 2: Rolled 12
+323 / Player 3: Rolled 10
+323 / Player 4: Rolled 11
+323 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+324 / Player 1: Rolled 8
+324 / Player 2: Rolled 4
+324 / Player 3: Rolled 7
+324 / Player 3: Robber activated (rolled 7) - no resources distributed
+324 / Player 1: Discarded 5 cards
+324 / Player 2: Discarded 4 cards
+324 / Player 3: Discarded 4 cards
+324 / Player 4: Rolled 8
+324 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+325 / Player 1: Rolled 8
+325 / Player 2: Rolled 10
+325 / Player 3: Rolled 12
+325 / Player 4: Rolled 9
+325 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+326 / Player 1: Rolled 7
+326 / Player 1: Robber activated (rolled 7) - no resources distributed
+326 / Player 3: Discarded 4 cards
+326 / Player 4: Discarded 4 cards
+326 / Player 2: Rolled 9
+326 / Player 3: Rolled 6
+326 / Player 4: Rolled 4
+326 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+327 / Player 1: Rolled 10
+327 / Player 2: Rolled 4
+327 / Player 3: Rolled 10
+327 / Player 4: Rolled 8
+327 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+328 / Player 1: Rolled 4
+328 / Player 2: Rolled 7
+328 / Player 2: Robber activated (rolled 7) - no resources distributed
+328 / Player 1: Discarded 4 cards
+328 / Player 2: Discarded 5 cards
+328 / Player 3: Rolled 12
+328 / Player 4: Rolled 6
+328 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+329 / Player 1: Rolled 8
+329 / Player 2: Rolled 7
+329 / Player 2: Robber activated (rolled 7) - no resources distributed
+329 / Player 3: Discarded 4 cards
+329 / Player 3: Rolled 4
+329 / Player 4: Rolled 4
+329 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+330 / Player 1: Rolled 10
+330 / Player 2: Rolled 6
+330 / Player 3: Rolled 5
+330 / Player 4: Rolled 5
+330 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+331 / Player 1: Rolled 5
+331 / Player 2: Rolled 6
+331 / Player 3: Rolled 9
+331 / Player 4: Rolled 8
+331 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+332 / Player 1: Rolled 10
+332 / Player 2: Rolled 8
+332 / Player 3: Rolled 4
+332 / Player 4: Rolled 7
+332 / Player 4: Robber activated (rolled 7) - no resources distributed
+332 / Player 2: Discarded 6 cards
+332 / Player 3: Discarded 4 cards
+332 / Player 4: Discarded 4 cards
+332 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+333 / Player 1: Rolled 6
+333 / Player 2: Rolled 3
+333 / Player 3: Rolled 7
+333 / Player 3: Robber activated (rolled 7) - no resources distributed
+333 / Player 4: Rolled 6
+333 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+334 / Player 1: Rolled 6
+334 / Player 2: Rolled 7
+334 / Player 2: Robber activated (rolled 7) - no resources distributed
+334 / Player 2: Discarded 4 cards
+334 / Player 3: Rolled 8
+334 / Player 4: Rolled 9
+334 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+335 / Player 1: Rolled 7
+335 / Player 1: Robber activated (rolled 7) - no resources distributed
+335 / Player 2: Rolled 10
+335 / Player 3: Rolled 3
+335 / Player 4: Rolled 7
+335 / Player 4: Robber activated (rolled 7) - no resources distributed
+335 / Player 3: Discarded 4 cards
+335 / Player 4: Discarded 4 cards
+335 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+336 / Player 1: Rolled 6
+336 / Player 2: Rolled 5
+336 / Player 3: Rolled 5
+336 / Player 4: Rolled 6
+336 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+337 / Player 1: Rolled 10
+337 / Player 2: Rolled 8
+337 / Player 3: Rolled 2
+337 / Player 4: Rolled 5
+337 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+338 / Player 1: Rolled 4
+338 / Player 2: Rolled 9
+338 / Player 3: Rolled 5
+338 / Player 4: Rolled 8
+338 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+339 / Player 1: Rolled 8
+339 / Player 2: Rolled 2
+339 / Player 3: Rolled 9
+339 / Player 4: Rolled 4
+339 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+340 / Player 1: Rolled 8
+340 / Player 2: Rolled 8
+340 / Player 3: Rolled 7
+340 / Player 3: Robber activated (rolled 7) - no resources distributed
+340 / Player 1: Discarded 4 cards
+340 / Player 2: Discarded 7 cards
+340 / Player 3: Discarded 5 cards
+340 / Player 4: Discarded 5 cards
+340 / Player 4: Rolled 7
+340 / Player 4: Robber activated (rolled 7) - no resources distributed
+340 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+341 / Player 1: Rolled 8
+341 / Player 2: Rolled 3
+341 / Player 3: Rolled 2
+341 / Player 4: Rolled 5
+341 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+342 / Player 1: Rolled 7
+342 / Player 1: Robber activated (rolled 7) - no resources distributed
+342 / Player 2: Discarded 4 cards
+342 / Player 3: Discarded 4 cards
+342 / Player 4: Discarded 4 cards
+342 / Player 2: Rolled 7
+342 / Player 2: Robber activated (rolled 7) - no resources distributed
+342 / Player 3: Rolled 7
+342 / Player 3: Robber activated (rolled 7) - no resources distributed
+342 / Player 4: Rolled 11
+342 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+343 / Player 1: Rolled 5
+343 / Player 2: Rolled 9
+343 / Player 3: Rolled 7
+343 / Player 3: Robber activated (rolled 7) - no resources distributed
+343 / Player 4: Rolled 7
+343 / Player 4: Robber activated (rolled 7) - no resources distributed
+343 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+344 / Player 1: Rolled 7
+344 / Player 1: Robber activated (rolled 7) - no resources distributed
+344 / Player 2: Rolled 6
+344 / Player 3: Rolled 12
+344 / Player 4: Rolled 4
+344 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+345 / Player 1: Rolled 8
+345 / Player 2: Rolled 7
+345 / Player 2: Robber activated (rolled 7) - no resources distributed
+345 / Player 3: Rolled 5
+345 / Player 4: Rolled 12
+345 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+346 / Player 1: Rolled 6
+346 / Player 2: Rolled 6
+346 / Player 3: Rolled 7
+346 / Player 3: Robber activated (rolled 7) - no resources distributed
+346 / Player 2: Discarded 4 cards
+346 / Player 4: Rolled 8
+346 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+347 / Player 1: Rolled 5
+347 / Player 2: Rolled 9
+347 / Player 3: Rolled 7
+347 / Player 3: Robber activated (rolled 7) - no resources distributed
+347 / Player 3: Discarded 4 cards
+347 / Player 4: Discarded 4 cards
+347 / Player 4: Rolled 11
+347 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+348 / Player 1: Rolled 5
+348 / Player 2: Rolled 10
+348 / Player 3: Rolled 6
+348 / Player 4: Rolled 5
+348 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+349 / Player 1: Rolled 6
+349 / Player 2: Rolled 6
+349 / Player 3: Rolled 9
+349 / Player 4: Rolled 7
+349 / Player 4: Robber activated (rolled 7) - no resources distributed
+349 / Player 2: Discarded 5 cards
+349 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+350 / Player 1: Rolled 8
+350 / Player 2: Rolled 5
+350 / Player 3: Rolled 7
+350 / Player 3: Robber activated (rolled 7) - no resources distributed
+350 / Player 4: Rolled 7
+350 / Player 4: Robber activated (rolled 7) - no resources distributed
+350 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+351 / Player 1: Rolled 5
+351 / Player 2: Rolled 4
+351 / Player 3: Rolled 7
+351 / Player 3: Robber activated (rolled 7) - no resources distributed
+351 / Player 4: Rolled 8
+351 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+352 / Player 1: Rolled 6
+352 / Player 2: Rolled 9
+352 / Player 3: Rolled 11
+352 / Player 4: Rolled 6
+352 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+353 / Player 1: Rolled 10
+353 / Player 2: Rolled 5
+353 / Player 3: Rolled 3
+353 / Player 4: Rolled 7
+353 / Player 4: Robber activated (rolled 7) - no resources distributed
+353 / Player 1: Discarded 4 cards
+353 / Player 2: Discarded 4 cards
+353 / Player 3: Discarded 4 cards
+353 / Player 4: Discarded 4 cards
+353 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+354 / Player 1: Rolled 7
+354 / Player 1: Robber activated (rolled 7) - no resources distributed
+354 / Player 2: Rolled 7
+354 / Player 2: Robber activated (rolled 7) - no resources distributed
+354 / Player 3: Rolled 11
+354 / Player 4: Rolled 4
+354 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+355 / Player 1: Rolled 7
+355 / Player 1: Robber activated (rolled 7) - no resources distributed
+355 / Player 2: Rolled 6
+355 / Player 3: Rolled 9
+355 / Player 4: Rolled 8
+355 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+356 / Player 1: Rolled 4
+356 / Player 2: Rolled 6
+356 / Player 3: Rolled 12
+356 / Player 4: Rolled 7
+356 / Player 4: Robber activated (rolled 7) - no resources distributed
+356 / Player 2: Discarded 5 cards
+356 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+357 / Player 1: Rolled 2
+357 / Player 2: Rolled 5
+357 / Player 3: Rolled 6
+357 / Player 4: Rolled 3
+357 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+358 / Player 1: Rolled 4
+358 / Player 2: Rolled 7
+358 / Player 2: Robber activated (rolled 7) - no resources distributed
+358 / Player 2: Discarded 4 cards
+358 / Player 3: Discarded 4 cards
+358 / Player 4: Discarded 4 cards
+358 / Player 3: Rolled 5
+358 / Player 4: Rolled 3
+358 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+359 / Player 1: Rolled 6
+359 / Player 2: Rolled 4
+359 / Player 3: Rolled 6
+359 / Player 4: Rolled 5
+359 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+360 / Player 1: Rolled 9
+360 / Player 2: Rolled 4
+360 / Player 3: Rolled 7
+360 / Player 3: Robber activated (rolled 7) - no resources distributed
+360 / Player 2: Discarded 4 cards
+360 / Player 4: Rolled 8
+360 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+361 / Player 1: Rolled 4
+361 / Player 2: Rolled 9
+361 / Player 3: Rolled 3
+361 / Player 4: Rolled 7
+361 / Player 4: Robber activated (rolled 7) - no resources distributed
+361 / Player 4: Discarded 4 cards
+361 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+362 / Player 1: Rolled 10
+362 / Player 2: Rolled 6
+362 / Player 3: Rolled 9
+362 / Player 4: Rolled 8
+362 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+363 / Player 1: Rolled 7
+363 / Player 1: Robber activated (rolled 7) - no resources distributed
+363 / Player 2: Discarded 4 cards
+363 / Player 3: Discarded 4 cards
+363 / Player 2: Rolled 12
+363 / Player 3: Rolled 3
+363 / Player 4: Rolled 7
+363 / Player 4: Robber activated (rolled 7) - no resources distributed
+363 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+364 / Player 1: Rolled 7
+364 / Player 1: Robber activated (rolled 7) - no resources distributed
+364 / Player 2: Rolled 9
+364 / Player 3: Rolled 11
+364 / Player 4: Rolled 7
+364 / Player 4: Robber activated (rolled 7) - no resources distributed
+364 / Player 1: Discarded 4 cards
+364 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+365 / Player 1: Rolled 9
+365 / Player 2: Rolled 8
+365 / Player 3: Rolled 12
+365 / Player 4: Rolled 6
+365 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+366 / Player 1: Rolled 7
+366 / Player 1: Robber activated (rolled 7) - no resources distributed
+366 / Player 2: Discarded 4 cards
+366 / Player 3: Discarded 4 cards
+366 / Player 4: Discarded 4 cards
+366 / Player 2: Rolled 9
+366 / Player 3: Rolled 6
+366 / Player 4: Rolled 4
+366 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+367 / Player 1: Rolled 7
+367 / Player 1: Robber activated (rolled 7) - no resources distributed
+367 / Player 2: Rolled 7
+367 / Player 2: Robber activated (rolled 7) - no resources distributed
+367 / Player 3: Rolled 12
+367 / Player 4: Rolled 3
+367 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+368 / Player 1: Rolled 8
+368 / Player 2: Rolled 5
+368 / Player 3: Rolled 10
+368 / Player 4: Rolled 7
+368 / Player 4: Robber activated (rolled 7) - no resources distributed
+368 / Player 3: Discarded 4 cards
+368 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+369 / Player 1: Rolled 5
+369 / Player 2: Rolled 7
+369 / Player 2: Robber activated (rolled 7) - no resources distributed
+369 / Player 3: Rolled 4
+369 / Player 4: Rolled 7
+369 / Player 4: Robber activated (rolled 7) - no resources distributed
+369 / Player 2: Discarded 4 cards
+369 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+370 / Player 1: Rolled 5
+370 / Player 2: Rolled 4
+370 / Player 3: Rolled 9
+370 / Player 4: Rolled 6
+370 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+371 / Player 1: Rolled 3
+371 / Player 2: Rolled 5
+371 / Player 3: Rolled 6
+371 / Player 4: Rolled 12
+371 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+372 / Player 1: Rolled 6
+372 / Player 2: Rolled 4
+372 / Player 3: Rolled 8
+372 / Player 4: Rolled 9
+372 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+373 / Player 1: Rolled 5
+373 / Player 2: Rolled 7
+373 / Player 2: Robber activated (rolled 7) - no resources distributed
+373 / Player 2: Discarded 5 cards
+373 / Player 3: Discarded 4 cards
+373 / Player 4: Discarded 4 cards
+373 / Player 3: Rolled 6
+373 / Player 4: Rolled 3
+373 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+374 / Player 1: Rolled 4
+374 / Player 2: Rolled 9
+374 / Player 3: Rolled 7
+374 / Player 3: Robber activated (rolled 7) - no resources distributed
+374 / Player 2: Discarded 4 cards
+374 / Player 4: Rolled 6
+374 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+375 / Player 1: Rolled 11
+375 / Player 2: Rolled 9
+375 / Player 3: Rolled 9
+375 / Player 4: Rolled 4
+375 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+376 / Player 1: Rolled 10
+376 / Player 2: Rolled 11
+376 / Player 3: Rolled 6
+376 / Player 4: Rolled 6
+376 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+377 / Player 1: Rolled 12
+377 / Player 2: Rolled 7
+377 / Player 2: Robber activated (rolled 7) - no resources distributed
+377 / Player 1: Discarded 4 cards
+377 / Player 2: Discarded 5 cards
+377 / Player 3: Rolled 6
+377 / Player 4: Rolled 9
+377 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+378 / Player 1: Rolled 8
+378 / Player 2: Rolled 5
+378 / Player 3: Rolled 5
+378 / Player 4: Rolled 7
+378 / Player 4: Robber activated (rolled 7) - no resources distributed
+378 / Player 2: Discarded 4 cards
+378 / Player 3: Discarded 4 cards
+378 / Player 4: Discarded 4 cards
+378 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+379 / Player 1: Rolled 6
+379 / Player 2: Rolled 9
+379 / Player 3: Rolled 9
+379 / Player 4: Rolled 10
+379 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+380 / Player 1: Rolled 8
+380 / Player 2: Rolled 5
+380 / Player 3: Rolled 4
+380 / Player 4: Rolled 11
+380 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+381 / Player 1: Rolled 10
+381 / Player 2: Rolled 8
+381 / Player 3: Rolled 7
+381 / Player 3: Robber activated (rolled 7) - no resources distributed
+381 / Player 2: Discarded 4 cards
+381 / Player 3: Discarded 4 cards
+381 / Player 4: Rolled 11
+381 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+382 / Player 1: Rolled 6
+382 / Player 2: Rolled 11
+382 / Player 3: Rolled 6
+382 / Player 4: Rolled 9
+382 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+383 / Player 1: Rolled 7
+383 / Player 1: Robber activated (rolled 7) - no resources distributed
+383 / Player 1: Discarded 4 cards
+383 / Player 4: Discarded 4 cards
+383 / Player 2: Rolled 5
+383 / Player 3: Rolled 5
+383 / Player 4: Rolled 4
+383 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+384 / Player 1: Rolled 3
+384 / Player 2: Rolled 3
+384 / Player 3: Rolled 7
+384 / Player 3: Robber activated (rolled 7) - no resources distributed
+384 / Player 2: Discarded 4 cards
+384 / Player 4: Rolled 11
+384 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+385 / Player 1: Rolled 5
+385 / Player 2: Rolled 12
+385 / Player 3: Rolled 8
+385 / Player 4: Rolled 10
+385 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+386 / Player 1: Rolled 6
+386 / Player 2: Rolled 9
+386 / Player 3: Rolled 6
+386 / Player 4: Rolled 7
+386 / Player 4: Robber activated (rolled 7) - no resources distributed
+386 / Player 3: Discarded 4 cards
+386 / Player 4: Discarded 4 cards
+386 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+387 / Player 1: Rolled 6
+387 / Player 2: Rolled 7
+387 / Player 2: Robber activated (rolled 7) - no resources distributed
+387 / Player 2: Discarded 4 cards
+387 / Player 3: Rolled 5
+387 / Player 4: Rolled 2
+387 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+388 / Player 1: Rolled 10
+388 / Player 2: Rolled 4
+388 / Player 3: Rolled 5
+388 / Player 4: Rolled 3
+388 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+389 / Player 1: Rolled 5
+389 / Player 2: Rolled 3
+389 / Player 3: Rolled 8
+389 / Player 4: Rolled 8
+389 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+390 / Player 1: Rolled 9
+390 / Player 2: Rolled 5
+390 / Player 3: Rolled 8
+390 / Player 4: Rolled 5
+390 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+391 / Player 1: Rolled 3
+391 / Player 2: Rolled 11
+391 / Player 3: Rolled 5
+391 / Player 4: Rolled 11
+391 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+392 / Player 1: Rolled 7
+392 / Player 1: Robber activated (rolled 7) - no resources distributed
+392 / Player 1: Discarded 5 cards
+392 / Player 3: Discarded 6 cards
+392 / Player 4: Discarded 7 cards
+392 / Player 2: Rolled 8
+392 / Player 3: Rolled 7
+392 / Player 3: Robber activated (rolled 7) - no resources distributed
+392 / Player 4: Discarded 4 cards
+392 / Player 4: Rolled 2
+392 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+393 / Player 1: Rolled 8
+393 / Player 2: Rolled 5
+393 / Player 3: Rolled 4
+393 / Player 4: Rolled 8
+393 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+394 / Player 1: Rolled 3
+394 / Player 2: Rolled 4
+394 / Player 3: Rolled 6
+394 / Player 4: Rolled 8
+394 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+395 / Player 1: Rolled 5
+395 / Player 2: Rolled 8
+395 / Player 3: Rolled 4
+395 / Player 4: Rolled 10
+395 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+396 / Player 1: Rolled 5
+396 / Player 2: Rolled 4
+396 / Player 3: Rolled 8
+396 / Player 4: Rolled 10
+396 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+397 / Player 1: Rolled 5
+397 / Player 2: Rolled 2
+397 / Player 3: Rolled 8
+397 / Player 4: Rolled 12
+397 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+398 / Player 1: Rolled 5
+398 / Player 2: Rolled 4
+398 / Player 3: Rolled 11
+398 / Player 4: Rolled 6
+398 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+399 / Player 1: Rolled 7
+399 / Player 1: Robber activated (rolled 7) - no resources distributed
+399 / Player 1: Discarded 4 cards
+399 / Player 2: Discarded 8 cards
+399 / Player 3: Discarded 8 cards
+399 / Player 4: Discarded 7 cards
+399 / Player 2: Rolled 6
+399 / Player 3: Rolled 11
+399 / Player 4: Rolled 7
+399 / Player 4: Robber activated (rolled 7) - no resources distributed
+399 / Player 2: Discarded 4 cards
+399 / Player 3: Discarded 4 cards
+399 / Player 4: Discarded 4 cards
+399 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+400 / Player 1: Rolled 3
+400 / Player 2: Rolled 7
+400 / Player 2: Robber activated (rolled 7) - no resources distributed
+400 / Player 3: Rolled 7
+400 / Player 3: Robber activated (rolled 7) - no resources distributed
+400 / Player 4: Rolled 4
+400 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+401 / Player 1: Rolled 6
+401 / Player 2: Rolled 7
+401 / Player 2: Robber activated (rolled 7) - no resources distributed
+401 / Player 3: Rolled 12
+401 / Player 4: Rolled 9
+401 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+402 / Player 1: Rolled 7
+402 / Player 1: Robber activated (rolled 7) - no resources distributed
+402 / Player 2: Discarded 4 cards
+402 / Player 2: Rolled 7
+402 / Player 2: Robber activated (rolled 7) - no resources distributed
+402 / Player 3: Rolled 10
+402 / Player 4: Rolled 7
+402 / Player 4: Robber activated (rolled 7) - no resources distributed
+402 / Player 3: Discarded 4 cards
+402 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+403 / Player 1: Rolled 8
+403 / Player 2: Rolled 4
+403 / Player 3: Rolled 8
+403 / Player 4: Rolled 9
+403 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+404 / Player 1: Rolled 3
+404 / Player 2: Rolled 9
+404 / Player 3: Rolled 7
+404 / Player 3: Robber activated (rolled 7) - no resources distributed
+404 / Player 4: Discarded 4 cards
+404 / Player 4: Rolled 11
+404 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+405 / Player 1: Rolled 8
+405 / Player 2: Rolled 6
+405 / Player 3: Rolled 6
+405 / Player 4: Rolled 8
+405 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+406 / Player 1: Rolled 10
+406 / Player 2: Rolled 8
+406 / Player 3: Rolled 9
+406 / Player 4: Rolled 5
+406 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+407 / Player 1: Rolled 9
+407 / Player 2: Rolled 5
+407 / Player 3: Rolled 10
+407 / Player 4: Rolled 4
+407 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+408 / Player 1: Rolled 7
+408 / Player 1: Robber activated (rolled 7) - no resources distributed
+408 / Player 1: Discarded 4 cards
+408 / Player 2: Discarded 6 cards
+408 / Player 3: Discarded 6 cards
+408 / Player 4: Discarded 4 cards
+408 / Player 2: Rolled 9
+408 / Player 3: Rolled 10
+408 / Player 4: Rolled 6
+408 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+409 / Player 1: Rolled 7
+409 / Player 1: Robber activated (rolled 7) - no resources distributed
+409 / Player 2: Discarded 4 cards
+409 / Player 2: Rolled 2
+409 / Player 3: Rolled 11
+409 / Player 4: Rolled 8
+409 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+410 / Player 1: Rolled 11
+410 / Player 2: Rolled 5
+410 / Player 3: Rolled 8
+410 / Player 4: Rolled 5
+410 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+411 / Player 1: Rolled 9
+411 / Player 2: Rolled 6
+411 / Player 3: Rolled 8
+411 / Player 4: Rolled 12
+411 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+412 / Player 1: Rolled 6
+412 / Player 2: Rolled 10
+412 / Player 3: Rolled 3
+412 / Player 4: Rolled 7
+412 / Player 4: Robber activated (rolled 7) - no resources distributed
+412 / Player 1: Discarded 4 cards
+412 / Player 2: Discarded 4 cards
+412 / Player 3: Discarded 6 cards
+412 / Player 4: Discarded 5 cards
+412 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+413 / Player 1: Rolled 3
+413 / Player 2: Rolled 5
+413 / Player 3: Rolled 10
+413 / Player 4: Rolled 8
+413 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+414 / Player 1: Rolled 8
+414 / Player 2: Rolled 6
+414 / Player 3: Rolled 5
+414 / Player 4: Rolled 6
+414 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+415 / Player 1: Rolled 11
+415 / Player 2: Rolled 6
+415 / Player 3: Rolled 5
+415 / Player 4: Rolled 9
+415 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+416 / Player 1: Rolled 6
+416 / Player 2: Rolled 2
+416 / Player 3: Rolled 9
+416 / Player 4: Rolled 4
+416 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+417 / Player 1: Rolled 9
+417 / Player 2: Rolled 11
+417 / Player 3: Rolled 2
+417 / Player 4: Rolled 5
+417 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+418 / Player 1: Rolled 9
+418 / Player 2: Rolled 6
+418 / Player 3: Rolled 10
+418 / Player 4: Rolled 10
+418 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+419 / Player 1: Rolled 7
+419 / Player 1: Robber activated (rolled 7) - no resources distributed
+419 / Player 1: Discarded 5 cards
+419 / Player 2: Discarded 8 cards
+419 / Player 3: Discarded 6 cards
+419 / Player 4: Discarded 6 cards
+419 / Player 2: Rolled 8
+419 / Player 3: Rolled 6
+419 / Player 4: Rolled 4
+419 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+420 / Player 1: Rolled 10
+420 / Player 2: Rolled 7
+420 / Player 2: Robber activated (rolled 7) - no resources distributed
+420 / Player 2: Discarded 5 cards
+420 / Player 3: Discarded 4 cards
+420 / Player 4: Discarded 4 cards
+420 / Player 3: Rolled 7
+420 / Player 3: Robber activated (rolled 7) - no resources distributed
+420 / Player 4: Rolled 9
+420 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+421 / Player 1: Rolled 10
+421 / Player 2: Rolled 6
+421 / Player 3: Rolled 10
+421 / Player 4: Rolled 12
+421 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+422 / Player 1: Rolled 11
+422 / Player 2: Rolled 7
+422 / Player 2: Robber activated (rolled 7) - no resources distributed
+422 / Player 1: Discarded 4 cards
+422 / Player 3: Discarded 4 cards
+422 / Player 3: Rolled 8
+422 / Player 4: Rolled 2
+422 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+423 / Player 1: Rolled 7
+423 / Player 1: Robber activated (rolled 7) - no resources distributed
+423 / Player 2: Discarded 4 cards
+423 / Player 2: Rolled 7
+423 / Player 2: Robber activated (rolled 7) - no resources distributed
+423 / Player 3: Rolled 10
+423 / Player 4: Rolled 8
+423 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+424 / Player 1: Rolled 8
+424 / Player 2: Rolled 4
+424 / Player 3: Rolled 11
+424 / Player 4: Rolled 11
+424 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+425 / Player 1: Rolled 9
+425 / Player 2: Rolled 5
+425 / Player 3: Rolled 11
+425 / Player 4: Rolled 7
+425 / Player 4: Robber activated (rolled 7) - no resources distributed
+425 / Player 1: Discarded 4 cards
+425 / Player 3: Discarded 4 cards
+425 / Player 4: Discarded 6 cards
+425 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+426 / Player 1: Rolled 5
+426 / Player 2: Rolled 9
+426 / Player 3: Rolled 10
+426 / Player 4: Rolled 10
+426 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+427 / Player 1: Rolled 5
+427 / Player 2: Rolled 6
+427 / Player 3: Rolled 8
+427 / Player 4: Rolled 4
+427 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+428 / Player 1: Rolled 7
+428 / Player 1: Robber activated (rolled 7) - no resources distributed
+428 / Player 2: Discarded 4 cards
+428 / Player 2: Rolled 9
+428 / Player 3: Rolled 6
+428 / Player 4: Rolled 3
+428 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+429 / Player 1: Rolled 9
+429 / Player 2: Rolled 7
+429 / Player 2: Robber activated (rolled 7) - no resources distributed
+429 / Player 2: Discarded 4 cards
+429 / Player 3: Discarded 4 cards
+429 / Player 4: Discarded 4 cards
+429 / Player 3: Rolled 11
+429 / Player 4: Rolled 5
+429 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+430 / Player 1: Rolled 4
+430 / Player 2: Rolled 7
+430 / Player 2: Robber activated (rolled 7) - no resources distributed
+430 / Player 1: Discarded 4 cards
+430 / Player 3: Rolled 6
+430 / Player 4: Rolled 7
+430 / Player 4: Robber activated (rolled 7) - no resources distributed
+430 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+431 / Player 1: Rolled 7
+431 / Player 1: Robber activated (rolled 7) - no resources distributed
+431 / Player 2: Rolled 10
+431 / Player 3: Rolled 8
+431 / Player 4: Rolled 3
+431 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+432 / Player 1: Rolled 6
+432 / Player 2: Rolled 9
+432 / Player 3: Rolled 7
+432 / Player 3: Robber activated (rolled 7) - no resources distributed
+432 / Player 2: Discarded 4 cards
+432 / Player 4: Rolled 7
+432 / Player 4: Robber activated (rolled 7) - no resources distributed
+432 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+433 / Player 1: Rolled 10
+433 / Player 2: Rolled 7
+433 / Player 2: Robber activated (rolled 7) - no resources distributed
+433 / Player 3: Discarded 4 cards
+433 / Player 3: Rolled 9
+433 / Player 4: Rolled 7
+433 / Player 4: Robber activated (rolled 7) - no resources distributed
+433 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+434 / Player 1: Rolled 11
+434 / Player 2: Rolled 9
+434 / Player 3: Rolled 5
+434 / Player 4: Rolled 5
+434 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+435 / Player 1: Rolled 11
+435 / Player 2: Rolled 9
+435 / Player 3: Rolled 9
+435 / Player 4: Rolled 7
+435 / Player 4: Robber activated (rolled 7) - no resources distributed
+435 / Player 1: Discarded 4 cards
+435 / Player 2: Discarded 4 cards
+435 / Player 4: Discarded 4 cards
+435 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+436 / Player 1: Rolled 2
+436 / Player 2: Rolled 6
+436 / Player 3: Rolled 12
+436 / Player 4: Rolled 4
+436 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+437 / Player 1: Rolled 2
+437 / Player 2: Rolled 8
+437 / Player 3: Rolled 8
+437 / Player 4: Rolled 4
+437 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+438 / Player 1: Rolled 9
+438 / Player 2: Rolled 9
+438 / Player 3: Rolled 5
+438 / Player 4: Rolled 7
+438 / Player 4: Robber activated (rolled 7) - no resources distributed
+438 / Player 2: Discarded 5 cards
+438 / Player 4: Discarded 4 cards
+438 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+439 / Player 1: Rolled 6
+439 / Player 2: Rolled 8
+439 / Player 3: Rolled 7
+439 / Player 3: Robber activated (rolled 7) - no resources distributed
+439 / Player 3: Discarded 4 cards
+439 / Player 4: Rolled 7
+439 / Player 4: Robber activated (rolled 7) - no resources distributed
+439 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+440 / Player 1: Rolled 5
+440 / Player 2: Rolled 9
+440 / Player 3: Rolled 5
+440 / Player 4: Rolled 6
+440 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+441 / Player 1: Rolled 7
+441 / Player 1: Robber activated (rolled 7) - no resources distributed
+441 / Player 2: Discarded 4 cards
+441 / Player 2: Rolled 6
+441 / Player 3: Rolled 8
+441 / Player 4: Rolled 7
+441 / Player 4: Robber activated (rolled 7) - no resources distributed
+441 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+442 / Player 1: Rolled 10
+442 / Player 2: Rolled 10
+442 / Player 3: Rolled 8
+442 / Player 4: Rolled 5
+442 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+443 / Player 1: Rolled 6
+443 / Player 2: Rolled 10
+443 / Player 3: Rolled 8
+443 / Player 4: Rolled 6
+443 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+444 / Player 1: Rolled 8
+444 / Player 2: Rolled 8
+444 / Player 3: Rolled 6
+444 / Player 4: Rolled 2
+444 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+445 / Player 1: Rolled 9
+445 / Player 2: Rolled 7
+445 / Player 2: Robber activated (rolled 7) - no resources distributed
+445 / Player 2: Discarded 5 cards
+445 / Player 3: Discarded 6 cards
+445 / Player 4: Discarded 6 cards
+445 / Player 3: Rolled 5
+445 / Player 4: Rolled 9
+445 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+446 / Player 1: Rolled 5
+446 / Player 2: Rolled 12
+446 / Player 3: Rolled 6
+446 / Player 4: Rolled 3
+446 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+447 / Player 1: Rolled 5
+447 / Player 2: Rolled 9
+447 / Player 3: Rolled 10
+447 / Player 4: Rolled 8
+447 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+448 / Player 1: Rolled 9
+448 / Player 2: Rolled 8
+448 / Player 3: Rolled 7
+448 / Player 3: Robber activated (rolled 7) - no resources distributed
+448 / Player 1: Discarded 4 cards
+448 / Player 2: Discarded 5 cards
+448 / Player 3: Discarded 5 cards
+448 / Player 4: Discarded 4 cards
+448 / Player 4: Rolled 7
+448 / Player 4: Robber activated (rolled 7) - no resources distributed
+448 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+449 / Player 1: Rolled 9
+449 / Player 2: Rolled 10
+449 / Player 3: Rolled 9
+449 / Player 4: Rolled 8
+449 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+450 / Player 1: Rolled 6
+450 / Player 2: Rolled 3
+450 / Player 3: Rolled 3
+450 / Player 4: Rolled 3
+450 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+451 / Player 1: Rolled 8
+451 / Player 2: Rolled 3
+451 / Player 3: Rolled 8
+451 / Player 4: Rolled 7
+451 / Player 4: Robber activated (rolled 7) - no resources distributed
+451 / Player 2: Discarded 4 cards
+451 / Player 3: Discarded 7 cards
+451 / Player 4: Discarded 6 cards
+451 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+452 / Player 1: Rolled 6
+452 / Player 2: Rolled 3
+452 / Player 3: Rolled 8
+452 / Player 4: Rolled 8
+452 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+453 / Player 1: Rolled 6
+453 / Player 2: Rolled 12
+453 / Player 3: Rolled 10
+453 / Player 4: Rolled 11
+453 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+454 / Player 1: Rolled 6
+454 / Player 2: Rolled 4
+454 / Player 3: Rolled 10
+454 / Player 4: Rolled 8
+454 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+455 / Player 1: Rolled 10
+455 / Player 2: Rolled 5
+455 / Player 3: Rolled 6
+455 / Player 4: Rolled 7
+455 / Player 4: Robber activated (rolled 7) - no resources distributed
+455 / Player 1: Discarded 4 cards
+455 / Player 2: Discarded 4 cards
+455 / Player 3: Discarded 7 cards
+455 / Player 4: Discarded 5 cards
+455 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+456 / Player 1: Rolled 5
+456 / Player 2: Rolled 5
+456 / Player 3: Rolled 5
+456 / Player 4: Rolled 3
+456 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+457 / Player 1: Rolled 10
+457 / Player 2: Rolled 7
+457 / Player 2: Robber activated (rolled 7) - no resources distributed
+457 / Player 3: Discarded 5 cards
+457 / Player 3: Rolled 12
+457 / Player 4: Rolled 4
+457 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+458 / Player 1: Rolled 8
+458 / Player 2: Rolled 6
+458 / Player 3: Rolled 7
+458 / Player 3: Robber activated (rolled 7) - no resources distributed
+458 / Player 4: Discarded 4 cards
+458 / Player 4: Rolled 5
+458 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+459 / Player 1: Rolled 5
+459 / Player 2: Rolled 5
+459 / Player 3: Rolled 11
+459 / Player 4: Rolled 7
+459 / Player 4: Robber activated (rolled 7) - no resources distributed
+459 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+460 / Player 1: Rolled 7
+460 / Player 1: Robber activated (rolled 7) - no resources distributed
+460 / Player 2: Rolled 3
+460 / Player 3: Rolled 7
+460 / Player 3: Robber activated (rolled 7) - no resources distributed
+460 / Player 3: Discarded 4 cards
+460 / Player 4: Rolled 6
+460 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+461 / Player 1: Rolled 9
+461 / Player 2: Rolled 9
+461 / Player 3: Rolled 4
+461 / Player 4: Rolled 7
+461 / Player 4: Robber activated (rolled 7) - no resources distributed
+461 / Player 2: Discarded 5 cards
+461 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+462 / Player 1: Rolled 5
+462 / Player 2: Rolled 9
+462 / Player 3: Rolled 3
+462 / Player 4: Rolled 4
+462 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+463 / Player 1: Rolled 8
+463 / Player 2: Rolled 5
+463 / Player 3: Rolled 10
+463 / Player 4: Rolled 10
+463 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+464 / Player 1: Rolled 5
+464 / Player 2: Rolled 8
+464 / Player 3: Rolled 9
+464 / Player 4: Rolled 9
+464 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+465 / Player 1: Rolled 3
+465 / Player 2: Rolled 6
+465 / Player 3: Rolled 8
+465 / Player 4: Rolled 5
+465 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+466 / Player 1: Rolled 6
+466 / Player 2: Rolled 10
+466 / Player 3: Rolled 8
+466 / Player 4: Rolled 7
+466 / Player 4: Robber activated (rolled 7) - no resources distributed
+466 / Player 1: Discarded 5 cards
+466 / Player 2: Discarded 6 cards
+466 / Player 3: Discarded 6 cards
+466 / Player 4: Discarded 6 cards
+466 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+467 / Player 1: Rolled 12
+467 / Player 2: Rolled 2
+467 / Player 3: Rolled 9
+467 / Player 4: Rolled 6
+467 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+468 / Player 1: Rolled 8
+468 / Player 2: Rolled 10
+468 / Player 3: Rolled 8
+468 / Player 4: Rolled 11
+468 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+469 / Player 1: Rolled 5
+469 / Player 2: Rolled 7
+469 / Player 2: Robber activated (rolled 7) - no resources distributed
+469 / Player 2: Discarded 4 cards
+469 / Player 3: Discarded 5 cards
+469 / Player 4: Discarded 5 cards
+469 / Player 3: Rolled 5
+469 / Player 4: Rolled 9
+469 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+470 / Player 1: Rolled 7
+470 / Player 1: Robber activated (rolled 7) - no resources distributed
+470 / Player 2: Rolled 8
+470 / Player 3: Rolled 9
+470 / Player 4: Rolled 6
+470 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+471 / Player 1: Rolled 4
+471 / Player 2: Rolled 7
+471 / Player 2: Robber activated (rolled 7) - no resources distributed
+471 / Player 2: Discarded 4 cards
+471 / Player 3: Rolled 11
+471 / Player 4: Rolled 8
+471 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+472 / Player 1: Rolled 3
+472 / Player 2: Rolled 12
+472 / Player 3: Rolled 9
+472 / Player 4: Rolled 10
+472 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+473 / Player 1: Rolled 5
+473 / Player 2: Rolled 3
+473 / Player 3: Rolled 5
+473 / Player 4: Rolled 8
+473 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+474 / Player 1: Rolled 8
+474 / Player 2: Rolled 6
+474 / Player 3: Rolled 5
+474 / Player 4: Rolled 6
+474 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+475 / Player 1: Rolled 9
+475 / Player 2: Rolled 5
+475 / Player 3: Rolled 9
+475 / Player 4: Rolled 6
+475 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+476 / Player 1: Rolled 6
+476 / Player 2: Rolled 10
+476 / Player 3: Rolled 7
+476 / Player 3: Robber activated (rolled 7) - no resources distributed
+476 / Player 1: Discarded 5 cards
+476 / Player 2: Discarded 6 cards
+476 / Player 3: Discarded 7 cards
+476 / Player 4: Discarded 6 cards
+476 / Player 4: Rolled 10
+476 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+477 / Player 1: Rolled 7
+477 / Player 1: Robber activated (rolled 7) - no resources distributed
+477 / Player 3: Discarded 4 cards
+477 / Player 2: Rolled 4
+477 / Player 3: Rolled 2
+477 / Player 4: Rolled 5
+477 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+478 / Player 1: Rolled 9
+478 / Player 2: Rolled 8
+478 / Player 3: Rolled 4
+478 / Player 4: Rolled 7
+478 / Player 4: Robber activated (rolled 7) - no resources distributed
+478 / Player 2: Discarded 5 cards
+478 / Player 4: Discarded 4 cards
+478 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+479 / Player 1: Rolled 7
+479 / Player 1: Robber activated (rolled 7) - no resources distributed
+479 / Player 2: Rolled 6
+479 / Player 3: Rolled 8
+479 / Player 4: Rolled 6
+479 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+480 / Player 1: Rolled 7
+480 / Player 1: Robber activated (rolled 7) - no resources distributed
+480 / Player 2: Rolled 8
+480 / Player 3: Rolled 7
+480 / Player 3: Robber activated (rolled 7) - no resources distributed
+480 / Player 3: Discarded 4 cards
+480 / Player 4: Rolled 12
+480 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+481 / Player 1: Rolled 7
+481 / Player 1: Robber activated (rolled 7) - no resources distributed
+481 / Player 2: Rolled 5
+481 / Player 3: Rolled 6
+481 / Player 4: Rolled 5
+481 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+482 / Player 1: Rolled 7
+482 / Player 1: Robber activated (rolled 7) - no resources distributed
+482 / Player 2: Discarded 4 cards
+482 / Player 2: Rolled 10
+482 / Player 3: Rolled 7
+482 / Player 3: Robber activated (rolled 7) - no resources distributed
+482 / Player 4: Rolled 9
+482 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+483 / Player 1: Rolled 9
+483 / Player 2: Rolled 7
+483 / Player 2: Robber activated (rolled 7) - no resources distributed
+483 / Player 3: Rolled 12
+483 / Player 4: Rolled 9
+483 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+484 / Player 1: Rolled 11
+484 / Player 2: Rolled 6
+484 / Player 3: Rolled 9
+484 / Player 4: Rolled 8
+484 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+485 / Player 1: Rolled 7
+485 / Player 1: Robber activated (rolled 7) - no resources distributed
+485 / Player 1: Discarded 4 cards
+485 / Player 2: Discarded 4 cards
+485 / Player 3: Discarded 4 cards
+485 / Player 4: Discarded 4 cards
+485 / Player 2: Rolled 5
+485 / Player 3: Rolled 2
+485 / Player 4: Rolled 8
+485 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+486 / Player 1: Rolled 6
+486 / Player 2: Rolled 6
+486 / Player 3: Rolled 4
+486 / Player 4: Rolled 3
+486 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+487 / Player 1: Rolled 8
+487 / Player 2: Rolled 6
+487 / Player 3: Rolled 8
+487 / Player 4: Rolled 5
+487 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+488 / Player 1: Rolled 4
+488 / Player 2: Rolled 3
+488 / Player 3: Rolled 10
+488 / Player 4: Rolled 5
+488 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+489 / Player 1: Rolled 6
+489 / Player 2: Rolled 5
+489 / Player 3: Rolled 8
+489 / Player 4: Rolled 11
+489 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+490 / Player 1: Rolled 4
+490 / Player 2: Rolled 7
+490 / Player 2: Robber activated (rolled 7) - no resources distributed
+490 / Player 2: Discarded 6 cards
+490 / Player 3: Discarded 5 cards
+490 / Player 4: Discarded 6 cards
+490 / Player 3: Rolled 10
+490 / Player 4: Rolled 3
+490 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+491 / Player 1: Rolled 11
+491 / Player 2: Rolled 3
+491 / Player 3: Rolled 8
+491 / Player 4: Rolled 4
+491 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+492 / Player 1: Rolled 3
+492 / Player 2: Rolled 8
+492 / Player 3: Rolled 12
+492 / Player 4: Rolled 9
+492 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+493 / Player 1: Rolled 6
+493 / Player 2: Rolled 8
+493 / Player 3: Rolled 9
+493 / Player 4: Rolled 4
+493 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+494 / Player 1: Rolled 9
+494 / Player 2: Rolled 9
+494 / Player 3: Rolled 2
+494 / Player 4: Rolled 6
+494 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+495 / Player 1: Rolled 3
+495 / Player 2: Rolled 6
+495 / Player 3: Rolled 9
+495 / Player 4: Rolled 8
+495 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+496 / Player 1: Rolled 8
+496 / Player 2: Rolled 8
+496 / Player 3: Rolled 11
+496 / Player 4: Rolled 7
+496 / Player 4: Robber activated (rolled 7) - no resources distributed
+496 / Player 1: Discarded 4 cards
+496 / Player 2: Discarded 9 cards
+496 / Player 3: Discarded 9 cards
+496 / Player 4: Discarded 9 cards
+496 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+497 / Player 1: Rolled 10
+497 / Player 2: Rolled 5
+497 / Player 3: Rolled 8
+497 / Player 4: Rolled 7
+497 / Player 4: Robber activated (rolled 7) - no resources distributed
+497 / Player 2: Discarded 4 cards
+497 / Player 3: Discarded 5 cards
+497 / Player 4: Discarded 5 cards
+497 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+498 / Player 1: Rolled 10
+498 / Player 2: Rolled 5
+498 / Player 3: Rolled 4
+498 / Player 4: Rolled 3
+498 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+499 / Player 1: Rolled 8
+499 / Player 2: Rolled 6
+499 / Player 3: Rolled 11
+499 / Player 4: Rolled 8
+499 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+500 / Player 1: Rolled 7
+500 / Player 1: Robber activated (rolled 7) - no resources distributed
+500 / Player 1: Discarded 4 cards
+500 / Player 3: Discarded 5 cards
+500 / Player 4: Discarded 5 cards
+500 / Player 2: Rolled 4
+500 / Player 3: Rolled 6
+500 / Player 4: Rolled 8
+500 / VP Summary: Player 1=2VP, Player 2=2VP, Player 3=2VP, Player 4=2VP
+
+===========================================
+  FINAL RESULTS
+===========================================
+
+Game ended after 500 rounds (no winner)
+
+Winner: None
+Total rounds: 500
+
+Final standings:
+  Player 1: 2 VP, 4 resources
+  Player 2: 2 VP, 9 resources
+  Player 3: 2 VP, 6 resources
+  Player 4: 2 VP, 6 resources
+]]></system-out>
+  </testcase>
+  <testcase name="testRobberNoDiscard" classname="catan.CatanEngineTest" time="0.002"/>
+  <testcase name="testBoardStructure" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testSettlementPlacementSetup" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testRoadResourceCost" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testSettlementResourceCost" classname="catan.CatanEngineTest" time="0.002"/>
+  <testcase name="testDistanceRule" classname="catan.CatanEngineTest" time="0.004"/>
+  <testcase name="testRobberDiscard" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testCityUpgradeInsufficientResources" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testDiceRoll" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testCityUpgrade" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testSimulatorInvalidRoundLimit" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testSettlementValidatorDistanceRule" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testSettlementOnOccupiedNode" classname="catan.CatanEngineTest" time="0.001"/>
+  <testcase name="testRoadPlacementSetup" classname="catan.CatanEngineTest" time="0.0"/>
+  <testcase name="testRoadConnectivity" classname="catan.CatanEngineTest" time="0.0"/>
+</testsuite>
