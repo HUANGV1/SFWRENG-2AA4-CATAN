@@ -1,0 +1,2224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:Codegen="http://www.eclipse.org/papyrus/Codegen/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_lW3tEAi4EfG9CvxSKhfZJA" name="UMLDesign">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_lagP4Ai4EfG9CvxSKhfZJA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_yjQO0Ai4EfG9CvxSKhfZJA" name="CatanProject">
+      <packagedElement xmi:type="uml:Package" xmi:id="_yj8yYAi4EfG9CvxSKhfZJA" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_yj8yYQi4EfG9CvxSKhfZJA" name="mycompany">
+          <packagedElement xmi:type="uml:Package" xmi:id="_yj8yYgi4EfG9CvxSKhfZJA" name="app">
+            <packagedElement xmi:type="uml:Class" xmi:id="_yj9ZcAi4EfG9CvxSKhfZJA" name="ActionLogger" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yj9ZcQi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykNREAi4EfG9CvxSKhfZJA" name="logAction" specification="_ykHxgAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>System.out.println(&quot;[&quot; + round + &quot;] / [&quot; + playerID + &quot;]: &quot; + action);</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykHxgAi4EfG9CvxSKhfZJA" name="logAction" visibility="public" method="_ykNREAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykHxgQi4EfG9CvxSKhfZJA">
+                  <body>Log an action to console in the specified format: [round] / [playerID]: action @param round Current round number @param playerID Player taking the action @param action Description of the action taken</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykIYkAi4EfG9CvxSKhfZJA" name="round" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykI_oAi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykI_oQi4EfG9CvxSKhfZJA" name="action" type="_ykBq5Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykRigAi4EfG9CvxSKhfZJA" name="Board" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ykRigQi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykSwoQi4EfG9CvxSKhfZJA" name="tiles" visibility="private" type="_ykRiggi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykSwogi4EfG9CvxSKhfZJA">
+                  <body></body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykTXsAi4EfG9CvxSKhfZJA" name="nodes" visibility="private" type="_ykRiggi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykTXsQi4EfG9CvxSKhfZJA">
+                  <body></body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykTXsgi4EfG9CvxSKhfZJA" name="edges" visibility="private" type="_ykRiggi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykTXswi4EfG9CvxSKhfZJA">
+                  <body></body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykTXtQi4EfG9CvxSKhfZJA" name="topology" visibility="private" type="_ykTXtAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykTXtgi4EfG9CvxSKhfZJA">
+                  <body></body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykVz8gi4EfG9CvxSKhfZJA" name="Board" specification="_ykTXtwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.topology = topology;
+this.tiles = new HashMap&lt;>();
+this.nodes = new HashMap&lt;>();
+this.edges = new HashMap&lt;>();
+initializeBoard();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykWbAAi4EfG9CvxSKhfZJA" name="initializeBoard" specification="_ykVz8wi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Initialize tiles with standard Catan distribution
+// 4 WHEAT, 4 SHEEP, 4 WOOD, 3 BRICK, 3 ORE, 1 DESERT
+// Number tokens: 2-12 (excluding 7), with standard frequency
+// Center tile
+tiles.put(0, new HexTile(0, TileType.WHEAT, 6));
+// Inner ring (6 tiles)
+tiles.put(1, new HexTile(1, TileType.WOOD, 3));
+tiles.put(2, new HexTile(2, TileType.BRICK, 8));
+tiles.put(3, new HexTile(3, TileType.SHEEP, 4));
+tiles.put(4, new HexTile(4, TileType.ORE, 9));
+tiles.put(5, new HexTile(5, TileType.WHEAT, 5));
+tiles.put(6, new HexTile(6, TileType.SHEEP, 10));
+// Outer ring (12 tiles)
+tiles.put(7, new HexTile(7, TileType.WOOD, 11));
+tiles.put(8, new HexTile(8, TileType.WHEAT, 12));
+tiles.put(9, new HexTile(9, TileType.SHEEP, 2));
+tiles.put(10, new HexTile(10, TileType.BRICK, 6));
+// Desert has no token
+tiles.put(11, new HexTile(11, TileType.DESERT, 0));
+tiles.put(12, new HexTile(12, TileType.ORE, 3));
+tiles.put(13, new HexTile(13, TileType.WOOD, 8));
+tiles.put(14, new HexTile(14, TileType.BRICK, 4));
+tiles.put(15, new HexTile(15, TileType.SHEEP, 5));
+tiles.put(16, new HexTile(16, TileType.WOOD, 9));
+tiles.put(17, new HexTile(17, TileType.ORE, 10));
+tiles.put(18, new HexTile(18, TileType.WHEAT, 11));
+// Initialize all 54 nodes as empty
+for (int i = 0; i &lt; 54; i++) {
+    nodes.put(i, new Node(i));
+}
+// Initialize all 72 edges as empty
+for (int i = 0; i &lt; 72; i++) {
+    edges.put(i, new Edge(i));
+}</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykXCEQi4EfG9CvxSKhfZJA" name="getNode" specification="_ykWbAQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return nodes.get(nodeID);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykXCFwi4EfG9CvxSKhfZJA" name="getEdge" specification="_ykXCEgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return edges.get(edgeID);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykXpIgi4EfG9CvxSKhfZJA" name="getTile" specification="_ykXCGAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return tiles.get(tileID);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykXpKAi4EfG9CvxSKhfZJA" name="getAllTiles" specification="_ykXpIwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return tiles.values();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykYQMwi4EfG9CvxSKhfZJA" name="getAllNodes" specification="_ykXpKQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return nodes.values();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykYQOQi4EfG9CvxSKhfZJA" name="getAllEdges" specification="_ykYQNAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return edges.values();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykYQPQi4EfG9CvxSKhfZJA" name="getTopology" specification="_ykYQOgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return topology;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykTXtwi4EfG9CvxSKhfZJA" name="Board" visibility="public" method="_ykVz8gi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykVz8Ai4EfG9CvxSKhfZJA">
+                  <body>Constructor for Board @param topology Board topology defining node and edge adjacencies</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykVz8Qi4EfG9CvxSKhfZJA" name="topology" type="_ykTXtAi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykVz8wi4EfG9CvxSKhfZJA" name="initializeBoard" visibility="private" method="_ykWbAAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykVz9Ai4EfG9CvxSKhfZJA">
+                  <body>Initialize the board with a hardcoded valid Catan configuration Creates 19 tiles, 54 nodes, and 72 edges</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykWbAQi4EfG9CvxSKhfZJA" name="getNode" visibility="public" method="_ykXCEQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykWbAgi4EfG9CvxSKhfZJA">
+                  <body>Get a specific node by ID @param nodeID The node identifier @return The Node object, or null if not found</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykWbBAi4EfG9CvxSKhfZJA" type="_ykWbAwi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXCEAi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykXCEgi4EfG9CvxSKhfZJA" name="getEdge" visibility="public" method="_ykXCFwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykXCEwi4EfG9CvxSKhfZJA">
+                  <body>Get a specific edge by ID @param edgeID The edge identifier @return The Edge object, or null if not found</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXCFQi4EfG9CvxSKhfZJA" type="_ykXCFAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXCFgi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykXCGAi4EfG9CvxSKhfZJA" name="getTile" visibility="public" method="_ykXpIgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykXCGQi4EfG9CvxSKhfZJA">
+                  <body>Get a specific tile by ID @param tileID The tile identifier @return The HexTile object, or null if not found</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXpIAi4EfG9CvxSKhfZJA" type="_ykXCGgi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXpIQi4EfG9CvxSKhfZJA" name="tileID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykXpIwi4EfG9CvxSKhfZJA" name="getAllTiles" visibility="public" method="_ykXpKAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykXpJAi4EfG9CvxSKhfZJA">
+                  <body>Get all tiles on the board @return Collection of all HexTiles</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykXpJQi4EfG9CvxSKhfZJA" type="_ykXCGgi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykXpJgi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykXpJwi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykXpKQi4EfG9CvxSKhfZJA" name="getAllNodes" visibility="public" method="_ykYQMwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykXpKgi4EfG9CvxSKhfZJA">
+                  <body>Get all nodes on the board @return Collection of all Nodes</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykYQMAi4EfG9CvxSKhfZJA" type="_ykWbAwi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykYQMQi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykYQMgi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykYQNAi4EfG9CvxSKhfZJA" name="getAllEdges" visibility="public" method="_ykYQOQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykYQNQi4EfG9CvxSKhfZJA">
+                  <body>Get all edges on the board @return Collection of all Edges</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykYQNgi4EfG9CvxSKhfZJA" type="_ykXCFAi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykYQNwi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykYQOAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykYQOgi4EfG9CvxSKhfZJA" name="getTopology" visibility="public" method="_ykYQPQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykYQOwi4EfG9CvxSKhfZJA">
+                  <body>Get the board topology @return The IBoardGraph defining adjacencies</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykYQPAi4EfG9CvxSKhfZJA" type="_ykTXtAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykRiggi4EfG9CvxSKhfZJA" name="Map"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_ykTXtAi4EfG9CvxSKhfZJA" name="IBoardGraph" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk2KQAi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk2KQQi4EfG9CvxSKhfZJA" name="getAdjacentNodes" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk2KQgi4EfG9CvxSKhfZJA">
+                  <body>@param nodeID  @return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2KQwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk2KRAi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk2KRQi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2KRgi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk2KRwi4EfG9CvxSKhfZJA" name="getAdjacentEdges" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk2KSAi4EfG9CvxSKhfZJA">
+                  <body>@param nodeID @return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2KSQi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk2KSgi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk2KSwi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2KTAi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk2xUAi4EfG9CvxSKhfZJA" name="getEdgeEndpoints" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk2xUQi4EfG9CvxSKhfZJA">
+                  <body>Get the two endpoint nodes of an edge @param edgeID The edge identifier @return Array of two node IDs, or empty array if not found</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2xUgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk2xUwi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk2xVAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2xVQi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk2xVgi4EfG9CvxSKhfZJA" name="getTileNodes" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk2xVwi4EfG9CvxSKhfZJA">
+                  <body>Get nodes adjacent to a specific tile @param tileID The tile identifier (0-18) @return Array of node IDs surrounding this tile</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2xWAi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk2xWQi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk2xWgi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk2xWwi4EfG9CvxSKhfZJA" name="tileID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykWbAwi4EfG9CvxSKhfZJA" name="Node" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk4mgAi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk4mgQi4EfG9CvxSKhfZJA" name="nodeID" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk4mggi4EfG9CvxSKhfZJA">
+                  <body>Unique identifier for this node</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk4mgwi4EfG9CvxSKhfZJA" name="type" visibility="private" type="_ykb6lwi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk4mhAi4EfG9CvxSKhfZJA">
+                  <body>Type of building on this node (NONE, SETTLEMENT, or CITY)</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk4mhQi4EfG9CvxSKhfZJA" name="occupant" visibility="private" type="_yku1gwi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk4mhgi4EfG9CvxSKhfZJA">
+                  <body>Player who owns the building on this node (null if unoccupied)</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_QRlW8gkcEfGiIetn17CwfQ" name="type" type="_ykb6lwi4EfG9CvxSKhfZJA" association="_QRkI0AkcEfGiIetn17CwfQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SGMIIAkcEfGiIetn17CwfQ" name="LiteralInteger1" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SGMIIQkcEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="1"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk5Nkwi4EfG9CvxSKhfZJA" name="Node" specification="_yk4mhwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.nodeID = nodeID;
+this.type = BuildingType.NONE;
+this.occupant = null;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk5Nlwi4EfG9CvxSKhfZJA" name="getNodeID" specification="_yk5NlAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return nodeID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk5Nmwi4EfG9CvxSKhfZJA" name="getType" specification="_yk5NmAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return type;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk50owi4EfG9CvxSKhfZJA" name="getOccupant" specification="_yk50oAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return occupant;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk50qAi4EfG9CvxSKhfZJA" name="setOccupant" specification="_yk50pAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.occupant = p;
+this.type = t;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk50rAi4EfG9CvxSKhfZJA" name="isOccupied" specification="_yk50qQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return type != BuildingType.NONE &amp;&amp; occupant != null;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk50sQi4EfG9CvxSKhfZJA" name="isOccupiedBy" specification="_yk50rQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return occupant != null &amp;&amp; occupant.getPlayerID() == playerID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk6bsgi4EfG9CvxSKhfZJA" name="buildSettlement" specification="_yk50sgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.occupant = player;
+this.type = BuildingType.SETTLEMENT;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk6btgi4EfG9CvxSKhfZJA" name="upgradeToCity" specification="_yk6bswi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>if (this.type == BuildingType.SETTLEMENT &amp;&amp; this.occupant == player) {
+    this.type = BuildingType.CITY;
+}</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk6buwi4EfG9CvxSKhfZJA" name="hasSettlementBy" specification="_yk6btwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return type == BuildingType.SETTLEMENT &amp;&amp; occupant != null &amp;&amp; occupant.getPlayerID() == playerID;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk4mhwi4EfG9CvxSKhfZJA" name="Node" visibility="public" method="_yk5Nkwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk5NkQi4EfG9CvxSKhfZJA">
+                  <body>Constructor for Node @param nodeID Unique node identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk5Nkgi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk5NlAi4EfG9CvxSKhfZJA" name="getNodeID" visibility="public" method="_yk5Nlwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk5NlQi4EfG9CvxSKhfZJA">
+                  <body>Get the node ID @return The node's unique identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk5Nlgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk5NmAi4EfG9CvxSKhfZJA" name="getType" visibility="public" method="_yk5Nmwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk5NmQi4EfG9CvxSKhfZJA">
+                  <body>Get the building type on this node @return The type of building (NONE, SETTLEMENT, or CITY)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk5Nmgi4EfG9CvxSKhfZJA" type="_ykb6lwi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk50oAi4EfG9CvxSKhfZJA" name="getOccupant" visibility="public" method="_yk50owi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk50oQi4EfG9CvxSKhfZJA">
+                  <body>Get the occupying player @return The player who owns the building, or null if unoccupied</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50ogi4EfG9CvxSKhfZJA" type="_yku1gwi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk50pAi4EfG9CvxSKhfZJA" name="setOccupant" visibility="public" method="_yk50qAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk50pQi4EfG9CvxSKhfZJA">
+                  <body>Set the occupant and building type on this node @param p Player who will occupy this node @param t Type of building to place</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50pgi4EfG9CvxSKhfZJA" name="p" type="_yku1gwi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50pwi4EfG9CvxSKhfZJA" name="t" type="_ykb6lwi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk50qQi4EfG9CvxSKhfZJA" name="isOccupied" visibility="public" method="_yk50rAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk50qgi4EfG9CvxSKhfZJA">
+                  <body>Check if this node is occupied by any player @return true if there's a building on this node</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50qwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk50rQi4EfG9CvxSKhfZJA" name="isOccupiedBy" visibility="public" method="_yk50sQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk50rgi4EfG9CvxSKhfZJA">
+                  <body>Check if this node is occupied by a specific player @param playerID The player ID to check @return true if this player occupies this node</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50rwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk50sAi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk50sgi4EfG9CvxSKhfZJA" name="buildSettlement" visibility="public" method="_yk6bsgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk6bsAi4EfG9CvxSKhfZJA">
+                  <body>Build a settlement on this node @param player The player building the settlement</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk6bsQi4EfG9CvxSKhfZJA" name="player" type="_yku1gwi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk6bswi4EfG9CvxSKhfZJA" name="upgradeToCity" visibility="public" method="_yk6btgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk6btAi4EfG9CvxSKhfZJA">
+                  <body>Upgrade settlement to city on this node @param player The player upgrading (must already own settlement)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk6btQi4EfG9CvxSKhfZJA" name="player" type="_yku1gwi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk6btwi4EfG9CvxSKhfZJA" name="hasSettlementBy" visibility="public" method="_yk6buwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk6buAi4EfG9CvxSKhfZJA">
+                  <body>Check if this is a settlement owned by the given player @param playerID The player ID to check @return true if this node has a settlement owned by the player</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk6buQi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk6bugi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykXCFAi4EfG9CvxSKhfZJA" name="Edge" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ykyf4Qi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykyf4gi4EfG9CvxSKhfZJA" name="edgeID" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykyf4wi4EfG9CvxSKhfZJA">
+                  <body>Unique identifier for this edge</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykzG8Ai4EfG9CvxSKhfZJA" name="occupant" visibility="private" type="_yku1gwi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzG8Qi4EfG9CvxSKhfZJA">
+                  <body>Player who has built a road on this edge (null if no road)</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykzuAAi4EfG9CvxSKhfZJA" name="Edge" specification="_ykzG8gi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.edgeID = edgeID;
+this.occupant = null;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykzuBAi4EfG9CvxSKhfZJA" name="getEdgeID" specification="_ykzuAQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return edgeID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykzuCAi4EfG9CvxSKhfZJA" name="getOccupant" specification="_ykzuBQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return occupant;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykzuDAi4EfG9CvxSKhfZJA" name="setOccupant" specification="_ykzuCQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.occupant = p;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykzuEAi4EfG9CvxSKhfZJA" name="hasRoad" specification="_ykzuDQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return occupant != null;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk0VEQi4EfG9CvxSKhfZJA" name="hasRoadBy" specification="_ykzuEQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return occupant != null &amp;&amp; occupant.getPlayerID() == playerID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk0VFQi4EfG9CvxSKhfZJA" name="buildRoad" specification="_yk0VEgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.occupant = player;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzG8gi4EfG9CvxSKhfZJA" name="Edge" visibility="public" method="_ykzuAAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzG9Ai4EfG9CvxSKhfZJA">
+                  <body>Constructor for Edge @param edgeID Unique edge identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzG9Qi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzuAQi4EfG9CvxSKhfZJA" name="getEdgeID" visibility="public" method="_ykzuBAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzuAgi4EfG9CvxSKhfZJA">
+                  <body>Get the edge ID @return The edge's unique identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzuAwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzuBQi4EfG9CvxSKhfZJA" name="getOccupant" visibility="public" method="_ykzuCAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzuBgi4EfG9CvxSKhfZJA">
+                  <body>Get the occupying player @return The player who owns the road, or null if no road</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzuBwi4EfG9CvxSKhfZJA" type="_yku1gwi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzuCQi4EfG9CvxSKhfZJA" name="setOccupant" visibility="public" method="_ykzuDAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzuCgi4EfG9CvxSKhfZJA">
+                  <body>Set the occupant of this edge (build a road) @param p Player who will build a road on this edge</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzuCwi4EfG9CvxSKhfZJA" name="p" type="_yku1gwi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzuDQi4EfG9CvxSKhfZJA" name="hasRoad" visibility="public" method="_ykzuEAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzuDgi4EfG9CvxSKhfZJA">
+                  <body>Check if this edge has a road @return true if any player has built a road on this edge</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzuDwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykzuEQi4EfG9CvxSKhfZJA" name="hasRoadBy" visibility="public" method="_yk0VEQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykzuEgi4EfG9CvxSKhfZJA">
+                  <body>Check if this edge has a road owned by specific player @param playerID The player ID to check @return true if this player has a road on this edge</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykzuEwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk0VEAi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk0VEgi4EfG9CvxSKhfZJA" name="buildRoad" visibility="public" method="_yk0VFQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk0VEwi4EfG9CvxSKhfZJA">
+                  <body>Build a road on this edge @param player The player building the road</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk0VFAi4EfG9CvxSKhfZJA" name="player" type="_yku1gwi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykXCGgi4EfG9CvxSKhfZJA" name="HexTile" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk0VFgi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk0VFwi4EfG9CvxSKhfZJA" name="tileID" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk0VGAi4EfG9CvxSKhfZJA">
+                  <body>Unique identifier for this tile</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk08IQi4EfG9CvxSKhfZJA" name="type" visibility="private" type="_ynw7YAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk08Igi4EfG9CvxSKhfZJA">
+                  <body>Type of resource this tile produces</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk08Iwi4EfG9CvxSKhfZJA" name="numberToken" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk08JAi4EfG9CvxSKhfZJA">
+                  <body>Number token on this tile (2-12, or 0 for desert)</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_NSIjQgkcEfGiIetn17CwfQ" name="type" type="_ynw7YAi4EfG9CvxSKhfZJA" association="_NSHVIAkcEfGiIetn17CwfQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PQz2cAkcEfGiIetn17CwfQ" name="LiteralInteger1" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PQz2cQkcEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="1"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk1jNAi4EfG9CvxSKhfZJA" name="HexTile" specification="_yk08JQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.tileID = tileID;
+this.type = type;
+this.numberToken = numberToken;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk1jOAi4EfG9CvxSKhfZJA" name="getTileID" specification="_yk1jNQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return tileID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk1jPAi4EfG9CvxSKhfZJA" name="getType" specification="_yk1jOQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return type;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk1jQAi4EfG9CvxSKhfZJA" name="getNumberToken" specification="_yk1jPQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return numberToken;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk08JQi4EfG9CvxSKhfZJA" name="HexTile" visibility="public" method="_yk1jNAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk1jMAi4EfG9CvxSKhfZJA">
+                  <body>Constructor for HexTile @param tileID Unique tile identifier @param type Resource type of this tile @param numberToken Number token (2-12, or 0 for desert)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jMQi4EfG9CvxSKhfZJA" name="tileID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jMgi4EfG9CvxSKhfZJA" name="type" type="_ynw7YAi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jMwi4EfG9CvxSKhfZJA" name="numberToken" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk1jNQi4EfG9CvxSKhfZJA" name="getTileID" visibility="public" method="_yk1jOAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk1jNgi4EfG9CvxSKhfZJA">
+                  <body>Get the tile ID @return The tile's unique identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jNwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk1jOQi4EfG9CvxSKhfZJA" name="getType" visibility="public" method="_yk1jPAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk1jOgi4EfG9CvxSKhfZJA">
+                  <body>Get the tile type @return The resource type of this tile</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jOwi4EfG9CvxSKhfZJA" type="_ynw7YAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk1jPQi4EfG9CvxSKhfZJA" name="getNumberToken" visibility="public" method="_yk1jQAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk1jPgi4EfG9CvxSKhfZJA">
+                  <body>Get the number token @return The number token on this tile</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk1jPwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_ykZeUAi4EfG9CvxSKhfZJA" name="BuildingCost" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykascQi4EfG9CvxSKhfZJA" name="cost" visibility="private" isLeaf="true" type="_ykZeWAi4EfG9CvxSKhfZJA" isUnique="false"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykascgi4EfG9CvxSKhfZJA" name="BuildingCost" visibility="private">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykb6kAi4EfG9CvxSKhfZJA" name="cost" type="_ykZeWAi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykb6kQi4EfG9CvxSKhfZJA" name="getCost" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykb6kgi4EfG9CvxSKhfZJA">
+                  <body>Get the resource cost for this building type @return Immutable map of resource types to quantities</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykb6kwi4EfG9CvxSKhfZJA" type="_ykZeWAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykb6lAi4EfG9CvxSKhfZJA" name="getVictoryPoints" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykb6lQi4EfG9CvxSKhfZJA">
+                  <body>Get the victory points awarded for this building @return Victory points (SETTLEMENT=1, CITY=2, ROAD=0)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykb6lgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykZeUQi4EfG9CvxSKhfZJA" name="ROAD">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_ykZeUgi4EfG9CvxSKhfZJA" name="specification">
+                  <language>JAVA</language>
+                  <body>Map.of(ResourceType.LUMBER, 1, ResourceType.BRICK, 1)</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykZeUwi4EfG9CvxSKhfZJA" name="SETTLEMENT">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_ykZeVAi4EfG9CvxSKhfZJA" name="specification">
+                  <language>JAVA</language>
+                  <body>Map.of(ResourceType.LUMBER, 1, ResourceType.BRICK, 1, ResourceType.GRAIN, 1, ResourceType.WOOL, 1)</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykZeVQi4EfG9CvxSKhfZJA" name="CITY">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_ykZeVgi4EfG9CvxSKhfZJA" name="specification">
+                  <language>JAVA</language>
+                  <body>Map.of(ResourceType.ORE, 3, ResourceType.GRAIN, 2)</body>
+                </specification>
+              </ownedLiteral>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_ykb6lwi4EfG9CvxSKhfZJA" name="BuildingType" visibility="public">
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykchoAi4EfG9CvxSKhfZJA" name="NONE"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykchoQi4EfG9CvxSKhfZJA" name="SETTLEMENT"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykchogi4EfG9CvxSKhfZJA" name="CITY"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ykchowi4EfG9CvxSKhfZJA" name="ROAD"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_yke94Ai4EfG9CvxSKhfZJA" name="CatanBoardGraph" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yke94Qi4EfG9CvxSKhfZJA">
+                <body>Hardcoded topology for a standard Catan board. Defines adjacency relationships between nodes and edges. Board structure: - 19 tiles: 0 (center), 1-6 (inner ring), 7-18 (outer ring) - 54 nodes: intersection points where settlements/cities can be built - 72 edges: paths between nodes where roads can be built</body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykioQAi4EfG9CvxSKhfZJA" name="nodeAdjacencies" visibility="private" type="_ykZeWAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykioQQi4EfG9CvxSKhfZJA">
+                  <body>Node adjacency map: node ID -> array of adjacent node IDs</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykioQgi4EfG9CvxSKhfZJA" name="edgeAdjacencies" visibility="private" type="_ykZeWAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykioQwi4EfG9CvxSKhfZJA">
+                  <body>Edge adjacency map: node ID -> array of adjacent edge IDs</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykioRAi4EfG9CvxSKhfZJA" name="edgeEndpoints" visibility="private" type="_ykZeWAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykioRQi4EfG9CvxSKhfZJA">
+                  <body>Edge endpoints map: edge ID -> array of two endpoint node IDs</body>
+                </ownedComment>
+              </ownedAttribute>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ykiBMAi4EfG9CvxSKhfZJA" name="CatanBoardGraph implements IBoardGraph" client="_yke94Ai4EfG9CvxSKhfZJA" supplier="_ykTXtAi4EfG9CvxSKhfZJA" contract="_ykTXtAi4EfG9CvxSKhfZJA"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykj2Ygi4EfG9CvxSKhfZJA" name="CatanBoardGraph" specification="_ykioRgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.nodeAdjacencies = new HashMap&lt;>();
+this.edgeAdjacencies = new HashMap&lt;>();
+this.edgeEndpoints = new HashMap&lt;>();
+initializeTopology();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykj2ZQi4EfG9CvxSKhfZJA" name="initializeTopology" specification="_ykj2Ywi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Initialize all 54 nodes with empty adjacencies first
+for (int i = 0; i &lt; 54; i++) {
+    nodeAdjacencies.put(i, new int[] {});
+    edgeAdjacencies.put(i, new int[] {});
+}
+// Center hexagon nodes (nodes 0-5 around center tile)
+// Each node connects to 2 neighbors in clockwise order
+nodeAdjacencies.put(0, new int[] { 1, 5 });
+nodeAdjacencies.put(1, new int[] { 0, 2 });
+nodeAdjacencies.put(2, new int[] { 1, 3 });
+nodeAdjacencies.put(3, new int[] { 2, 4 });
+nodeAdjacencies.put(4, new int[] { 3, 5 });
+nodeAdjacencies.put(5, new int[] { 4, 0 });
+// These connect to center nodes and to each other
+for (int i = 6; i &lt; 18; i++) {
+    // Which center node this connects to
+    int centerNode = (i - 6) / 2;
+    int nextInner = i + 1;
+    if (nextInner >= 18)
+        nextInner = 6;
+    int prevInner = i - 1;
+    if (prevInner &lt; 6)
+        prevInner = 17;
+    if (i % 2 == 0) {
+        // Even inner nodes
+        nodeAdjacencies.put(i, new int[] { centerNode, nextInner });
+    } else {
+        // Odd inner nodes
+        nodeAdjacencies.put(i, new int[] { centerNode, nextInner });
+    }
+}
+// Simplified outer ring - each connects to 2 neighbors
+for (int i = 18; i &lt; 54; i++) {
+    int next = i + 1;
+    if (next >= 54)
+        next = 18;
+    int prev = i - 1;
+    if (prev &lt; 18)
+        prev = 53;
+    if (i &lt; 53) {
+        nodeAdjacencies.put(i, new int[] { prev, next });
+    } else {
+        // Wrap around
+        nodeAdjacencies.put(i, new int[] { prev, 18 });
+    }
+}
+// Initialize edges
+// Each edge connects two nodes
+int edgeId = 0;
+// Create edges for center hexagon (6 edges)
+for (int i = 0; i &lt; 6; i++) {
+    int node1 = i;
+    int node2 = (i + 1) % 6;
+    edgeEndpoints.put(edgeId, new int[] { node1, node2 });
+    // Add this edge to both nodes' edge adjacency lists
+    addEdgeToNode(node1, edgeId);
+    addEdgeToNode(node2, edgeId);
+    edgeId++;
+}
+// Create edges connecting center to inner ring (12 edges)
+for (int i = 0; i &lt; 12; i++) {
+    int centerNode = i / 2;
+    int innerNode = 6 + i;
+    edgeEndpoints.put(edgeId, new int[] { centerNode, innerNode });
+    addEdgeToNode(centerNode, edgeId);
+    addEdgeToNode(innerNode, edgeId);
+    edgeId++;
+}
+// Create edges for inner ring (12 edges connecting inner ring nodes)
+for (int i = 6; i &lt; 18; i++) {
+    int nextNode = (i - 6 + 1) % 12 + 6;
+    edgeEndpoints.put(edgeId, new int[] { i, nextNode });
+    addEdgeToNode(i, edgeId);
+    addEdgeToNode(nextNode, edgeId);
+    edgeId++;
+}
+// This creates a basic structure; a full implementation would need all 72 edges
+for (int i = 18; i &lt; 54 &amp;&amp; edgeId &lt; 72; i++) {
+    int nextNode = (i - 18 + 1) % 36 + 18;
+    edgeEndpoints.put(edgeId, new int[] { i, nextNode });
+    addEdgeToNode(i, edgeId);
+    addEdgeToNode(nextNode, edgeId);
+    edgeId++;
+}</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykkdcgi4EfG9CvxSKhfZJA" name="addEdgeToNode" specification="_ykj2Zgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>int[] currentEdges = edgeAdjacencies.get(nodeId);
+int[] newEdges = new int[currentEdges.length + 1];
+System.arraycopy(currentEdges, 0, newEdges, 0, currentEdges.length);
+newEdges[currentEdges.length] = edgeId;
+edgeAdjacencies.put(nodeId, newEdges);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykkdeAi4EfG9CvxSKhfZJA" name="getAdjacentNodes" specification="_ykkdcwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return nodeAdjacencies.getOrDefault(nodeID, new int[] {});</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykkdfgi4EfG9CvxSKhfZJA" name="getAdjacentEdges" specification="_ykkdeQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return edgeAdjacencies.getOrDefault(nodeID, new int[] {});</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yklEhgi4EfG9CvxSKhfZJA" name="getEdgeEndpoints" specification="_yklEgAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return edgeEndpoints.getOrDefault(edgeID, new int[] {});</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yklEjQi4EfG9CvxSKhfZJA" name="getTileNodes" specification="_yklEhwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Center tile (ID 0) has nodes 0-5
+if (tileID == 0) {
+    return new int[] { 0, 1, 2, 3, 4, 5 };
+}
+// Inner ring tiles (1-6) - simplified
+if (tileID >= 1 &amp;&amp; tileID &lt;= 6) {
+    int baseNode = (tileID - 1) * 2 + 6;
+    return new int[] { (tileID - 1), tileID % 6, baseNode, baseNode + 1 };
+}
+// Outer ring tiles (7-18) - simplified
+if (tileID >= 7 &amp;&amp; tileID &lt;= 18) {
+    int baseNode = (tileID - 7) * 3 + 18;
+    return new int[] { baseNode, baseNode + 1, baseNode + 2 };
+}
+return new int[] {};</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykioRgi4EfG9CvxSKhfZJA" name="CatanBoardGraph" visibility="public" method="_ykj2Ygi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykj2YQi4EfG9CvxSKhfZJA">
+                  <body>Constructor initializes the hardcoded Catan board topology</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykj2Ywi4EfG9CvxSKhfZJA" name="initializeTopology" visibility="private" method="_ykj2ZQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykj2ZAi4EfG9CvxSKhfZJA">
+                  <body>Initialize the board topology with hardcoded adjacencies. This creates a simplified Catan-like hexagonal board structure.</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykj2Zgi4EfG9CvxSKhfZJA" name="addEdgeToNode" visibility="private" method="_ykkdcgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykj2Zwi4EfG9CvxSKhfZJA">
+                  <body>Helper method to add an edge to a node's edge adjacency list</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkdcAi4EfG9CvxSKhfZJA" name="nodeId" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkdcQi4EfG9CvxSKhfZJA" name="edgeId" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykkdcwi4EfG9CvxSKhfZJA" name="getAdjacentNodes" visibility="public" method="_ykkdeAi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkddAi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykkddQi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykkddgi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkddwi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykkdeQi4EfG9CvxSKhfZJA" name="getAdjacentEdges" visibility="public" method="_ykkdfgi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkdegi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykkdewi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykkdfAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykkdfQi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yklEgAi4EfG9CvxSKhfZJA" name="getEdgeEndpoints" visibility="public" method="_yklEhgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yklEgQi4EfG9CvxSKhfZJA">
+                  <body>Get the two endpoint nodes of an edge @param edgeID The edge ID @return Array of two node IDs that are the endpoints of this edge</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yklEggi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yklEgwi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yklEhAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yklEhQi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yklEhwi4EfG9CvxSKhfZJA" name="getTileNodes" visibility="public" method="_yklEjQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yklEiAi4EfG9CvxSKhfZJA">
+                  <body>Get nodes adjacent to a specific tile @param tileID The tile ID (0-18) @return Array of node IDs surrounding this tile</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yklEiQi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yklEigi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yklEiwi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yklEjAi4EfG9CvxSKhfZJA" name="tileID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykm5sAi4EfG9CvxSKhfZJA" name="CatanEngine" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ykm5sQi4EfG9CvxSKhfZJA">
+                <body>Main game engine that implements game rules and validates player actions. Implements the IGameController interface to provide a clean API for players.</body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykm5tAi4EfG9CvxSKhfZJA" name="board" visibility="private" type="_ykRigAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykm5tQi4EfG9CvxSKhfZJA">
+                  <body>Game board with tiles, nodes, and edges</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykm5twi4EfG9CvxSKhfZJA" name="dice" visibility="private" type="_ykm5tgi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykm5uAi4EfG9CvxSKhfZJA">
+                  <body>Dice for rolling</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykoH0Ai4EfG9CvxSKhfZJA" name="players" visibility="private" type="_ykm5uQi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykoH0Qi4EfG9CvxSKhfZJA">
+                  <body>List of players in the game</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykou4Qi4EfG9CvxSKhfZJA" name="settlementValidator" visibility="private" type="_ykoH0gi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykou4gi4EfG9CvxSKhfZJA">
+                  <body>Validator for settlement placement</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykpV8Qi4EfG9CvxSKhfZJA" name="roadValidator" visibility="private" type="_ykou4wi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykpV8gi4EfG9CvxSKhfZJA">
+                  <body>Validator for road placement</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykqkEQi4EfG9CvxSKhfZJA" name="resourceDistributor" visibility="private" type="_ykp9AAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykqkEgi4EfG9CvxSKhfZJA">
+                  <body>Service for distributing resources</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ykrLIQi4EfG9CvxSKhfZJA" name="buildingService" visibility="private" type="_ykqkEwi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykryMAi4EfG9CvxSKhfZJA">
+                  <body>Service for building placement</body>
+                </ownedComment>
+              </ownedAttribute>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ykm5swi4EfG9CvxSKhfZJA" name="CatanEngine implements IGameController" client="_ykm5sAi4EfG9CvxSKhfZJA" supplier="_ykm5sgi4EfG9CvxSKhfZJA" contract="_ykm5sgi4EfG9CvxSKhfZJA"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yksZQwi4EfG9CvxSKhfZJA" name="CatanEngine" specification="_ykryMQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.board = board;
+this.dice = dice;
+this.players = new ArrayList&lt;>();
+// Initialize validators
+this.settlementValidator = new SettlementValidator(board);
+this.roadValidator = new RoadValidator(board, board.getTopology());
+// Initialize services
+this.resourceDistributor = new ResourceDistributor(board, board.getTopology());
+this.buildingService = new BuildingService(board, settlementValidator, roadValidator);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yksZRwi4EfG9CvxSKhfZJA" name="setPlayers" specification="_yksZRAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.players = players;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yktAUAi4EfG9CvxSKhfZJA" name="rollDice" specification="_yksZSAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return dice.roll();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yktAVQi4EfG9CvxSKhfZJA" name="distributeResources" specification="_yktAUQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>resourceDistributor.distribute(diceRoll, players);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yktAWwi4EfG9CvxSKhfZJA" name="getValidSettlementLocations" specification="_yktAVgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>boolean isInitialPlacement = getTotalBuildings(playerID) == 0;
+return settlementValidator.getValidLocations(playerID, isInitialPlacement);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yktnZAi4EfG9CvxSKhfZJA" name="getTotalBuildings" specification="_yktnYAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>int count = 0;
+for (Node node : board.getAllNodes()) {
+    if (node.getOccupant() != null &amp;&amp; node.getOccupant().getPlayerID() == playerID &amp;&amp; node.getType() != BuildingType.NONE) {
+        count++;
+    }
+}
+return count;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yktnagi4EfG9CvxSKhfZJA" name="getValidRoadLocations" specification="_yktnZQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return roadValidator.getValidLocations(playerID);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykuOcQi4EfG9CvxSKhfZJA" name="requestBuildSettlement" specification="_yktnawi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>Player player = getPlayer(playerID);
+if (player == null)
+    return false;
+return buildingService.buildSettlement(playerID, nodeID, player);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykuOdgi4EfG9CvxSKhfZJA" name="requestBuildRoad" specification="_ykuOcgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>Player player = getPlayer(playerID);
+if (player == null)
+    return false;
+return buildingService.buildRoad(playerID, edgeID, player);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yku1gAi4EfG9CvxSKhfZJA" name="requestBuildCity" specification="_ykuOdwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>Player player = getPlayer(playerID);
+if (player == null)
+    return false;
+return buildingService.buildCity(playerID, nodeID, player);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yku1hgi4EfG9CvxSKhfZJA" name="getPlayer" specification="_yku1gQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>if (players == null)
+    return null;
+return players.stream().filter( p -> p.getPlayerID() == playerID).findFirst().orElse(null);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yku1igi4EfG9CvxSKhfZJA" name="getBoard" specification="_yku1hwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return board;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykryMQi4EfG9CvxSKhfZJA" name="CatanEngine" visibility="public" method="_yksZQwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yksZQAi4EfG9CvxSKhfZJA">
+                  <body>Constructor for CatanEngine @param board The game board @param dice Dice implementation</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yksZQQi4EfG9CvxSKhfZJA" name="board" type="_ykRigAi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yksZQgi4EfG9CvxSKhfZJA" name="dice" type="_ykm5tgi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yksZRAi4EfG9CvxSKhfZJA" name="setPlayers" visibility="public" method="_yksZRwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yksZRQi4EfG9CvxSKhfZJA">
+                  <body>Set the players for this game @param players List of players</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yksZRgi4EfG9CvxSKhfZJA" name="players" type="_ykm5uQi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yksZSAi4EfG9CvxSKhfZJA" name="rollDice" visibility="public" method="_yktAUAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yksZSQi4EfG9CvxSKhfZJA">
+                  <body>Roll the dice @return The dice roll result (2-12)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yksZSgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yktAUQi4EfG9CvxSKhfZJA" name="distributeResources" visibility="public" method="_yktAVQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yktAUgi4EfG9CvxSKhfZJA">
+                  <body>Distribute resources based on dice roll @param diceRoll The number rolled @param players List of all players</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktAUwi4EfG9CvxSKhfZJA" name="diceRoll" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktAVAi4EfG9CvxSKhfZJA" name="players" type="_ykm5uQi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yktAVgi4EfG9CvxSKhfZJA" name="getValidSettlementLocations" visibility="public" method="_yktAWwi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktAVwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yktAWAi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yktAWQi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktAWgi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yktnYAi4EfG9CvxSKhfZJA" name="getTotalBuildings" visibility="private" method="_yktnZAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yktnYQi4EfG9CvxSKhfZJA">
+                  <body>Get total buildings for a player</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnYgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnYwi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yktnZQi4EfG9CvxSKhfZJA" name="getValidRoadLocations" visibility="public" method="_yktnagi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnZgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yktnZwi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yktnaAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnaQi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yktnawi4EfG9CvxSKhfZJA" name="requestBuildSettlement" visibility="public" method="_ykuOcQi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnbQi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yktnbgi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOcAi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykuOcgi4EfG9CvxSKhfZJA" name="requestBuildRoad" visibility="public" method="_ykuOdgi4EfG9CvxSKhfZJA">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOcwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOdAi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOdQi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykuOdwi4EfG9CvxSKhfZJA" name="requestBuildCity" visibility="public" method="_yku1gAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykuOeAi4EfG9CvxSKhfZJA">
+                  <body>Request to build a city (upgrade settlement) @param playerID Player making the request @param nodeID Node location @return true if successful, false otherwise</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOeQi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOegi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykuOewi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yku1gQi4EfG9CvxSKhfZJA" name="getPlayer" visibility="private" method="_yku1hgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yku1ggi4EfG9CvxSKhfZJA">
+                  <body>Get a player by ID @param playerID The player's ID @return The Player object, or null if not found</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yku1hAi4EfG9CvxSKhfZJA" type="_yku1gwi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yku1hQi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yku1hwi4EfG9CvxSKhfZJA" name="getBoard" visibility="public" method="_yku1igi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yku1iAi4EfG9CvxSKhfZJA">
+                  <body>Get the board @return The game board</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yku1iQi4EfG9CvxSKhfZJA" type="_ykRigAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_ykm5sgi4EfG9CvxSKhfZJA" name="IGameController" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk2xXAi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk2xXQi4EfG9CvxSKhfZJA" name="getValidSettlementLocations" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk2xXgi4EfG9CvxSKhfZJA">
+                  <body>@param playerID  @return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YYAi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk3YYQi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk3YYgi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YYwi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk3YZAi4EfG9CvxSKhfZJA" name="getValidRoadLocations" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk3YZQi4EfG9CvxSKhfZJA">
+                  <body>@param playerID  @return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YZgi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yk3YZwi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yk3YaAi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YaQi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk3Yagi4EfG9CvxSKhfZJA" name="requestBuildSettlement" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk3Yawi4EfG9CvxSKhfZJA">
+                  <body>@param playerID  @param nodeID  @return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YbAi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YbQi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3Ybgi4EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk3Ybwi4EfG9CvxSKhfZJA" name="requestBuildRoad" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk3YcAi4EfG9CvxSKhfZJA">
+                  <body>@param playerID  @param edgeID  @param Parameter1</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3YcQi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3Ycgi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3Ycwi4EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_ykm5tgi4EfG9CvxSKhfZJA" name="IRandomDice" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk3_cAi4EfG9CvxSKhfZJA">
+                <body></body>
+              </ownedComment>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk3_cQi4EfG9CvxSKhfZJA" name="roll" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk3_cgi4EfG9CvxSKhfZJA">
+                  <body>@return</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk3_cwi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykm5uQi4EfG9CvxSKhfZJA" name="List"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykoH0gi4EfG9CvxSKhfZJA" name="SettlementValidator"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykou4wi4EfG9CvxSKhfZJA" name="RoadValidator"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykp9AAi4EfG9CvxSKhfZJA" name="ResourceDistributor"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykqkEwi4EfG9CvxSKhfZJA" name="BuildingService"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_yku1gwi4EfG9CvxSKhfZJA" name="Player" visibility="public" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk7CwAi4EfG9CvxSKhfZJA">
+                <body>Abstract base class for all player types in the game. Manages resources, victory points, and defines abstract methods for player behavior.</body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk7p0Ai4EfG9CvxSKhfZJA" name="playerID" visibility="protected" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk7p0Qi4EfG9CvxSKhfZJA">
+                  <body>Unique identifier for this player</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk7p0gi4EfG9CvxSKhfZJA" name="victoryPoints" visibility="protected" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk7p0wi4EfG9CvxSKhfZJA">
+                  <body>Current victory points for this player</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_yk7p1Ai4EfG9CvxSKhfZJA" name="resources" visibility="protected" type="_ykZeWAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk7p1Qi4EfG9CvxSKhfZJA">
+                  <body>Resources owned by this player (map of resource type to quantity)</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk8Q4wi4EfG9CvxSKhfZJA" name="Player" specification="_yk7p1gi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.playerID = playerID;
+this.victoryPoints = 0;
+this.resources = new HashMap&lt;>();
+// Initialize all resource types to 0
+for (ResourceType type : ResourceType.values()) {
+    resources.put(type, 0);
+}</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk8Q5wi4EfG9CvxSKhfZJA" name="getPlayerID" specification="_yk8Q5Ai4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return playerID;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk8Q6wi4EfG9CvxSKhfZJA" name="getVictoryPoints" specification="_yk8Q6Ai4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return victoryPoints;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk8Q7wi4EfG9CvxSKhfZJA" name="addVictoryPoints" specification="_yk8Q7Ai4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.victoryPoints += points;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk839Qi4EfG9CvxSKhfZJA" name="addResource" specification="_yk838Qi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>resources.put(type, resources.get(type) + amount);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk83-gi4EfG9CvxSKhfZJA" name="deductResource" specification="_yk839gi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>int current = resources.get(type);
+resources.put(type, Math.max(0, current - amount));</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk83_wi4EfG9CvxSKhfZJA" name="getResourceCount" specification="_yk83-wi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return resources.get(type);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk9fAAi4EfG9CvxSKhfZJA" name="getTotalResourceCards" specification="_yk84AAi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>return resources.values().stream().mapToInt(Integer::intValue).sum();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yk9fBQi4EfG9CvxSKhfZJA" name="hasResources" specification="_yk9fAQi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>for (Map.Entry&lt;ResourceType, Integer> entry : cost.entrySet()) {
+    if (resources.get(entry.getKey()) &lt; entry.getValue()) {
+        return false;
+    }
+}
+return true;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk7p1gi4EfG9CvxSKhfZJA" name="Player" visibility="public" method="_yk8Q4wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk8Q4Qi4EfG9CvxSKhfZJA">
+                  <body>Constructor for Player @param playerID Unique player identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk8Q4gi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk8Q5Ai4EfG9CvxSKhfZJA" name="getPlayerID" visibility="public" method="_yk8Q5wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk8Q5Qi4EfG9CvxSKhfZJA">
+                  <body>Get the player's ID @return The player's unique identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk8Q5gi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk8Q6Ai4EfG9CvxSKhfZJA" name="getVictoryPoints" visibility="public" method="_yk8Q6wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk8Q6Qi4EfG9CvxSKhfZJA">
+                  <body>Get the player's current victory points @return Current victory points</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk8Q6gi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk8Q7Ai4EfG9CvxSKhfZJA" name="addVictoryPoints" visibility="public" method="_yk8Q7wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk8Q7Qi4EfG9CvxSKhfZJA">
+                  <body>Add victory points to this player @param points Number of points to add</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk8Q7gi4EfG9CvxSKhfZJA" name="points" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk838Qi4EfG9CvxSKhfZJA" name="addResource" visibility="public" method="_yk839Qi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk838gi4EfG9CvxSKhfZJA">
+                  <body>Add resources to this player's inventory @param type Type of resource to add @param amount Amount to add</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk838wi4EfG9CvxSKhfZJA" name="type" type="_ymkokAi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk839Ai4EfG9CvxSKhfZJA" name="amount" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk839gi4EfG9CvxSKhfZJA" name="deductResource" visibility="public" method="_yk83-gi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk839wi4EfG9CvxSKhfZJA">
+                  <body>Deduct resources from this player's inventory @param type Type of resource to deduct @param amount Amount to deduct</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk83-Ai4EfG9CvxSKhfZJA" name="type" type="_ymkokAi4EfG9CvxSKhfZJA"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk83-Qi4EfG9CvxSKhfZJA" name="amount" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk83-wi4EfG9CvxSKhfZJA" name="getResourceCount" visibility="public" method="_yk83_wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk83_Ai4EfG9CvxSKhfZJA">
+                  <body>Get the quantity of a specific resource @param type Resource type to query @return Quantity of that resource</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk83_Qi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk83_gi4EfG9CvxSKhfZJA" name="type" type="_ymkokAi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk84AAi4EfG9CvxSKhfZJA" name="getTotalResourceCards" visibility="public" method="_yk9fAAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk84AQi4EfG9CvxSKhfZJA">
+                  <body>Get the total number of resource cards held by this player @return Total resource card count</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk84Agi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk9fAQi4EfG9CvxSKhfZJA" name="hasResources" visibility="public" method="_yk9fBQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk9fAgi4EfG9CvxSKhfZJA">
+                  <body>Check if player has sufficient resources for a given cost @param cost Map of resource types to required quantities @return true if player has all required resources, false otherwise</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk9fAwi4EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk9fBAi4EfG9CvxSKhfZJA" name="cost" type="_ykZeWAi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk9fBgi4EfG9CvxSKhfZJA" name="takeTurn" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk9fBwi4EfG9CvxSKhfZJA">
+                  <body>Abstract method for player to take their turn @param controller Game controller interface for making moves</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_yk9fCAi4EfG9CvxSKhfZJA" name="controller" type="_ykm5sgi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_yk9fCQi4EfG9CvxSKhfZJA" name="handleOverSevenCards" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_yk9fCgi4EfG9CvxSKhfZJA">
+                  <body>Abstract method for handling situation when player has more than 7 cards</body>
+                </ownedComment>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykwDoAi4EfG9CvxSKhfZJA" name="ConfigParser" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ykwDoQi4EfG9CvxSKhfZJA">
+                <body>Parser for reading configuration files for the Catan simulator</body>
+              </ownedComment>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykwqsQi4EfG9CvxSKhfZJA" name="readMaxTurns" specification="_ykwDogi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        line = line.trim();
+        // Skip empty lines and comments
+        if (line.isEmpty() || line.startsWith(&quot;#&quot;)) {
+            continue;
+        }
+        // Parse &quot;turns: &lt;int>&quot; format
+        if (line.startsWith(&quot;turns:&quot;)) {
+            String[] parts = line.split(&quot;:&quot;, 2);
+            if (parts.length == 2) {
+                try {
+                    int turns = Integer.parseInt(parts[1].trim());
+                    // Validate range [1-8192]
+                    if (turns &lt; 1 || turns > 8192) {
+                        throw new IllegalArgumentException(&quot;Turns value must be between 1 and 8192, got: &quot; + turns);
+                    }
+                    return turns;
+                } catch (NumberFormatException e) {
+                    throw new IllegalArgumentException(&quot;Invalid turns value: &quot; + parts[1].trim());
+                }
+            }
+        }
+    }
+    throw new IllegalArgumentException(&quot;Configuration file does not contain 'turns: &lt;int>'&quot;);
+}</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykwDogi4EfG9CvxSKhfZJA" name="readMaxTurns" visibility="public" isStatic="true" method="_ykwqsQi4EfG9CvxSKhfZJA" raisedException="_ykwDpwi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykwDowi4EfG9CvxSKhfZJA">
+                  <body>Read the maximum number of turns from a configuration file Expected format: &quot;turns: &lt;integer>&quot; @param filename Path to the configuration file @return The maximum number of turns (1-8192) @throws IOException If file cannot be read @throws IllegalArgumentException If format is invalid or value is out of range</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykwDpAi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykwDpQi4EfG9CvxSKhfZJA" name="filename" type="_ykBq5Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ykx40Ai4EfG9CvxSKhfZJA" name="Demonstrator" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ykx40Qi4EfG9CvxSKhfZJA">
+                <body>Demonstrator class - Main entry point for the Catan simulator Runs a sample simulation demonstrating the game mechanics</body>
+              </ownedComment>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ykyf4Ai4EfG9CvxSKhfZJA" name="main" specification="_ykx40gi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>System.out.println(&quot;===========================================&quot;);
+System.out.println(&quot;  Settlers of Catan Simulator&quot;);
+System.out.println(&quot;  SFWRENG 2AA4 - Assignment 1&quot;);
+System.out.println(&quot;===========================================\n&quot;);
+// Read configuration
+// Default value
+int maxTurns = 100;
+try {
+    maxTurns = ConfigParser.readMaxTurns(&quot;config.txt&quot;);
+    System.out.println(&quot;Configuration loaded successfully&quot;);
+} catch (Exception e) {
+    System.out.println(&quot;Could not read config.txt, using default max turns: &quot; + maxTurns);
+    System.out.println(&quot;Error: &quot; + e.getMessage());
+}
+System.out.println(&quot;\n--- Game Configuration ---&quot;);
+System.out.println(&quot;Max turns: &quot; + maxTurns);
+System.out.println(&quot;Players: 4 (RandomAgents)&quot;);
+System.out.println(&quot;Win condition: 10 Victory Points&quot;);
+System.out.println(&quot;Board: Standard Catan (19 tiles, 54 nodes, 72 edges)&quot;);
+System.out.println(&quot;\n--- Game Rules (Implemented) ---&quot;);
+System.out.println(&quot;✓ Settlement building (1 LUMBER, 1 BRICK, 1 GRAIN, 1 WOOL)&quot;);
+System.out.println(&quot;✓ Road building (1 LUMBER, 1 BRICK)&quot;);
+System.out.println(&quot;✓ City upgrades (3 ORE, 2 GRAIN)&quot;);
+System.out.println(&quot;✓ Resource distribution on dice roll&quot;);
+System.out.println(&quot;✓ Distance-2 rule for settlements&quot;);
+System.out.println(&quot;✓ Road connectivity validation&quot;);
+System.out.println(&quot;✓ Victory point tracking&quot;);
+System.out.println(&quot;\n--- Game Rules (Excluded per R1.3) ---&quot;);
+System.out.println(&quot;✗ Harbour tiles&quot;);
+System.out.println(&quot;✗ Trading (domestic and maritime)&quot;);
+System.out.println(&quot;✗ Development cards&quot;);
+System.out.println(&quot;✗ Robber movement (roll 7 = no resources)&quot;);
+System.out.println(&quot;\n===========================================&quot;);
+System.out.println(&quot;Starting simulation...&quot;);
+System.out.println(&quot;===========================================\n&quot;);
+// Create and run simulator
+Simulator sim = new Simulator(maxTurns);
+sim.runSimulation();
+System.out.println(&quot;\n===========================================&quot;);
+System.out.println(&quot;Simulation complete!&quot;);
+System.out.println(&quot;===========================================&quot;);</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ykx40gi4EfG9CvxSKhfZJA" name="main" visibility="public" isStatic="true" method="_ykyf4Ai4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ykx40wi4EfG9CvxSKhfZJA">
+                  <body>Main entry point @param args Command line arguments (unused)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ykx41Ai4EfG9CvxSKhfZJA" name="args" type="_ykBq5Qi4EfG9CvxSKhfZJA">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ykx41Qi4EfG9CvxSKhfZJA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ykx41gi4EfG9CvxSKhfZJA" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_ynw7YAi4EfG9CvxSKhfZJA" name="TileType" visibility="public">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ynxidgi4EfG9CvxSKhfZJA" name="getResourceType" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ynxidwi4EfG9CvxSKhfZJA">
+                  <body>Get the resource type produced by this tile type @return ResourceType, or null for DESERT</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ynxieAi4EfG9CvxSKhfZJA" type="_ymkokAi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxicAi4EfG9CvxSKhfZJA" name="WOOD"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxicQi4EfG9CvxSKhfZJA" name="BRICK"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxicgi4EfG9CvxSKhfZJA" name="WHEAT"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxicwi4EfG9CvxSKhfZJA" name="SHEEP"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxidAi4EfG9CvxSKhfZJA" name="ORE"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ynxidQi4EfG9CvxSKhfZJA" name="DESERT"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_ymkokAi4EfG9CvxSKhfZJA" name="ResourceType" visibility="public">
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ymlPoAi4EfG9CvxSKhfZJA" name="LUMBER"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ymlPoQi4EfG9CvxSKhfZJA" name="BRICK"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ymlPogi4EfG9CvxSKhfZJA" name="GRAIN"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ymlPowi4EfG9CvxSKhfZJA" name="WOOL"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ymlPpAi4EfG9CvxSKhfZJA" name="ORE"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_yk_UMAi4EfG9CvxSKhfZJA" name="RandomAgent" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_yk_UMQi4EfG9CvxSKhfZJA">
+                <body>Random agent that makes random valid moves each turn</body>
+              </ownedComment>
+              <generalization xmi:type="uml:Generalization" xmi:id="_yk_UMgi4EfG9CvxSKhfZJA" general="_yku1gwi4EfG9CvxSKhfZJA"/>
+              <generalization xmi:type="uml:Generalization" xmi:id="_wiB08AkbEfGiIetn17CwfQ" general="_yku1gwi4EfG9CvxSKhfZJA"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ylAiUQi4EfG9CvxSKhfZJA" name="random" visibility="private" type="_yk_UMwi4EfG9CvxSKhfZJA" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ylBJYgi4EfG9CvxSKhfZJA" name="RandomAgent" specification="_ylAiUgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>super(playerID);
+this.random = new Random();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ylBJZgi4EfG9CvxSKhfZJA" name="takeTurn" specification="_ylBJYwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Try to build something random if possible
+List&lt;String> possibleActions = new ArrayList&lt;>();
+// Check if can build city (upgrade settlement)
+if (controller instanceof CatanEngine) {
+    CatanEngine engine = (CatanEngine) controller;
+    // Check nodes for player's settlements that could be upgraded
+    for (Node node : engine.getBoard().getAllNodes()) {
+        if (node.getOccupant() != null &amp;&amp; node.getOccupant().getPlayerID() == this.playerID &amp;&amp; node.getType() == BuildingType.SETTLEMENT) {
+            // Check if player has resources for city
+            Map&lt;ResourceType, Integer> cityCost = new HashMap&lt;>();
+            cityCost.put(ResourceType.ORE, 3);
+            cityCost.put(ResourceType.GRAIN, 2);
+            if (hasResources(cityCost)) {
+                possibleActions.add(&quot;CITY:&quot; + node.getNodeID());
+            }
+        }
+    }
+}
+// Check if can build settlement
+int[] validSettlements = controller.getValidSettlementLocations(playerID);
+for (int nodeID : validSettlements) {
+    Map&lt;ResourceType, Integer> settlementCost = new HashMap&lt;>();
+    settlementCost.put(ResourceType.LUMBER, 1);
+    settlementCost.put(ResourceType.BRICK, 1);
+    settlementCost.put(ResourceType.GRAIN, 1);
+    settlementCost.put(ResourceType.WOOL, 1);
+    if (hasResources(settlementCost)) {
+        possibleActions.add(&quot;SETTLEMENT:&quot; + nodeID);
+    }
+}
+// Check if can build road
+int[] validRoads = controller.getValidRoadLocations(playerID);
+for (int edgeID : validRoads) {
+    Map&lt;ResourceType, Integer> roadCost = new HashMap&lt;>();
+    roadCost.put(ResourceType.LUMBER, 1);
+    roadCost.put(ResourceType.BRICK, 1);
+    if (hasResources(roadCost)) {
+        possibleActions.add(&quot;ROAD:&quot; + edgeID);
+    }
+}
+// If no actions possible, end turn
+if (possibleActions.isEmpty()) {
+    return;
+}
+// Pick random action
+String action = possibleActions.get(random.nextInt(possibleActions.size()));
+// Execute action
+String[] parts = action.split(&quot;:&quot;);
+String type = parts[0];
+int locationID = Integer.parseInt(parts[1]);
+boolean success = false;
+switch(type) {
+    case &quot;SETTLEMENT&quot;:
+        success = controller.requestBuildSettlement(playerID, locationID);
+        if (success) {
+            System.out.println(&quot;[0] / [&quot; + playerID + &quot;]: Built settlement at node &quot; + locationID);
+        }
+        break;
+    case &quot;ROAD&quot;:
+        success = controller.requestBuildRoad(playerID, locationID);
+        if (success) {
+            System.out.println(&quot;[0] / [&quot; + playerID + &quot;]: Built road on edge &quot; + locationID);
+        }
+        break;
+    case &quot;CITY&quot;:
+        if (controller instanceof CatanEngine) {
+            success = ((CatanEngine) controller).requestBuildCity(playerID, locationID);
+            if (success) {
+                System.out.println(&quot;[0] / [&quot; + playerID + &quot;]: Upgraded to city at node &quot; + locationID);
+            }
+        }
+        break;
+}</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ylBJaQi4EfG9CvxSKhfZJA" name="handleOverSevenCards" specification="_ylBJZwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// While player has >7 cards, attempt to build something
+int attempts = 0;
+while (getTotalResourceCards() > 7 &amp;&amp; attempts &lt; 10) {
+    attempts++;
+    // Try to build something cheap (road first, then settlement, then city)
+    Map&lt;ResourceType, Integer> roadCost = new HashMap&lt;>();
+    roadCost.put(ResourceType.LUMBER, 1);
+    roadCost.put(ResourceType.BRICK, 1);
+    if (hasResources(roadCost)) {
+        // For now, just break as we can't build without controller
+        break;
+    }
+    Map&lt;ResourceType, Integer> settlementCost = new HashMap&lt;>();
+    settlementCost.put(ResourceType.LUMBER, 1);
+    settlementCost.put(ResourceType.BRICK, 1);
+    settlementCost.put(ResourceType.GRAIN, 1);
+    settlementCost.put(ResourceType.WOOL, 1);
+    if (hasResources(settlementCost)) {
+        break;
+    }
+    // Can't build anything, stop trying
+    break;
+}</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ylAiUgi4EfG9CvxSKhfZJA" name="RandomAgent" visibility="public" method="_ylBJYgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ylBJYAi4EfG9CvxSKhfZJA">
+                  <body>Constructor for RandomAgent @param playerID Unique player identifier</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ylBJYQi4EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ylBJYwi4EfG9CvxSKhfZJA" name="takeTurn" visibility="public" method="_ylBJZgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ylBJZAi4EfG9CvxSKhfZJA">
+                  <body>Take a turn by making random valid moves @param controller Game controller interface</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ylBJZQi4EfG9CvxSKhfZJA" name="controller" type="_ykm5sgi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ylBJZwi4EfG9CvxSKhfZJA" name="handleOverSevenCards" visibility="public" method="_ylBJaQi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ylBJaAi4EfG9CvxSKhfZJA">
+                  <body>Handle having more than 7 cards by attempting to build</body>
+                </ownedComment>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_yk_UMwi4EfG9CvxSKhfZJA" name="Random"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ymnE0Ai4EfG9CvxSKhfZJA" name="Simulator" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ymnE0Qi4EfG9CvxSKhfZJA">
+                <body>Simulator orchestrates the game flow, managing rounds and player turns</body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ymnE0gi4EfG9CvxSKhfZJA" name="engine" visibility="private" type="_ykm5sAi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymnE0wi4EfG9CvxSKhfZJA">
+                  <body>The game engine</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ymnE1Ai4EfG9CvxSKhfZJA" name="players" visibility="private" type="_yku1gwi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymnE1Qi4EfG9CvxSKhfZJA">
+                  <body>List of players (3-4 players)</body>
+                </ownedComment>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ymnE1gi4EfG9CvxSKhfZJA"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ymnE1wi4EfG9CvxSKhfZJA" value="*"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ymnE2Ai4EfG9CvxSKhfZJA" name="currRound" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymnE2Qi4EfG9CvxSKhfZJA">
+                  <body>Current round number</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ymnE2gi4EfG9CvxSKhfZJA" name="maxRounds" visibility="private" type="_ykBq4Qi4EfG9CvxSKhfZJA" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymnE2wi4EfG9CvxSKhfZJA">
+                  <body>Maximum number of rounds to simulate</body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymoS8Qi4EfG9CvxSKhfZJA" name="Simulator" specification="_ymnE3Ai4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Create board with topology
+IBoardGraph topology = new CatanBoardGraph();
+Board board = new Board(topology);
+// Create dice
+IRandomDice dice = new StandardDice();
+// Create engine
+this.engine = new CatanEngine(board, dice);
+// Create 4 random agents
+this.players = new ArrayList&lt;>();
+for (int i = 0; i &lt; 4; i++) {
+    players.add(new RandomAgent(i));
+}
+engine.setPlayers(players);
+this.maxRounds = maxRounds;
+this.currRound = 0;</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymoS9Ai4EfG9CvxSKhfZJA" name="initialSetup" specification="_ymoS8gi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// This is a simplified initial setup
+for (Player player : players) {
+    // Give starting resources (2 of each for initial builds)
+    player.addResource(ResourceType.LUMBER, 4);
+    player.addResource(ResourceType.BRICK, 4);
+    player.addResource(ResourceType.GRAIN, 2);
+    player.addResource(ResourceType.WOOL, 2);
+    player.addResource(ResourceType.ORE, 2);
+}
+System.out.println(&quot;Initial setup: Each player receives starting resources&quot;);</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymoS9wi4EfG9CvxSKhfZJA" name="runSimulation" specification="_ymoS9Qi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Initial setup
+initialSetup();
+// Main game loop
+while (currRound &lt; maxRounds) {
+    currRound++;
+    // Each player takes a turn
+    for (Player player : players) {
+        // Roll dice
+        int roll = engine.rollDice();
+        System.out.println(&quot;[&quot; + currRound + &quot;] / [&quot; + player.getPlayerID() + &quot;]: Rolled &quot; + roll);
+        // Handle robber on 7
+        if (roll == 7) {
+            System.out.println(&quot;[&quot; + currRound + &quot;] / [&quot; + player.getPlayerID() + &quot;]: Rolled 7, no resources produced&quot;);
+            // Each player with >7 cards must handle it
+            for (Player p : players) {
+                if (p.getTotalResourceCards() > 7) {
+                    System.out.println(&quot;[&quot; + currRound + &quot;] / [&quot; + p.getPlayerID() + &quot;]: Has &quot; + p.getTotalResourceCards() + &quot; cards, attempting to build...&quot;);
+                    p.handleOverSevenCards();
+                }
+            }
+        } else {
+            // Distribute resources
+            engine.distributeResources(roll, players);
+            // Log resource collection
+            int totalCollected = 0;
+            for (Player p : players) {
+                // Count resources this player collected (simplified)
+                if (p.getTotalResourceCards() > 0) {
+                    totalCollected++;
+                }
+            }
+        }
+        // Player takes turn (attempts to build)
+        player.takeTurn(engine);
+        // Check for victory
+        if (player.getVictoryPoints() >= 10) {
+            System.out.println(&quot;[&quot; + currRound + &quot;] / [&quot; + player.getPlayerID() + &quot;]: Reached 10 victory points! Game over.&quot;);
+            printFinalScores();
+            // Terminate (R1.5)
+            return;
+        }
+    }
+    // End of round: print victory points (R1.7)
+    printRoundScores();
+}
+// Max rounds reached
+System.out.println(&quot;\nMaximum rounds reached. Game over.&quot;);
+printFinalScores();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymoS-gi4EfG9CvxSKhfZJA" name="printRoundScores" specification="_ymoS-Ai4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>StringBuilder sb = new StringBuilder(&quot;End of round &quot; + currRound + &quot;: &quot;);
+for (int i = 0; i &lt; players.size(); i++) {
+    sb.append(&quot;Player &quot;).append(i).append(&quot;: &quot;).append(players.get(i).getVictoryPoints()).append(&quot; VP&quot;);
+    if (i &lt; players.size() - 1) {
+        sb.append(&quot;, &quot;);
+    }
+}
+System.out.println(sb.toString());</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymo6AAi4EfG9CvxSKhfZJA" name="printFinalScores" specification="_ymoS-wi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>System.out.println(&quot;\n=== Final Scores ===&quot;);
+for (Player player : players) {
+    System.out.println(&quot;Player &quot; + player.getPlayerID() + &quot;: &quot; + player.getVictoryPoints() + &quot; victory points&quot;);
+}</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymnE3Ai4EfG9CvxSKhfZJA" name="Simulator" visibility="public" method="_ymoS8Qi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymnr4Qi4EfG9CvxSKhfZJA">
+                  <body>Constructor for Simulator @param maxRounds Maximum number of rounds to run (1-8192)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ymoS8Ai4EfG9CvxSKhfZJA" name="maxRounds" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymoS8gi4EfG9CvxSKhfZJA" name="initialSetup" visibility="private" method="_ymoS9Ai4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymoS8wi4EfG9CvxSKhfZJA">
+                  <body>Initial setup phase - give each player starting resources and positions</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymoS9Qi4EfG9CvxSKhfZJA" name="runSimulation" visibility="public" method="_ymoS9wi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymoS9gi4EfG9CvxSKhfZJA">
+                  <body>Run the complete simulation</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymoS-Ai4EfG9CvxSKhfZJA" name="printRoundScores" visibility="private" method="_ymoS-gi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymoS-Qi4EfG9CvxSKhfZJA">
+                  <body>Print victory points at end of each round</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymoS-wi4EfG9CvxSKhfZJA" name="printFinalScores" visibility="private" method="_ymo6AAi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymoS_Ai4EfG9CvxSKhfZJA">
+                  <body>Print final scores at game end</body>
+                </ownedComment>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ymo6AQi4EfG9CvxSKhfZJA" name="StandardDice" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_ymo6Agi4EfG9CvxSKhfZJA">
+                <body>Standard implementation of IRandomDice that simulates rolling two six-sided dice. Returns values between 2 and 12 (inclusive).</body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ymphEQi4EfG9CvxSKhfZJA" name="random" visibility="private" type="_ymo6BAi4EfG9CvxSKhfZJA" isUnique="false"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ymo6Awi4EfG9CvxSKhfZJA" name="StandardDice implements IRandomDice" client="_ymo6AQi4EfG9CvxSKhfZJA" supplier="_ykm5tgi4EfG9CvxSKhfZJA" contract="_ykm5tgi4EfG9CvxSKhfZJA"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymqIIgi4EfG9CvxSKhfZJA" name="StandardDice" specification="_ymphEgi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>this.random = new Random();</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ymqIJgi4EfG9CvxSKhfZJA" name="roll" specification="_ymqIIwi4EfG9CvxSKhfZJA">
+                <language>JAVA</language>
+                <body>// Roll two six-sided dice
+// 1-6
+int die1 = random.nextInt(6) + 1;
+// 1-6
+int die2 = random.nextInt(6) + 1;
+// 2-12
+return die1 + die2;</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymphEgi4EfG9CvxSKhfZJA" name="StandardDice" visibility="public" method="_ymqIIgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymqIIQi4EfG9CvxSKhfZJA">
+                  <body>Constructor for StandardDice</body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ymqIIwi4EfG9CvxSKhfZJA" name="roll" visibility="public" method="_ymqIJgi4EfG9CvxSKhfZJA">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_ymqIJAi4EfG9CvxSKhfZJA">
+                  <body>Rolls two six-sided dice and returns the sum @return The sum of two dice rolls (2-12)</body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ymqIJQi4EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_4VZjEAj5EfG9CvxSKhfZJA" name="services">
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VebkAj5EfG9CvxSKhfZJA" name="BuildingService" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_4VfCoAj5EfG9CvxSKhfZJA">
+                  <body>Coordinates building placement operations Implements Single Responsibility Principle - handles only building placement</body>
+                </ownedComment>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4Vj7IAj5EfG9CvxSKhfZJA" name="board" visibility="private" type="_4VfpsAj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4VkiMQj5EfG9CvxSKhfZJA" name="settlementValidator" visibility="private" type="_4VkiMAj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4VkiMwj5EfG9CvxSKhfZJA" name="roadValidator" visibility="private" type="_4VkiMgj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VlwUwj5EfG9CvxSKhfZJA" name="BuildingService" specification="_4VkiNAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>this.board = board;
+this.settlementValidator = settlementValidator;
+this.roadValidator = roadValidator;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vm-dwj5EfG9CvxSKhfZJA" name="buildSettlement" specification="_4Vm-cQj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>// Validate location
+if (!settlementValidator.isValid(playerID, nodeID, false)) {
+    return false;
+}
+// Check resources
+Map&lt;ResourceType, Integer> cost = BuildingCost.SETTLEMENT.getCost();
+if (!player.hasResources(cost)) {
+    return false;
+}
+// Build settlement
+Node node = board.getNode(nodeID);
+node.buildSettlement(player);
+// Deduct resources
+deductResources(player, cost);
+// Award victory points
+player.addVictoryPoints(BuildingCost.SETTLEMENT.getVictoryPoints());
+return true;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vnlhgj5EfG9CvxSKhfZJA" name="buildRoad" specification="_4VnlgAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>if (!roadValidator.isValid(playerID, edgeID)) {
+    return false;
+}
+Map&lt;ResourceType, Integer> cost = BuildingCost.ROAD.getCost();
+if (!player.hasResources(cost)) {
+    return false;
+}
+Edge edge = board.getEdge(edgeID);
+edge.buildRoad(player);
+deductResources(player, cost);
+return true;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VoMlAj5EfG9CvxSKhfZJA" name="buildCity" specification="_4Vnlhwj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>Node node = board.getNode(nodeID);
+if (node == null)
+    return false;
+// Must have settlement at this location
+if (!node.hasSettlementBy(playerID)) {
+    return false;
+}
+Map&lt;ResourceType, Integer> cost = BuildingCost.CITY.getCost();
+if (!player.hasResources(cost)) {
+    return false;
+}
+node.upgradeToCity(player);
+deductResources(player, cost);
+// +1 VP for upgrade (total 2 for city)
+player.addVictoryPoints(1);
+return true;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VozoAj5EfG9CvxSKhfZJA" name="deductResources" specification="_4VoMlQj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>for (Map.Entry&lt;ResourceType, Integer> entry : cost.entrySet()) {
+    player.deductResource(entry.getKey(), entry.getValue());
+}</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VkiNAj5EfG9CvxSKhfZJA" name="BuildingService" visibility="public" method="_4VlwUwj5EfG9CvxSKhfZJA">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VlwUAj5EfG9CvxSKhfZJA" name="board" type="_4VfpsAj5EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VlwUQj5EfG9CvxSKhfZJA" name="settlementValidator" type="_4VkiMAj5EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VlwUgj5EfG9CvxSKhfZJA" name="roadValidator" type="_4VkiMgj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4Vm-cQj5EfG9CvxSKhfZJA" name="buildSettlement" visibility="public" method="_4Vm-dwj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4Vm-cgj5EfG9CvxSKhfZJA">
+                    <body>Attempt to build a settlement @param playerID The player ID @param nodeID The node location @param player The player object @return true if successful</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vm-cwj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vm-dAj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vm-dQj5EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vm-dgj5EfG9CvxSKhfZJA" name="player" type="_4VmXYAj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VnlgAj5EfG9CvxSKhfZJA" name="buildRoad" visibility="public" method="_4Vnlhgj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VnlgQj5EfG9CvxSKhfZJA">
+                    <body>Attempt to build a road @param playerID The player ID @param edgeID The edge location @param player The player object @return true if successful</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vnlggj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vnlgwj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VnlhAj5EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VnlhQj5EfG9CvxSKhfZJA" name="player" type="_4VmXYAj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4Vnlhwj5EfG9CvxSKhfZJA" name="buildCity" visibility="public" method="_4VoMlAj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VnliAj5EfG9CvxSKhfZJA">
+                    <body>Attempt to build a city (upgrade settlement) @param playerID The player ID @param nodeID The node location @param player The player object @return true if successful</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMkAj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMkQj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMkgj5EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMkwj5EfG9CvxSKhfZJA" name="player" type="_4VmXYAj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VoMlQj5EfG9CvxSKhfZJA" name="deductResources" visibility="private" method="_4VozoAj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VoMlgj5EfG9CvxSKhfZJA">
+                    <body>Deduct resources from a player @param player The player @param cost Map of resources to deduct</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMlwj5EfG9CvxSKhfZJA" name="player" type="_4VmXYAj5EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VoMmAj5EfG9CvxSKhfZJA" name="cost" type="_ykZeWAi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VfpsAj5EfG9CvxSKhfZJA" name="Board"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VkiMAj5EfG9CvxSKhfZJA" name="SettlementValidator"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VkiMgj5EfG9CvxSKhfZJA" name="RoadValidator"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VmXYAj5EfG9CvxSKhfZJA" name="Player"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VqBwAj5EfG9CvxSKhfZJA" name="ResourceDistributor" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_4VqBwQj5EfG9CvxSKhfZJA">
+                  <body>Handles resource distribution based on dice rolls Implements Single Responsibility Principle - handles only resource distribution</body>
+                </ownedComment>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4VqBwgj5EfG9CvxSKhfZJA" name="board" visibility="private" type="_4VfpsAj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4Vqo0Qj5EfG9CvxSKhfZJA" name="topology" visibility="private" type="_4VqBwwj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VrP4wj5EfG9CvxSKhfZJA" name="ResourceDistributor" specification="_4Vqo0gj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>this.board = board;
+this.topology = topology;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vr28wj5EfG9CvxSKhfZJA" name="distribute" specification="_4VrP5Aj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>// Don't distribute on 7 (robber)
+if (diceRoll == 7) {
+    return;
+}
+// For each tile with matching number token
+for (HexTile tile : board.getAllTiles()) {
+    if (tile.getNumberToken() == diceRoll &amp;&amp; tile.getType() != TileType.DESERT) {
+        ResourceType resourceType = tile.getType().getResourceType();
+        if (resourceType == null)
+            continue;
+        // Get nodes adjacent to this tile
+        int[] tileNodes = topology.getTileNodes(tile.getTileID());
+        // For each node, check if there's a building
+        for (int nodeID : tileNodes) {
+            Node node = board.getNode(nodeID);
+            if (node != null &amp;&amp; node.getOccupant() != null) {
+                Player player = node.getOccupant();
+                int amount = (node.getType() == BuildingType.CITY) ? 2 : 1;
+                player.addResource(resourceType, amount);
+            }
+        }
+    }
+}</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4Vqo0gj5EfG9CvxSKhfZJA" name="ResourceDistributor" visibility="public" method="_4VrP4wj5EfG9CvxSKhfZJA">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VrP4Qj5EfG9CvxSKhfZJA" name="board" type="_4VfpsAj5EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VrP4gj5EfG9CvxSKhfZJA" name="topology" type="_4VqBwwj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VrP5Aj5EfG9CvxSKhfZJA" name="distribute" visibility="public" method="_4Vr28wj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VrP5Qj5EfG9CvxSKhfZJA">
+                    <body>Distribute resources based on dice roll to all players @param diceRoll The number rolled (2-12) @param players List of all players</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VrP5gj5EfG9CvxSKhfZJA" name="diceRoll" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vr28Aj5EfG9CvxSKhfZJA" name="players" type="_4VmXYAj5EfG9CvxSKhfZJA">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Vr28Qj5EfG9CvxSKhfZJA"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4Vr28gj5EfG9CvxSKhfZJA" value="*"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_4VqBwwj5EfG9CvxSKhfZJA" name="IBoardGraph"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_4VtFEAj5EfG9CvxSKhfZJA" name="validators">
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VtsIAj5EfG9CvxSKhfZJA" name="RoadValidator" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_4VtsIQj5EfG9CvxSKhfZJA">
+                  <body>Validates road placement according to Catan rules Implements Single Responsibility Principle - handles only road validation</body>
+                </ownedComment>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4VtsJAj5EfG9CvxSKhfZJA" name="board" visibility="private" type="_4VtsIgj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4VuTMgj5EfG9CvxSKhfZJA" name="topology" visibility="private" type="_4VuTMAj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vu6Qwj5EfG9CvxSKhfZJA" name="RoadValidator" specification="_4VuTMwj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>this.board = board;
+this.topology = topology;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VvhUwj5EfG9CvxSKhfZJA" name="isValid" specification="_4Vu6RAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>Edge edge = board.getEdge(edgeID);
+if (edge == null)
+    return false;
+// Edge must be unoccupied
+if (edge.hasRoad()) {
+    return false;
+}
+// Must connect to existing road or settlement/city owned by player
+return connectsToPlayerStructure(playerID, edgeID);</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VvhWQj5EfG9CvxSKhfZJA" name="connectsToPlayerStructure" specification="_4VvhVAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>int[] endpointNodes = topology.getEdgeEndpoints(edgeID);
+if (endpointNodes.length &lt; 2)
+    return false;
+for (int nodeID : endpointNodes) {
+    Node node = board.getNode(nodeID);
+    if (node == null)
+        continue;
+    // Check if node has player's building
+    if (node.getOccupant() != null &amp;&amp; node.getOccupant().getPlayerID() == playerID &amp;&amp; node.getType() != BuildingType.NONE) {
+        return true;
+    }
+    // Check if node has player's adjacent road
+    int[] adjacentEdges = board.getTopology().getAdjacentEdges(nodeID);
+    for (int adjEdgeID : adjacentEdges) {
+        if (adjEdgeID == edgeID)
+            continue;
+        Edge adjEdge = board.getEdge(adjEdgeID);
+        if (adjEdge != null &amp;&amp; adjEdge.getOccupant() != null &amp;&amp; adjEdge.getOccupant().getPlayerID() == playerID) {
+            return true;
+        }
+    }
+}
+return false;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VwIYQj5EfG9CvxSKhfZJA" name="getValidLocations" specification="_4VvhWgj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>List&lt;Integer> validLocations = new ArrayList&lt;>();
+for (Edge edge : board.getAllEdges()) {
+    if (isValid(playerID, edge.getEdgeID())) {
+        validLocations.add(edge.getEdgeID());
+    }
+}
+return validLocations.stream().mapToInt( i -> i).toArray();</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VuTMwj5EfG9CvxSKhfZJA" name="RoadValidator" visibility="public" method="_4Vu6Qwj5EfG9CvxSKhfZJA">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vu6QQj5EfG9CvxSKhfZJA" name="board" type="_4VtsIgj5EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vu6Qgj5EfG9CvxSKhfZJA" name="topology" type="_4VuTMAj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4Vu6RAj5EfG9CvxSKhfZJA" name="isValid" visibility="public" method="_4VvhUwj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4Vu6RQj5EfG9CvxSKhfZJA">
+                    <body>Check if road can be built on this edge Rules: Edge empty, connects to player's road or building @param playerID The player attempting to build @param edgeID The edge location @return true if valid location</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhUAj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhUQj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhUgj5EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VvhVAj5EfG9CvxSKhfZJA" name="connectsToPlayerStructure" visibility="private" method="_4VvhWQj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VvhVQj5EfG9CvxSKhfZJA">
+                    <body>Check if this edge connects to any of the player's structures</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhVgj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhVwj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhWAj5EfG9CvxSKhfZJA" name="edgeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VvhWgj5EfG9CvxSKhfZJA" name="getValidLocations" visibility="public" method="_4VwIYQj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VvhWwj5EfG9CvxSKhfZJA">
+                    <body>Get all valid road locations for a player @param playerID The player ID @return Array of valid edge IDs</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VvhXAj5EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4VvhXQj5EfG9CvxSKhfZJA"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4VvhXgj5EfG9CvxSKhfZJA" value="*"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VwIYAj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VtsIgj5EfG9CvxSKhfZJA" name="Board"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_4VuTMAj5EfG9CvxSKhfZJA" name="IBoardGraph"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_4VwvcAj5EfG9CvxSKhfZJA" name="SettlementValidator" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_4VwvcQj5EfG9CvxSKhfZJA">
+                  <body>Validates settlement placement according to Catan rules Implements Single Responsibility Principle - handles only settlement validation</body>
+                </ownedComment>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4Vwvcgj5EfG9CvxSKhfZJA" name="board" visibility="private" type="_4VtsIgj5EfG9CvxSKhfZJA" isUnique="false"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4VxWgwj5EfG9CvxSKhfZJA" name="SettlementValidator" specification="_4VxWgAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>this.board = board;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vx9lAj5EfG9CvxSKhfZJA" name="isValid" specification="_4VxWhAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>Node node = board.getNode(nodeID);
+if (node == null)
+    return false;
+// Node must be unoccupied
+if (node.isOccupied()) {
+    return false;
+}
+// Must have adjacent road (skip for initial placement)
+if (!isInitialPlacement &amp;&amp; !hasAdjacentRoad(playerID, nodeID)) {
+    return false;
+}
+// Distance-2 rule: adjacent nodes must be empty
+int[] adjacentNodes = board.getTopology().getAdjacentNodes(nodeID);
+for (int adjNodeID : adjacentNodes) {
+    Node adjNode = board.getNode(adjNodeID);
+    if (adjNode != null &amp;&amp; adjNode.getType() != BuildingType.NONE) {
+        return false;
+    }
+}
+return true;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vx9mgj5EfG9CvxSKhfZJA" name="hasAdjacentRoad" specification="_4Vx9lQj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>int[] adjacentEdges = board.getTopology().getAdjacentEdges(nodeID);
+for (int edgeID : adjacentEdges) {
+    Edge edge = board.getEdge(edgeID);
+    if (edge != null &amp;&amp; edge.getOccupant() != null &amp;&amp; edge.getOccupant().getPlayerID() == playerID) {
+        return true;
+    }
+}
+return false;</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Vykpwj5EfG9CvxSKhfZJA" name="getValidLocations" specification="_4VykoAj5EfG9CvxSKhfZJA">
+                  <language>JAVA</language>
+                  <body>List&lt;Integer> validLocations = new ArrayList&lt;>();
+for (Node node : board.getAllNodes()) {
+    if (isValid(playerID, node.getNodeID(), isInitialPlacement)) {
+        validLocations.add(node.getNodeID());
+    }
+}
+return validLocations.stream().mapToInt( i -> i).toArray();</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VxWgAj5EfG9CvxSKhfZJA" name="SettlementValidator" visibility="public" method="_4VxWgwj5EfG9CvxSKhfZJA">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VxWggj5EfG9CvxSKhfZJA" name="board" type="_4VtsIgj5EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VxWhAj5EfG9CvxSKhfZJA" name="isValid" visibility="public" method="_4Vx9lAj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VxWhQj5EfG9CvxSKhfZJA">
+                    <body>Check if settlement can be built at this node Rules: Node empty, adjacent road owned by player, distance-2 from other buildings @param playerID The player attempting to build @param nodeID The node location @param isInitialPlacement Whether this is initial placement (skips road requirement) @return true if valid location</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9kAj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9kQj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9kgj5EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9kwj5EfG9CvxSKhfZJA" name="isInitialPlacement" type="_yktnbAi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4Vx9lQj5EfG9CvxSKhfZJA" name="hasAdjacentRoad" visibility="private" method="_4Vx9mgj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4Vx9lgj5EfG9CvxSKhfZJA">
+                    <body>Check if player has an adjacent road to this node</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9lwj5EfG9CvxSKhfZJA" type="_yktnbAi4EfG9CvxSKhfZJA" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9mAj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vx9mQj5EfG9CvxSKhfZJA" name="nodeID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_4VykoAj5EfG9CvxSKhfZJA" name="getValidLocations" visibility="public" method="_4Vykpwj5EfG9CvxSKhfZJA">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_4VykoQj5EfG9CvxSKhfZJA">
+                    <body>Get all valid settlement locations for a player @param playerID The player ID @param isInitialPlacement Whether this is initial placement @return Array of valid node IDs</body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vykogj5EfG9CvxSKhfZJA" type="_ykBq4Qi4EfG9CvxSKhfZJA" direction="return">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Vykowj5EfG9CvxSKhfZJA"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4VykpAj5EfG9CvxSKhfZJA" value="*"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VykpQj5EfG9CvxSKhfZJA" name="playerID" type="_ykBq4Qi4EfG9CvxSKhfZJA"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Vykpgj5EfG9CvxSKhfZJA" name="isInitialPlacement" type="_yktnbAi4EfG9CvxSKhfZJA"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_ktndoAkZEfGiIetn17CwfQ" client="_ykm5sAi4EfG9CvxSKhfZJA" supplier="_ykm5sgi4EfG9CvxSKhfZJA"/>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_nQBwAAkZEfGiIetn17CwfQ" client="_ymo6AQi4EfG9CvxSKhfZJA" supplier="_ykm5tgi4EfG9CvxSKhfZJA"/>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_lkvA8AkbEfGiIetn17CwfQ" client="_yke94Ai4EfG9CvxSKhfZJA" supplier="_ykTXtAi4EfG9CvxSKhfZJA"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ykBD0Ai4EfG9CvxSKhfZJA" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ykBq4Ai4EfG9CvxSKhfZJA" name="primitivetype">
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ykBq4Qi4EfG9CvxSKhfZJA" name="Integer"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yktnbAi4EfG9CvxSKhfZJA" name="Boolean"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ykBq4gi4EfG9CvxSKhfZJA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ykBq4wi4EfG9CvxSKhfZJA" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_ykBq5Ai4EfG9CvxSKhfZJA" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ykBq5Qi4EfG9CvxSKhfZJA" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ykZeVwi4EfG9CvxSKhfZJA" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ykZeWAi4EfG9CvxSKhfZJA" name="Map"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ymo6BAi4EfG9CvxSKhfZJA" name="Random"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ykwDpgi4EfG9CvxSKhfZJA" name="io">
+          <packagedElement xmi:type="uml:Interface" xmi:id="_ykwDpwi4EfG9CvxSKhfZJA" name="IOException"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WzQRAAkYEfGiIetn17CwfQ" memberEnd="_WzRfIgkYEfGiIetn17CwfQ _WzStQAkYEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WzRfIAkYEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WzRfIQkYEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_WzRfIgkYEfGiIetn17CwfQ" name="engine" type="_ykm5sAi4EfG9CvxSKhfZJA" aggregation="shared" association="_WzQRAAkYEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_WzStQAkYEfGiIetn17CwfQ" name="" type="_ymnE0Ai4EfG9CvxSKhfZJA" association="_WzQRAAkYEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JTJFgAkZEfGiIetn17CwfQ" memberEnd="_JTKTogkZEfGiIetn17CwfQ _JTKTowkZEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JTKToAkZEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JTKToQkZEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_JTKTogkZEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_JTJFgAkZEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_JTKTowkZEfGiIetn17CwfQ" name="buildingservice" type="_4VebkAj5EfG9CvxSKhfZJA" aggregation="composite" association="_JTJFgAkZEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_UbDOEAkZEfGiIetn17CwfQ" memberEnd="_UbD1IgkZEfGiIetn17CwfQ _UbEcMAkZEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UbD1IAkZEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UbD1IQkZEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_UbD1IgkZEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_UbDOEAkZEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_UbEcMAkZEfGiIetn17CwfQ" name="settlementvalidator" type="_4VwvcAj5EfG9CvxSKhfZJA" aggregation="composite" association="_UbDOEAkZEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_o4pToAkZEfGiIetn17CwfQ" memberEnd="_o4qhwgkZEfGiIetn17CwfQ _o4rI0AkZEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o4qhwAkZEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o4qhwQkZEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_o4qhwgkZEfGiIetn17CwfQ" name="dice" type="_ykm5tgi4EfG9CvxSKhfZJA" aggregation="shared" association="_o4pToAkZEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_o4rI0AkZEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_o4pToAkZEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_7dE4IAkZEfGiIetn17CwfQ" memberEnd="_7dGGQgkZEfGiIetn17CwfQ _7dGtUAkZEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7dGGQAkZEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7dGGQQkZEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_7dGGQgkZEfGiIetn17CwfQ" name="board" type="_ykRigAi4EfG9CvxSKhfZJA" aggregation="shared" association="_7dE4IAkZEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_7dGtUAkZEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_7dE4IAkZEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CMevYAkaEfGiIetn17CwfQ" memberEnd="_CMf9ggkaEfGiIetn17CwfQ _CMf9gwkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CMf9gAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CMf9gQkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CMf9ggkaEfGiIetn17CwfQ" name="roadvalidator" type="_4VtsIAj5EfG9CvxSKhfZJA" aggregation="composite" association="_CMevYAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CMf9gwkaEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_CMevYAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_F_QdcAkaEfGiIetn17CwfQ" memberEnd="_F_RrkQkaEfGiIetn17CwfQ _F_RrkgkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F_REgAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F_RrkAkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_F_RrkQkaEfGiIetn17CwfQ" name="resourcedistributor" type="_4VqBwAj5EfG9CvxSKhfZJA" aggregation="composite" association="_F_QdcAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_F_RrkgkaEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_F_QdcAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Qt048AkaEfGiIetn17CwfQ" memberEnd="_Qt2HEQkaEfGiIetn17CwfQ _Qt2HEgkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Qt1gAAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qt2HEAkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Qt2HEQkaEfGiIetn17CwfQ" name="" type="_4VebkAj5EfG9CvxSKhfZJA" association="_Qt048AkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Qt2HEgkaEfGiIetn17CwfQ" name="settlementvalidator" type="_4VwvcAj5EfG9CvxSKhfZJA" aggregation="shared" association="_Qt048AkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_VEG8sAkaEfGiIetn17CwfQ" memberEnd="_VEIK0gkaEfGiIetn17CwfQ _VEIx4AkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VEIK0AkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VEIK0QkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_VEIK0gkaEfGiIetn17CwfQ" name="" type="_4VebkAj5EfG9CvxSKhfZJA" association="_VEG8sAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_VEIx4AkaEfGiIetn17CwfQ" name="roadvalidator" type="_4VtsIAj5EfG9CvxSKhfZJA" aggregation="shared" association="_VEG8sAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_bL8doAkaEfGiIetn17CwfQ" memberEnd="_bL9rwQkaEfGiIetn17CwfQ _bL-S0AkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bL9EsAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bL9rwAkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_bL9rwQkaEfGiIetn17CwfQ" name="" type="_4VebkAj5EfG9CvxSKhfZJA" association="_bL8doAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_bL-S0AkaEfGiIetn17CwfQ" name="board" type="_ykRigAi4EfG9CvxSKhfZJA" aggregation="shared" association="_bL8doAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_emsGMAkaEfGiIetn17CwfQ" memberEnd="_emtUUgkaEfGiIetn17CwfQ _emt7YAkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_emtUUAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_emtUUQkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_emtUUgkaEfGiIetn17CwfQ" name="" type="_4VwvcAj5EfG9CvxSKhfZJA" association="_emsGMAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_emt7YAkaEfGiIetn17CwfQ" name="board" type="_ykRigAi4EfG9CvxSKhfZJA" aggregation="shared" association="_emsGMAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_keDiMAkaEfGiIetn17CwfQ" memberEnd="_keEwUgkaEfGiIetn17CwfQ _keFXYAkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_keEwUAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_keEwUQkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_keEwUgkaEfGiIetn17CwfQ" name="board" type="_ykRigAi4EfG9CvxSKhfZJA" aggregation="shared" association="_keDiMAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_keFXYAkaEfGiIetn17CwfQ" name="" type="_4VtsIAj5EfG9CvxSKhfZJA" association="_keDiMAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_sr6UcAkaEfGiIetn17CwfQ" memberEnd="_sr7ikAkaEfGiIetn17CwfQ _sr8JoAkaEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sr67gAkaEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sr67gQkaEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_sr7ikAkaEfGiIetn17CwfQ" name="board" type="_ykRigAi4EfG9CvxSKhfZJA" aggregation="shared" association="_sr6UcAkaEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_sr8JoAkaEfGiIetn17CwfQ" name="" type="_4VqBwAj5EfG9CvxSKhfZJA" association="_sr6UcAkaEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_DAg-8AkbEfGiIetn17CwfQ" memberEnd="_DAiNEQkbEfGiIetn17CwfQ _DAi0IAkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DAhmAAkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DAiNEAkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_DAiNEQkbEfGiIetn17CwfQ" name="player" type="_yku1gwi4EfG9CvxSKhfZJA" aggregation="shared" association="_DAg-8AkbEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hs844AkbEfGiIetn17CwfQ" name="LiteralInteger1" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hs9f8AkbEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="4"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_DAi0IAkbEfGiIetn17CwfQ" name="" type="_ymnE0Ai4EfG9CvxSKhfZJA" association="_DAg-8AkbEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LL1akAkbEfGiIetn17CwfQ" memberEnd="_LL3PwgkbEfGiIetn17CwfQ _LL320AkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LL3PwAkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LL3PwQkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_LL3PwgkbEfGiIetn17CwfQ" name="player" type="_yku1gwi4EfG9CvxSKhfZJA" aggregation="shared" association="_LL1akAkbEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NVX58AkbEfGiIetn17CwfQ" name="LiteralInteger1" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NVZIEAkbEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="4"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_LL320AkbEfGiIetn17CwfQ" name="" type="_ykm5sAi4EfG9CvxSKhfZJA" association="_LL1akAkbEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Xp42sAkbEfGiIetn17CwfQ" memberEnd="_Xp6E0gkbEfGiIetn17CwfQ _Xp6r4AkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xp6E0AkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xp6E0QkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Xp6E0gkbEfGiIetn17CwfQ" name="" type="_ykTXtAi4EfG9CvxSKhfZJA" aggregation="shared" association="_Xp42sAkbEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Xp6r4AkbEfGiIetn17CwfQ" name="topology" type="_4VqBwAj5EfG9CvxSKhfZJA" association="_Xp42sAkbEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fjvH0AkbEfGiIetn17CwfQ" memberEnd="_fjw9AAkbEfGiIetn17CwfQ _fjw9AQkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fjwV8AkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fjwV8QkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fjw9AAkbEfGiIetn17CwfQ" name="topology" type="_ykTXtAi4EfG9CvxSKhfZJA" aggregation="shared" association="_fjvH0AkbEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fjw9AQkbEfGiIetn17CwfQ" name="" type="_4VtsIAj5EfG9CvxSKhfZJA" association="_fjvH0AkbEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0XUEcAkbEfGiIetn17CwfQ" memberEnd="_0XVSkgkbEfGiIetn17CwfQ _0XV5ogkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0XVSkAkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0XVSkQkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_0XV5ogkbEfGiIetn17CwfQ" name="" type="_ykRigAi4EfG9CvxSKhfZJA" association="_0XUEcAkbEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_0XVSkgkbEfGiIetn17CwfQ" name="topology" type="_ykTXtAi4EfG9CvxSKhfZJA" aggregation="composite" association="_0XUEcAkbEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uPBYAkbEfGiIetn17CwfQ" name="LiteralInteger1" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uPocAkbEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8u9E0AkbEfGiIetn17CwfQ" memberEnd="_8u-S8gkbEfGiIetn17CwfQ _8u-6AAkbEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8u-S8AkbEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8u-S8QkbEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_8u-6AAkbEfGiIetn17CwfQ" name="" type="_ykRigAi4EfG9CvxSKhfZJA" association="_8u9E0AkbEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_8u-S8gkbEfGiIetn17CwfQ" name="edges" type="_ykXCFAi4EfG9CvxSKhfZJA" aggregation="composite" association="_8u9E0AkbEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__-m3sAkbEfGiIetn17CwfQ" name="LiteralInteger1" value="72"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__-m3sQkbEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="72"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CZAdkAkcEfGiIetn17CwfQ" memberEnd="_CZBrsgkcEfGiIetn17CwfQ _CZCSwgkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CZBrsAkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CZBrsQkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CZCSwgkcEfGiIetn17CwfQ" name="" type="_ykRigAi4EfG9CvxSKhfZJA" association="_CZAdkAkcEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CZBrsgkcEfGiIetn17CwfQ" name="nodes" type="_ykWbAwi4EfG9CvxSKhfZJA" aggregation="composite" association="_CZAdkAkcEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EpXWoAkcEfGiIetn17CwfQ" name="LiteralInteger1" value="54"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EpX9sAkcEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="54"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Gd7EgAkcEfGiIetn17CwfQ" memberEnd="_Gd8SogkcEfGiIetn17CwfQ _Gd85sgkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gd8SoAkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gd8SoQkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Gd85sgkcEfGiIetn17CwfQ" name="" type="_ykRigAi4EfG9CvxSKhfZJA" association="_Gd7EgAkcEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Gd8SogkcEfGiIetn17CwfQ" name="tiles" type="_ykXCGgi4EfG9CvxSKhfZJA" aggregation="composite" association="_Gd7EgAkcEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5GpEAkcEfGiIetn17CwfQ" name="LiteralInteger1" value="19"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5HQIAkcEfGiIetn17CwfQ" name="LiteralUnlimitedNatural1" value="19"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_NSHVIAkcEfGiIetn17CwfQ" memberEnd="_NSIjQgkcEfGiIetn17CwfQ _NSJKUgkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NSIjQAkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NSIjQQkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_NSJKUgkcEfGiIetn17CwfQ" name="" type="_ykXCGgi4EfG9CvxSKhfZJA" association="_NSHVIAkcEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_QRkI0AkcEfGiIetn17CwfQ" memberEnd="_QRlW8gkcEfGiIetn17CwfQ _QRl-AgkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QRlW8AkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QRlW8QkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_QRl-AgkcEfGiIetn17CwfQ" name="" type="_ykWbAwi4EfG9CvxSKhfZJA" association="_QRkI0AkcEfGiIetn17CwfQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WO1_kAkcEfGiIetn17CwfQ" memberEnd="_WO3NsgkcEfGiIetn17CwfQ _WO30wgkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WO3NsAkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WO3NsQkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_WO30wgkcEfGiIetn17CwfQ" name="" type="_ykWbAwi4EfG9CvxSKhfZJA" association="_WO1_kAkcEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_WO3NsgkcEfGiIetn17CwfQ" name="occupant" type="_yku1gwi4EfG9CvxSKhfZJA" aggregation="shared" association="_WO1_kAkcEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WO30wAkcEfGiIetn17CwfQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WO30wQkcEfGiIetn17CwfQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cecVYAkcEfGiIetn17CwfQ" memberEnd="_cedjggkcEfGiIetn17CwfQ _ceeKkQkcEfGiIetn17CwfQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cedjgAkcEfGiIetn17CwfQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cedjgQkcEfGiIetn17CwfQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ceeKkQkcEfGiIetn17CwfQ" name="" type="_ykXCFAi4EfG9CvxSKhfZJA" association="_cecVYAkcEfGiIetn17CwfQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_cedjggkcEfGiIetn17CwfQ" name="occupant" type="_yku1gwi4EfG9CvxSKhfZJA" aggregation="shared" association="_cecVYAkcEfGiIetn17CwfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cedjgwkcEfGiIetn17CwfQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ceeKkAkcEfGiIetn17CwfQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yjpQYAi4EfG9CvxSKhfZJA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yjrsoAi4EfG9CvxSKhfZJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yjzBYAi4EfG9CvxSKhfZJA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yjzocAi4EfG9CvxSKhfZJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yjzocQi4EfG9CvxSKhfZJA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yjzocgi4EfG9CvxSKhfZJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Codegen:External xmi:id="_h3UgMAi8EfG9CvxSKhfZJA" name="java.lang.String" base_Classifier="_ykBq5Qi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VHQAi8EfG9CvxSKhfZJA" name="Map" base_Classifier="_ykRiggi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ykVM4Ai4EfG9CvxSKhfZJA" base_BehavioralFeature="_ykTXtwi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VHQQi8EfG9CvxSKhfZJA" name="java.util.Map" base_Classifier="_ykZeWAi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ykbTgAi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ykascgi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ykj2YAi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ykioRgi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VHQgi8EfG9CvxSKhfZJA" name="List" base_Classifier="_ykm5uQi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VHQwi8EfG9CvxSKhfZJA" name="SettlementValidator" base_Classifier="_ykoH0gi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VHRAi8EfG9CvxSKhfZJA" name="RoadValidator" base_Classifier="_ykou4wi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VuUAi8EfG9CvxSKhfZJA" name="ResourceDistributor" base_Classifier="_ykp9AAi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VuUQi8EfG9CvxSKhfZJA" name="BuildingService" base_Classifier="_ykqkEwi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ykryMgi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ykryMQi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VuUgi8EfG9CvxSKhfZJA" name="java.io.IOException" base_Classifier="_ykwDpwi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ykzG8wi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ykzG8gi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_yk08Jgi4EfG9CvxSKhfZJA" base_BehavioralFeature="_yk08JQi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_yk5NkAi4EfG9CvxSKhfZJA" base_BehavioralFeature="_yk4mhwi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_yk8Q4Ai4EfG9CvxSKhfZJA" base_BehavioralFeature="_yk7p1gi4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VuUwi8EfG9CvxSKhfZJA" name="Random" base_Classifier="_yk_UMwi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ylAiUwi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ylAiUgi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ymnr4Ai4EfG9CvxSKhfZJA" base_BehavioralFeature="_ymnE3Ai4EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_h3VuVAi8EfG9CvxSKhfZJA" name="java.util.Random" base_Classifier="_ymo6BAi4EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_ymqIIAi4EfG9CvxSKhfZJA" base_BehavioralFeature="_ymphEgi4EfG9CvxSKhfZJA"/>
+  <Codegen:GeneratorHint xmi:id="_p_ObcAi8EfG9CvxSKhfZJA" base_Element="_lW3tEAi4EfG9CvxSKhfZJA" generatorID="Standard Java">
+    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/>
+  </Codegen:GeneratorHint>
+  <Codegen:External xmi:id="_4VitAAj5EfG9CvxSKhfZJA" name="Board" base_Classifier="_4VfpsAj5EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_4VlJQAj5EfG9CvxSKhfZJA" base_BehavioralFeature="_4VkiNAj5EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_4Vm-cAj5EfG9CvxSKhfZJA" name="Player" base_Classifier="_4VmXYAj5EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_4Vqo0Aj5EfG9CvxSKhfZJA" name="IBoardGraph" base_Classifier="_4VqBwwj5EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_4VrP4Aj5EfG9CvxSKhfZJA" base_BehavioralFeature="_4Vqo0gj5EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_4VtsIwj5EfG9CvxSKhfZJA" name="Board" base_Classifier="_4VtsIgj5EfG9CvxSKhfZJA"/>
+  <Codegen:External xmi:id="_4VuTMQj5EfG9CvxSKhfZJA" name="IBoardGraph" base_Classifier="_4VuTMAj5EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_4Vu6QAj5EfG9CvxSKhfZJA" base_BehavioralFeature="_4VuTMwj5EfG9CvxSKhfZJA"/>
+  <standard:Create xmi:id="_4VxWgQj5EfG9CvxSKhfZJA" base_BehavioralFeature="_4VxWgAj5EfG9CvxSKhfZJA"/>
+</xmi:XMI>
