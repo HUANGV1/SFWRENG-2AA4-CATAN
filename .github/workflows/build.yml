@@ -1,47 +1,52 @@
-name: Build and Analyze
+name: Build and SonarQube
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - viho-sonar-build-test
   pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
-  sonarqube:
+  build-and-sonar:
+    name: Build All Parts and SonarQube
     runs-on: ubuntu-latest
-
     steps:
+      # 1. Checkout code
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2. Setup Java 21
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: maven
 
-      # Compile Part2
-      - name: Compile Part2
-        run: |
-          mkdir -p Part2/out
-          javac -d Part2/out $(find Part2 -name "*.java")
+      # 3. Build Part2
+      - name: Build Part2
+        working-directory: Part2
+        run: mvn clean verify
 
-      # Build Part3
+      # 4. Build Part3
       - name: Build Part3
         working-directory: Part3
         run: mvn clean verify
 
-      # Build Part4
+      # 5. Build Part4
       - name: Build Part4
         working-directory: Part4
         run: mvn clean verify
 
-      # Sonar
+      # 6. Run SonarQube scan
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.sources=Part2,Part3/src/main/java,Part4/src/main/java
-            -Dsonar.java.binaries=Part2/out,Part3/target/classes,Part4/target/classes
+            -Dsonar.sources=Part2/src/main/java,Part3/src/main/java,Part4/src/main/java
+            -Dsonar.java.binaries=Part2/target/classes,Part3/target/classes,Part4/target/classes
