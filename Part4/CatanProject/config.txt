@@ -1,0 +1,5 @@
+# Catan Simulator Configuration File
+# Format: turns: <integer>
+# Valid range: 1-8192 rounds
+
+turns: 100
