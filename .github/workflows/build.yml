@@ -44,5 +44,3 @@ jobs:
             -Dsonar.sources=Part3/src/main/java,Part4/CatanProject/src/main/java
             -Dsonar.tests=Part3/src/test/java,Part4/CatanProject/src/test/java
             -Dsonar.java.binaries=Part3/target/classes,Part4/CatanProject/target/classes
-            -Dsonar.projectKey=catan-simulator
-            -Dsonar.organization=your-org-key
