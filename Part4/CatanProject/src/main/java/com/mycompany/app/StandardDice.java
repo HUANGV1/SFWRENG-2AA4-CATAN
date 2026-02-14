@@ -21,7 +21,7 @@ public class StandardDice implements IRandomDice {
      * @return The sum of two dice rolls (2-12)
      */
     @Override
-    public Integer roll() {
+    public int roll() {
         // Roll two six-sided dice
         int die1 = random.nextInt(6) + 1;  // 1-6
         int die2 = random.nextInt(6) + 1;  // 1-6

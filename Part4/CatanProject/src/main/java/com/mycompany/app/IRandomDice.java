@@ -13,5 +13,5 @@ public interface IRandomDice {
 	 * 
 	 * @return 
 	 */
-	public Integer roll();
+	public int roll();
 }

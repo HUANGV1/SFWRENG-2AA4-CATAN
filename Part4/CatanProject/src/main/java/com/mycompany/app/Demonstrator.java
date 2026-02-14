@@ -1,4 +1,4 @@
-package main.java.com.mycompany.app;
+package com.mycompany.app;
 
 /**
  * Demonstrator class - Main entry point for the Catan simulator
