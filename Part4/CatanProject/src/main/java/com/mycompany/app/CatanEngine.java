@@ -184,6 +184,15 @@ public class CatanEngine implements IGameController {
 	}
 
 	/**
+	 * Get the resource distributor
+	 * 
+	 * @return The ResourceDistributor service
+	 */
+	public ResourceDistributor getDistributor() {
+		return resourceDistributor;
+	}
+
+	/**
 	 * Attach an observer to be notified of state changes
 	 * 
 	 * @param observer The observer to attach

@@ -4,8 +4,11 @@
 
 package com.mycompany.app;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /************************************************************/
 /**
@@ -152,5 +155,36 @@ public abstract class Player {
 	 */
 	public Map<ResourceType, Integer> getResources() {
 		return new HashMap<>(resources);
+	}
+
+	/**
+	 * Steal a random resource from this player.
+	 * Removes one card of a random resource type and returns the type stolen.
+	 * 
+	 * @return The ResourceType that was stolen, or null if the player has no
+	 *         resources
+	 */
+	public ResourceType stealRandomResource() {
+		if (getTotalResourceCards() == 0) {
+			return null;
+		}
+
+		// Collect resource types that have at least 1 card
+		List<ResourceType> available = new ArrayList<>();
+		for (ResourceType type : ResourceType.values()) {
+			if (getResourceCount(type) > 0) {
+				available.add(type);
+			}
+		}
+
+		if (available.isEmpty()) {
+			return null;
+		}
+
+		// Pick a random resource type and remove 1
+		Random random = new Random();
+		ResourceType stolen = available.get(random.nextInt(available.size()));
+		deductResource(stolen, 1);
+		return stolen;
 	}
 }

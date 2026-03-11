@@ -116,14 +116,18 @@ public class Simulator {
 					System.out.println(
 							"[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled 7, no resources produced");
 
-					// Each player with >7 cards must handle it
+					// Each player with >7 cards must discard half (rounded down)
 					for (Player p : players) {
 						if (p.getTotalResourceCards() > 7) {
+							int amountToDrop = p.getTotalResourceCards() / 2;
 							System.out.println("[" + currRound + "] / [" + p.getPlayerID() + "]: Has "
-									+ p.getTotalResourceCards() + " cards, attempting to build...");
-							p.handleOverSevenCards();
+									+ p.getTotalResourceCards() + " cards, must discard " + amountToDrop);
+							p.robberDiscard(amountToDrop);
 						}
 					}
+
+					// Move robber and steal
+					engine.getDistributor().handleRobber(player);
 				} else {
 					// Distribute resources
 					engine.distributeResources(roll, players);
