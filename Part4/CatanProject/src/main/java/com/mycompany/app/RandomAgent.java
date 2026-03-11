@@ -15,6 +15,7 @@ public class RandomAgent extends Player {
 
 	/**
 	 * Constructor for RandomAgent
+	 * 
 	 * @param playerID Unique player identifier
 	 */
 	public RandomAgent(int playerID) {
@@ -24,6 +25,7 @@ public class RandomAgent extends Player {
 
 	/**
 	 * Take a turn by making random valid moves
+	 * 
 	 * @param controller Game controller interface
 	 */
 	@Override
@@ -37,8 +39,8 @@ public class RandomAgent extends Player {
 			// Check nodes for player's settlements that could be upgraded
 			for (Node node : engine.getBoard().getAllNodes()) {
 				if (node.getOccupant() != null &&
-				    node.getOccupant().getPlayerID() == this.playerID &&
-				    node.getType() == BuildingType.SETTLEMENT) {
+						node.getOccupant().getPlayerID() == this.playerID &&
+						node.getType() == BuildingType.SETTLEMENT) {
 					// Check if player has resources for city
 					Map<ResourceType, Integer> cityCost = new HashMap<>();
 					cityCost.put(ResourceType.ORE, 3);
@@ -145,6 +147,34 @@ public class RandomAgent extends Player {
 
 			// Can't build anything, stop trying
 			break;
+		}
+	}
+
+	/**
+	 * Discard cards randomly when the robber is activated.
+	 * Randomly selects resource types to remove one at a time.
+	 * 
+	 * @param amountToDrop The number of cards to discard
+	 */
+	@Override
+	public void robberDiscard(int amountToDrop) {
+		int dropped = 0;
+		while (dropped < amountToDrop && getTotalResourceCards() > 0) {
+			// Collect resource types that have at least 1 card
+			List<ResourceType> available = new ArrayList<>();
+			for (ResourceType type : ResourceType.values()) {
+				if (getResourceCount(type) > 0) {
+					available.add(type);
+				}
+			}
+			if (available.isEmpty()) {
+				break;
+			}
+
+			// Pick a random resource type and remove 1
+			ResourceType toRemove = available.get(random.nextInt(available.size()));
+			deductResource(toRemove, 1);
+			dropped++;
 		}
 	}
 }

@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * Handles resource distribution based on dice rolls
- * Implements Single Responsibility Principle - handles only resource distribution
+ * Implements Single Responsibility Principle - handles only resource
+ * distribution
  */
 public class ResourceDistributor {
 	private Board board;
@@ -18,11 +19,12 @@ public class ResourceDistributor {
 
 	/**
 	 * Distribute resources based on dice roll to all players
+	 * 
 	 * @param diceRoll The number rolled (2-12)
-	 * @param players List of all players
+	 * @param players  List of all players
 	 */
 	public void distribute(int diceRoll, List<Player> players) {
-		// Don't distribute on 7 (robber)
+		// This is the only place where the robber is handled
 		if (diceRoll == 7) {
 			return;
 		}
@@ -30,10 +32,11 @@ public class ResourceDistributor {
 		// For each tile with matching number token
 		for (HexTile tile : board.getAllTiles()) {
 			if (tile.getNumberToken() == diceRoll &&
-				tile.getType() != TileType.DESERT) {
+					tile.getType() != TileType.DESERT) {
 
 				ResourceType resourceType = tile.getType().getResourceType();
-				if (resourceType == null) continue;
+				if (resourceType == null)
+					continue;
 
 				// Get nodes adjacent to this tile
 				int[] tileNodes = topology.getTileNodes(tile.getTileID());

@@ -10,7 +10,8 @@ import java.util.Map;
 /************************************************************/
 /**
  * Abstract base class for all player types in the game.
- * Manages resources, victory points, and defines abstract methods for player behavior.
+ * Manages resources, victory points, and defines abstract methods for player
+ * behavior.
  */
 public abstract class Player {
 	/**
@@ -28,6 +29,7 @@ public abstract class Player {
 
 	/**
 	 * Constructor for Player
+	 * 
 	 * @param playerID Unique player identifier
 	 */
 	public Player(int playerID) {
@@ -43,6 +45,7 @@ public abstract class Player {
 
 	/**
 	 * Get the player's ID
+	 * 
 	 * @return The player's unique identifier
 	 */
 	public int getPlayerID() {
@@ -51,6 +54,7 @@ public abstract class Player {
 
 	/**
 	 * Get the player's current victory points
+	 * 
 	 * @return Current victory points
 	 */
 	public int getVictoryPoints() {
@@ -59,6 +63,7 @@ public abstract class Player {
 
 	/**
 	 * Add victory points to this player
+	 * 
 	 * @param points Number of points to add
 	 */
 	public void addVictoryPoints(int points) {
@@ -67,7 +72,8 @@ public abstract class Player {
 
 	/**
 	 * Add resources to this player's inventory
-	 * @param type Type of resource to add
+	 * 
+	 * @param type   Type of resource to add
 	 * @param amount Amount to add
 	 */
 	public void addResource(ResourceType type, int amount) {
@@ -76,7 +82,8 @@ public abstract class Player {
 
 	/**
 	 * Deduct resources from this player's inventory
-	 * @param type Type of resource to deduct
+	 * 
+	 * @param type   Type of resource to deduct
 	 * @param amount Amount to deduct
 	 */
 	public void deductResource(ResourceType type, int amount) {
@@ -86,6 +93,7 @@ public abstract class Player {
 
 	/**
 	 * Get the quantity of a specific resource
+	 * 
 	 * @param type Resource type to query
 	 * @return Quantity of that resource
 	 */
@@ -95,6 +103,7 @@ public abstract class Player {
 
 	/**
 	 * Get the total number of resource cards held by this player
+	 * 
 	 * @return Total resource card count
 	 */
 	public int getTotalResourceCards() {
@@ -103,6 +112,7 @@ public abstract class Player {
 
 	/**
 	 * Check if player has sufficient resources for a given cost
+	 * 
 	 * @param cost Map of resource types to required quantities
 	 * @return true if player has all required resources, false otherwise
 	 */
@@ -117,6 +127,7 @@ public abstract class Player {
 
 	/**
 	 * Abstract method for player to take their turn
+	 * 
 	 * @param controller Game controller interface for making moves
 	 */
 	public abstract void takeTurn(IGameController controller);
@@ -125,4 +136,21 @@ public abstract class Player {
 	 * Abstract method for handling situation when player has more than 7 cards
 	 */
 	public abstract void handleOverSevenCards();
+
+	/**
+	 * Abstract method for discarding cards when the robber is activated.
+	 * Called when a 7 is rolled and the player has more than 7 cards.
+	 * 
+	 * @param amountToDrop The number of cards the player must discard
+	 */
+	public abstract void robberDiscard(int amountToDrop);
+
+	/**
+	 * Get a copy of the player's resources
+	 * 
+	 * @return Defensive copy of the resources map
+	 */
+	public Map<ResourceType, Integer> getResources() {
+		return new HashMap<>(resources);
+	}
 }
