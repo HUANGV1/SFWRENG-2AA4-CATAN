@@ -29,8 +29,12 @@ public class BuildingService {
 	 * @return true if successful
 	 */
 	public boolean buildSettlement(int playerID, int nodeID, Player player) {
+		// Treat first building for this player as initial placement:
+		// initial placements skip the "adjacent road" requirement.
+		boolean hasExistingBuilding = playerHasAnyBuilding(playerID);
+
 		// Validate location
-		if (!settlementValidator.isValid(playerID, nodeID, false)) {
+		if (!settlementValidator.isValid(playerID, nodeID, !hasExistingBuilding)) {
 			return false;
 		}
 
@@ -51,6 +55,20 @@ public class BuildingService {
 		player.addVictoryPoints(BuildingCost.SETTLEMENT.getVictoryPoints());
 
 		return true;
+	}
+
+	/**
+	 * Check if the player already has any non-empty building on the board
+	 */
+	private boolean playerHasAnyBuilding(int playerID) {
+		for (Node node : board.getAllNodes()) {
+			if (node.getOccupant() != null &&
+			    node.getOccupant().getPlayerID() == playerID &&
+			    node.getType() != BuildingType.NONE) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
