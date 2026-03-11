@@ -3,9 +3,13 @@
 // --------------------------------------------------------
 
 package com.mycompany.app;
-import com.mycompany.app.validators.*;
-import com.mycompany.app.services.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mycompany.app.services.BuildingService;
+import com.mycompany.app.services.ResourceDistributor;
+import com.mycompany.app.validators.RoadValidator;
+import com.mycompany.app.validators.SettlementValidator;
 
 /************************************************************/
 /**
@@ -41,6 +45,10 @@ public class CatanEngine implements IGameController {
 	 * Service for building placement
 	 */
 	private BuildingService buildingService;
+	/**
+	 * List of observers
+	 */
+	private List<IObserver> observers;
 
 	/**
 	 * Constructor for CatanEngine
@@ -59,6 +67,9 @@ public class CatanEngine implements IGameController {
 		// Initialize services
 		this.resourceDistributor = new ResourceDistributor(board, board.getTopology());
 		this.buildingService = new BuildingService(board, settlementValidator, roadValidator);
+
+		// Initialize observers
+		this.observers = new ArrayList<>();
 	}
 
 	/**
@@ -67,6 +78,7 @@ public class CatanEngine implements IGameController {
 	 */
 	public void setPlayers(List<Player> players) {
 		this.players = players;
+		notifyObservers();
 	}
 
 	/**
@@ -84,6 +96,7 @@ public class CatanEngine implements IGameController {
 	 */
 	public void distributeResources(int diceRoll, List<Player> players) {
 		resourceDistributor.distribute(diceRoll, players);
+		notifyObservers();
 	}
 
 	@Override
@@ -116,14 +129,22 @@ public class CatanEngine implements IGameController {
 	public boolean requestBuildSettlement(int playerID, int nodeID) {
 		Player player = getPlayer(playerID);
 		if (player == null) return false;
-		return buildingService.buildSettlement(playerID, nodeID, player);
+		boolean success = buildingService.buildSettlement(playerID, nodeID, player);
+		if (success) {
+			notifyObservers();
+		}
+		return success;
 	}
 
 	@Override
 	public boolean requestBuildRoad(int playerID, int edgeID) {
 		Player player = getPlayer(playerID);
 		if (player == null) return false;
-		return buildingService.buildRoad(playerID, edgeID, player);
+		boolean success = buildingService.buildRoad(playerID, edgeID, player);
+		if (success) {
+			notifyObservers();
+		}
+		return success;
 	}
 
 	/**
@@ -135,7 +156,11 @@ public class CatanEngine implements IGameController {
 	public boolean requestBuildCity(int playerID, int nodeID) {
 		Player player = getPlayer(playerID);
 		if (player == null) return false;
-		return buildingService.buildCity(playerID, nodeID, player);
+		boolean success = buildingService.buildCity(playerID, nodeID, player);
+		if (success) {
+			notifyObservers();
+		}
+		return success;
 	}
 
 	/**
@@ -158,5 +183,32 @@ public class CatanEngine implements IGameController {
 	 */
 	public Board getBoard() {
 		return board;
+	}
+	/**
+	 * 
+	 * @param o 
+	 */
+	public void attach(IObserver o) {
+		observers.add(o);
+	}
+
+	/**
+	 * 
+	 * @param o 
+	 */
+	public void detatch(IObserver o) {
+		observers.remove(o);
+	}
+
+	/**
+	 * 
+	 */
+	public void notifyObservers() {
+		if (observers == null) {
+			return;
+		}
+		for (IObserver observer : observers) {
+			observer.update();
+		}
 	}
 }

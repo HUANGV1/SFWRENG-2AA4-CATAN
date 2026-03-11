@@ -44,6 +44,9 @@ public class Simulator {
 		// Create engine
 		this.engine = new CatanEngine(board, dice);
 
+		// Attach game state observer for visualization exports
+		new GameStateObserver(this.engine);
+
 		// Create 4 random agents
 		this.players = new ArrayList<>();
 		for (int i = 0; i < 4; i++) {

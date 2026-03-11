@@ -31,21 +31,6 @@ public class Demonstrator {
 		System.out.println("Win condition: 10 Victory Points");
 		System.out.println("Board: Standard Catan (19 tiles, 54 nodes, 72 edges)");
 
-		System.out.println("\n--- Game Rules (Implemented) ---");
-		System.out.println("✓ Settlement building (1 LUMBER, 1 BRICK, 1 GRAIN, 1 WOOL)");
-		System.out.println("✓ Road building (1 LUMBER, 1 BRICK)");
-		System.out.println("✓ City upgrades (3 ORE, 2 GRAIN)");
-		System.out.println("✓ Resource distribution on dice roll");
-		System.out.println("✓ Distance-2 rule for settlements");
-		System.out.println("✓ Road connectivity validation");
-		System.out.println("✓ Victory point tracking");
-
-		System.out.println("\n--- Game Rules (Excluded per R1.3) ---");
-		System.out.println("✗ Harbour tiles");
-		System.out.println("✗ Trading (domestic and maritime)");
-		System.out.println("✗ Development cards");
-		System.out.println("✗ Robber movement (roll 7 = no resources)");
-
 		System.out.println("\n===========================================");
 		System.out.println("Starting simulation...");
 		System.out.println("===========================================\n");
