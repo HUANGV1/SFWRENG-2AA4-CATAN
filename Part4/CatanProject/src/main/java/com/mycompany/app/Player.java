@@ -141,50 +141,17 @@ public abstract class Player {
 	public abstract void handleOverSevenCards();
 
 	/**
-	 * Abstract method for discarding cards when the robber is activated.
-	 * Called when a 7 is rolled and the player has more than 7 cards.
-	 * 
-	 * @param amountToDrop The number of cards the player must discard
+	 * Robber discard hook used when a player must drop a specified number
+	 * of resource cards due to robber rules.
+	 * @param amountToDrop total number of cards the player must discard
 	 */
 	public abstract void robberDiscard(int amountToDrop);
 
 	/**
-	 * Get a copy of the player's resources
-	 * 
-	 * @return Defensive copy of the resources map
+	 * Select and remove a single random resource card from this player,
+	 * returning the resource type that was stolen. If the player has no
+	 * resource cards, this method should return null.
+	 * @return the type of resource that was removed, or null if none
 	 */
-	public Map<ResourceType, Integer> getResources() {
-		return new HashMap<>(resources);
-	}
-
-	/**
-	 * Steal a random resource from this player.
-	 * Removes one card of a random resource type and returns the type stolen.
-	 * 
-	 * @return The ResourceType that was stolen, or null if the player has no
-	 *         resources
-	 */
-	public ResourceType stealRandomResource() {
-		if (getTotalResourceCards() == 0) {
-			return null;
-		}
-
-		// Collect resource types that have at least 1 card
-		List<ResourceType> available = new ArrayList<>();
-		for (ResourceType type : ResourceType.values()) {
-			if (getResourceCount(type) > 0) {
-				available.add(type);
-			}
-		}
-
-		if (available.isEmpty()) {
-			return null;
-		}
-
-		// Pick a random resource type and remove 1
-		Random random = new Random();
-		ResourceType stolen = available.get(random.nextInt(available.size()));
-		deductResource(stolen, 1);
-		return stolen;
-	}
+	public abstract ResourceType stealRandomResource();
 }

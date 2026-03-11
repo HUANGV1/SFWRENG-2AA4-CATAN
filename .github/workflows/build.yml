@@ -34,7 +34,14 @@ jobs:
         working-directory: Part4/CatanProject
         run: mvn clean verify
 
-      # 5. SonarQube Scan (ignores Part2)
+      # 5. Upload JaCoCo coverage reports
+      - name: Upload Part4 coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report-part4
+          path: Part4/CatanProject/target/site/jacoco/
+
+      # 6. SonarQube Scan (ignores Part2)
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:

@@ -150,17 +150,11 @@ public class RandomAgent extends Player {
 		}
 	}
 
-	/**
-	 * Discard cards randomly when the robber is activated.
-	 * Randomly selects resource types to remove one at a time.
-	 * 
-	 * @param amountToDrop The number of cards to discard
-	 */
 	@Override
 	public void robberDiscard(int amountToDrop) {
-		int dropped = 0;
-		while (dropped < amountToDrop && getTotalResourceCards() > 0) {
-			// Collect resource types that have at least 1 card
+		int remaining = amountToDrop;
+		// Simple strategy: discard uniformly from resources while we can.
+		while (remaining > 0 && getTotalResourceCards() > 0) {
 			List<ResourceType> available = new ArrayList<>();
 			for (ResourceType type : ResourceType.values()) {
 				if (getResourceCount(type) > 0) {
@@ -170,11 +164,25 @@ public class RandomAgent extends Player {
 			if (available.isEmpty()) {
 				break;
 			}
-
-			// Pick a random resource type and remove 1
-			ResourceType toRemove = available.get(random.nextInt(available.size()));
-			deductResource(toRemove, 1);
-			dropped++;
+			ResourceType chosen = available.get(random.nextInt(available.size()));
+			deductResource(chosen, 1);
+			remaining--;
 		}
+	}
+
+	@Override
+	public ResourceType stealRandomResource() {
+		List<ResourceType> available = new ArrayList<>();
+		for (ResourceType type : ResourceType.values()) {
+			if (getResourceCount(type) > 0) {
+				available.add(type);
+			}
+		}
+		if (available.isEmpty()) {
+			return null;
+		}
+		ResourceType chosen = available.get(random.nextInt(available.size()));
+		deductResource(chosen, 1);
+		return chosen;
 	}
 }
