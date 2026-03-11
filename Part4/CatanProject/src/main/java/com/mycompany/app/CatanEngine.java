@@ -116,7 +116,8 @@ public class CatanEngine implements IGameController {
 	public boolean requestBuildSettlement(int playerID, int nodeID) {
 		Player player = getPlayer(playerID);
 		if (player == null) return false;
-		return buildingService.buildSettlement(playerID, nodeID, player);
+		boolean isInitialPlacement = getTotalBuildings(playerID) == 0;
+		return buildingService.buildSettlement(playerID, nodeID, player, isInitialPlacement);
 	}
 
 	@Override

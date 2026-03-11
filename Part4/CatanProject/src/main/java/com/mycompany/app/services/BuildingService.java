@@ -28,9 +28,9 @@ public class BuildingService {
 	 * @param player The player object
 	 * @return true if successful
 	 */
-	public boolean buildSettlement(int playerID, int nodeID, Player player) {
+	public boolean buildSettlement(int playerID, int nodeID, Player player, boolean isInitialPlacement) {
 		// Validate location
-		if (!settlementValidator.isValid(playerID, nodeID, false)) {
+		if (!settlementValidator.isValid(playerID, nodeID, isInitialPlacement)) {
 			return false;
 		}
 
