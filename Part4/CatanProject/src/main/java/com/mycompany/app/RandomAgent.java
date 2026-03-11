@@ -147,4 +147,40 @@ public class RandomAgent extends Player {
 			break;
 		}
 	}
+
+	@Override
+	public void robberDiscard(int amountToDrop) {
+		int remaining = amountToDrop;
+		// Simple strategy: discard uniformly from resources while we can.
+		while (remaining > 0 && getTotalResourceCards() > 0) {
+			List<ResourceType> available = new ArrayList<>();
+			for (ResourceType type : ResourceType.values()) {
+				if (getResourceCount(type) > 0) {
+					available.add(type);
+				}
+			}
+			if (available.isEmpty()) {
+				break;
+			}
+			ResourceType chosen = available.get(random.nextInt(available.size()));
+			deductResource(chosen, 1);
+			remaining--;
+		}
+	}
+
+	@Override
+	public ResourceType stealRandomResource() {
+		List<ResourceType> available = new ArrayList<>();
+		for (ResourceType type : ResourceType.values()) {
+			if (getResourceCount(type) > 0) {
+				available.add(type);
+			}
+		}
+		if (available.isEmpty()) {
+			return null;
+		}
+		ResourceType chosen = available.get(random.nextInt(available.size()));
+		deductResource(chosen, 1);
+		return chosen;
+	}
 }

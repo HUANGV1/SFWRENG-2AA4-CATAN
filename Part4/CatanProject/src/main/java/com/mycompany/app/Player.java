@@ -125,4 +125,19 @@ public abstract class Player {
 	 * Abstract method for handling situation when player has more than 7 cards
 	 */
 	public abstract void handleOverSevenCards();
+
+	/**
+	 * Robber discard hook used when a player must drop a specified number
+	 * of resource cards due to robber rules.
+	 * @param amountToDrop total number of cards the player must discard
+	 */
+	public abstract void robberDiscard(int amountToDrop);
+
+	/**
+	 * Select and remove a single random resource card from this player,
+	 * returning the resource type that was stolen. If the player has no
+	 * resource cards, this method should return null.
+	 * @return the type of resource that was removed, or null if none
+	 */
+	public abstract ResourceType stealRandomResource();
 }
