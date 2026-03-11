@@ -15,6 +15,7 @@ public class RandomAgent extends Player {
 
 	/**
 	 * Constructor for RandomAgent
+	 * 
 	 * @param playerID Unique player identifier
 	 */
 	public RandomAgent(int playerID) {
@@ -24,6 +25,7 @@ public class RandomAgent extends Player {
 
 	/**
 	 * Take a turn by making random valid moves
+	 * 
 	 * @param controller Game controller interface
 	 */
 	@Override
@@ -37,8 +39,8 @@ public class RandomAgent extends Player {
 			// Check nodes for player's settlements that could be upgraded
 			for (Node node : engine.getBoard().getAllNodes()) {
 				if (node.getOccupant() != null &&
-				    node.getOccupant().getPlayerID() == this.playerID &&
-				    node.getType() == BuildingType.SETTLEMENT) {
+						node.getOccupant().getPlayerID() == this.playerID &&
+						node.getType() == BuildingType.SETTLEMENT) {
 					// Check if player has resources for city
 					Map<ResourceType, Integer> cityCost = new HashMap<>();
 					cityCost.put(ResourceType.ORE, 3);
