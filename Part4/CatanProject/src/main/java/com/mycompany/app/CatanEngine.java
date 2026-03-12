@@ -93,6 +93,19 @@ public class CatanEngine implements IGameController {
 		notifyObservers();
 	}
 
+	/**
+	 * Handle a roll of 7: each player with more than 7 cards discards half,
+	 * then the active player moves the robber to a random tile and steals from
+	 * one victim adjacent to that tile.
+	 *
+	 * @param activePlayer The player who rolled the 7
+	 */
+	public void handleRollSeven(Player activePlayer) {
+		resourceDistributor.handleOverSevenCardsPhase(players);
+		resourceDistributor.handleRobber(activePlayer);
+		notifyObservers();
+	}
+
 	@Override
 	public int[] getValidSettlementLocations(int playerID) {
 		boolean isInitialPlacement = getTotalBuildings(playerID) == 0;

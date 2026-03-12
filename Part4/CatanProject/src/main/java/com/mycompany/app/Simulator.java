@@ -62,7 +62,6 @@ public class Simulator {
 
 		// Create players: player 0 is a human, the rest are random agents
 		this.players = new ArrayList<>();
-		Scanner scanner = new Scanner(System.in);
 		players.add(new HumanPlayer(0, new HumanInputParser(), scanner));
 		for (int i = 1; i < 4; i++) {
 			players.add(new RandomAgent(i));
@@ -119,15 +118,7 @@ public class Simulator {
 							"[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled 7, no resources produced");
 
 					// Each player with >7 cards must discard half (rounded down)
-					for (Player p : players) {
-						if (p.getTotalResourceCards() > 7) {
-							int total = p.getTotalResourceCards();
-							int amountToDrop = total / 2; // Standard Catan rule
-							System.out.println("[" + currRound + "] / [" + p.getPlayerID() + "]: Has "
-								+ total + " cards, must discard " + amountToDrop + " due to robber.");
-							p.robberDiscard(amountToDrop);
-						}
-					}
+					engine.getDistributor().handleOverSevenCardsPhase(players);
 
 					// Move robber and steal
 					engine.getDistributor().handleRobber(player);
