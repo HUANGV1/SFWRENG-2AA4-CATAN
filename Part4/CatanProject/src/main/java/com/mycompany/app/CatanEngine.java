@@ -129,7 +129,8 @@ public class CatanEngine implements IGameController {
 	public boolean requestBuildSettlement(int playerID, int nodeID) {
 		Player player = getPlayer(playerID);
 		if (player == null) return false;
-		boolean success = buildingService.buildSettlement(playerID, nodeID, player);
+		boolean isInitialPlacement = getTotalBuildings(playerID) == 0;
+		boolean success = buildingService.buildSettlement(playerID, nodeID, player, isInitialPlacement);
 		if (success) {
 			notifyObservers();
 		}
@@ -183,6 +184,32 @@ public class CatanEngine implements IGameController {
 	 */
 	public Board getBoard() {
 		return board;
+	}
+
+	/**
+	 * Expose resource distribution / robber utilities for orchestration layers (e.g., Simulator).
+	 */
+	public ResourceDistributor getDistributor() {
+		return resourceDistributor;
+	}
+
+	/**
+	 * Expose current players for command-driven flows.
+	 */
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	/**
+	 * Handle the special roll-7 flow: no production, discard phase, move robber + steal.
+	 */
+	public void handleRollSeven(Player activePlayer) {
+		if (players == null || activePlayer == null) {
+			return;
+		}
+		resourceDistributor.handleOverSevenCardsPhase(players);
+		resourceDistributor.handleRobber(activePlayer);
+		notifyObservers();
 	}
 	/**
 	 * 

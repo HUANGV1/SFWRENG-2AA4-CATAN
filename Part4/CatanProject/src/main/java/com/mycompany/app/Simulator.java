@@ -32,9 +32,7 @@ public class Simulator {
 	/**
 	 * Shared scanner for console input (step-forward)
 	 */
-	private Scanner scanner;
-
-	private final java.util.Scanner stepScanner = new java.util.Scanner(System.in);
+	private final Scanner stepScanner;
 
 
 	/**
@@ -43,6 +41,17 @@ public class Simulator {
 	 * @param maxRounds Maximum number of rounds to run (1-8192)
 	 */
 	public Simulator(int maxRounds) {
+		this(maxRounds, new Scanner(System.in));
+	}
+
+	/**
+	 * Constructor for Simulator with injected input (useful for tests).
+	 *
+	 * @param maxRounds Maximum number of rounds to run (1-8192)
+	 * @param scanner Shared scanner for step-forward + human input
+	 */
+	public Simulator(int maxRounds, Scanner scanner) {
+		this.stepScanner = scanner;
 		
 		// Create board with topology
     	IBoardGraph topology = new CatanBoardGraph();
@@ -188,8 +197,8 @@ public class Simulator {
 	 */
 	private void waitForGo(Player player) {
 		System.out.println("\nType 'go' to proceed to Player " + player.getPlayerID() + "'s turn...");
-		while (scanner.hasNextLine()) {
-			String input = scanner.nextLine().trim();
+		while (stepScanner.hasNextLine()) {
+			String input = stepScanner.nextLine().trim();
 			if (input.equalsIgnoreCase("go")) {
 				break;
 			}
@@ -199,7 +208,7 @@ public class Simulator {
 
 	private void waitForGo() {
 		while (true) {
-			System.out.print("Type \"go\" to continue: ");
+			System.out.print("Type 'go' to proceed: ");
 			String line;
 			try {
 				line = stepScanner.nextLine();
@@ -209,7 +218,7 @@ public class Simulator {
 			if (line != null && line.trim().equalsIgnoreCase("go")) {
 				return;
 			}
-			System.out.println("Unrecognized input. Please type exactly \"go\".");
+			System.out.println("Unrecognized input. Please type exactly 'go'.");
 		}
 	}
 }

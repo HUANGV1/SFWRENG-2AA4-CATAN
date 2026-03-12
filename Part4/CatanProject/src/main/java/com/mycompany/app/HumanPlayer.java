@@ -1,9 +1,6 @@
 package com.mycompany.app;
 
-import com.mycompany.app.commands.DiscardCommand;
-import com.mycompany.app.commands.EndTurnCommand;
-import com.mycompany.app.commands.HelpCommand;
-import com.mycompany.app.commands.InvalidCommand;
+import com.mycompany.app.commands.*;
 
 import java.util.Scanner;
 
@@ -16,39 +13,107 @@ import java.util.Scanner;
  */
 public class HumanPlayer extends Player {
 
-    private final IParser parser;
-    private final Scanner scanner;
+	private enum TurnState {
+		PRE_ROLL,
+		WAIT_FOR_ROLL_RESOLUTION,
+		ROBBER_PHASE,
+		ACTION_PHASE
+	}
 
-    public HumanPlayer(int playerID, IParser parser, Scanner scanner) {
-        super(playerID);
-        this.parser = parser;
-        this.scanner = scanner;
-    }
+	private final IParser parser;
+	private final Scanner scanner;
 
-    @Override
-    public void takeTurn(IGameController controller) {
-        System.out.println("Human player " + playerID + " turn. Type 'help' for commands.");
-        while (true) {
-            System.out.print("> ");
-            if (!scanner.hasNextLine()) {
-                // No more input; end the turn gracefully.
-                return;
-            }
-            String line = scanner.nextLine();
-            if (line == null) {
-                return;
-            }
-            com.mycompany.app.ICommand command = parser.parse(line);
-            if (command == null) {
-                // Defensive: should never happen, but avoid NPE.
-                command = new InvalidCommand("Unrecognized command.");
-            }
-            command.execute(controller, this);
-            if (command instanceof EndTurnCommand) {
-                return;
-            }
-        }
-    }
+	public HumanPlayer(int playerID, IParser parser, Scanner scanner) {
+		super(playerID);
+		this.parser = parser;
+		this.scanner = scanner;
+	}
+
+	@Override
+	public void takeTurn(IGameController controller) {
+		System.out.println("Human player " + playerID + " turn. Type 'help' for commands.");
+
+		TurnState state = TurnState.PRE_ROLL;
+		while (true) {
+			switch (state) {
+				case PRE_ROLL:
+					// State 1: pre-roll, only meaningful transition is to roll dice.
+					System.out.print("[pre-roll] > ");
+					ICommand preRollCommand = readCommand();
+					if (preRollCommand == null) {
+						return;
+					}
+
+					if (preRollCommand instanceof RollCommand) {
+						preRollCommand.execute(controller, this);
+						state = TurnState.WAIT_FOR_ROLL_RESOLUTION;
+					} else if (preRollCommand instanceof HelpCommand ||
+							preRollCommand instanceof StatusCommand ||
+							preRollCommand instanceof InvalidCommand) {
+						preRollCommand.execute(controller, this);
+						// Remain in PRE_ROLL until a roll actually occurs.
+					} else if (preRollCommand instanceof EndTurnCommand) {
+						System.out.println("You must roll before ending your turn.");
+					} else {
+						System.out.println("You must roll first. Type 'roll' to roll the dice.");
+					}
+					break;
+
+				case WAIT_FOR_ROLL_RESOLUTION:
+					// State 2: in this implementation, roll resolution (including 7/robber)
+					// is handled synchronously inside the RollCommand and engine,
+					// so we immediately transition into the robber phase.
+					state = TurnState.ROBBER_PHASE;
+					break;
+
+				case ROBBER_PHASE:
+					// State 3: robber phase is driven by the engine via callbacks
+					// (e.g., robberDiscard), so from the HumanPlayer's state
+					// machine perspective we epsilon-transition to the action phase.
+					state = TurnState.ACTION_PHASE;
+					break;
+
+				case ACTION_PHASE:
+					// State 4: main action phase. The only stateful transition we
+					// enforce here is: once you successfully invoke a build-oriented
+					// command, the turn ends.
+					System.out.print("[action] > ");
+					ICommand actionCommand = readCommand();
+					if (actionCommand == null) {
+						return;
+					}
+
+					actionCommand.execute(controller, this);
+
+					// If the player explicitly ends their turn, or issues a build
+					// command (settlement/road/city/dev card), we terminate the turn.
+					if (actionCommand instanceof EndTurnCommand ||
+							actionCommand instanceof BuildSettlementCommand ||
+							actionCommand instanceof BuildRoadCommand ||
+							actionCommand instanceof BuildCityCommand ||
+							actionCommand instanceof BuyDevCardCommand) {
+						return;
+					}
+					// Otherwise, remain in ACTION_PHASE to allow further commands.
+					break;
+			}
+		}
+	}
+
+	private ICommand readCommand() {
+		if (!scanner.hasNextLine()) {
+			return null;
+		}
+		String line = scanner.nextLine();
+		if (line == null) {
+			return null;
+		}
+		ICommand command = parser.parse(line);
+		if (command == null) {
+			return new InvalidCommand("Unrecognized command.");
+		}
+		return command;
+	}
 
     @Override
     public void handleOverSevenCards() {

@@ -5,8 +5,6 @@ import com.mycompany.app.ICommand;
 import com.mycompany.app.IGameController;
 import com.mycompany.app.Player;
 
-import java.util.Collections;
-
 /**
  * Rolls the dice for the current player and triggers resource distribution.
  *
@@ -26,7 +24,7 @@ public class RollCommand implements ICommand {
         if (roll == 7) {
             engine.handleRollSeven(currentPlayer);
         } else {
-            engine.distributeResources(roll, Collections.singletonList(currentPlayer));
+            engine.distributeResources(roll, engine.getPlayers());
         }
     }
 }
