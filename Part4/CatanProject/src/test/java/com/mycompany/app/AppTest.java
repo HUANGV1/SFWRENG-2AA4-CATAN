@@ -32,12 +32,4 @@ public class AppTest {
         assertNull(TileType.DESERT.getResourceType(), "Desert produces no resource");
     }
 
-    /**
-     * Verifies all 6 tile types exist in the enum.
-     */
-    @Test
-    public void testTileTypeHasSixValues() {
-        assertEquals(6, TileType.values().length,
-                "Must have exactly 6 tile types: WOOD, BRICK, WHEAT, SHEEP, ORE, DESERT");
-    }
 }

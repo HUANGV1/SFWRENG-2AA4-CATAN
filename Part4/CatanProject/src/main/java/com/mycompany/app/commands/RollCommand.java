@@ -23,9 +23,11 @@ public class RollCommand implements ICommand {
         CatanEngine engine = (CatanEngine) controller;
         int roll = engine.rollDice();
         System.out.println("Player " + currentPlayer.getPlayerID() + " rolled " + roll);
-        // For an interactive game with only a single player reference here we
-        // at least distribute resources to that player when appropriate.
-        engine.distributeResources(roll, Collections.singletonList(currentPlayer));
+        if (roll == 7) {
+            engine.handleRollSeven(currentPlayer);
+        } else {
+            engine.distributeResources(roll, Collections.singletonList(currentPlayer));
+        }
     }
 }
 

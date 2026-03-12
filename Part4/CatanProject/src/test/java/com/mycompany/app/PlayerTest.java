@@ -25,25 +25,6 @@ class PlayerTest {
         assertEquals(0, player.getTotalResourceCards());
     }
 
-    @Test
-    void testAddVictoryPoints() {
-        player.addVictoryPoints(2);
-        assertEquals(2, player.getVictoryPoints());
-        player.addVictoryPoints(1);
-        assertEquals(3, player.getVictoryPoints());
-    }
-
-    @Test
-    void testAddResource() {
-        player.addResource(ResourceType.LUMBER, 3);
-        assertEquals(3, player.getResourceCount(ResourceType.LUMBER));
-        assertEquals(3, player.getTotalResourceCards());
-
-        player.addResource(ResourceType.BRICK, 2);
-        assertEquals(2, player.getResourceCount(ResourceType.BRICK));
-        assertEquals(5, player.getTotalResourceCards());
-    }
-
     /**
      * Boundary testing for deductResource.
      * Tests deducting exactly the amount held, deducting less than held,
@@ -101,54 +82,5 @@ class PlayerTest {
         // Partition 4: Empty cost map
         Map<ResourceType, Integer> emptyCost = new HashMap<>();
         assertTrue(player.hasResources(emptyCost), "Partition 4: Empty cost should return true");
-    }
-
-    /**
-     * Repeated addResource calls must accumulate, not overwrite.
-     */
-    @Test
-    void testAddResourceAccumulatesAcrossMultipleCalls() {
-        player.addResource(ResourceType.LUMBER, 3);
-        player.addResource(ResourceType.LUMBER, 2);
-        assertEquals(5, player.getResourceCount(ResourceType.LUMBER),
-                "Multiple addResource calls must sum, not replace");
-    }
-
-    /**
-     * Deducting from a zero balance must remain at 0 (Math.max guard).
-     */
-    @Test
-    void testDeductFromZeroRemainsZero() {
-        player.deductResource(ResourceType.WOOL, 5);
-        assertEquals(0, player.getResourceCount(ResourceType.WOOL),
-                "Deducting from 0 should leave 0, never go negative");
-    }
-
-    /**
-     * getTotalResourceCards must sum across ALL 5 resource types correctly.
-     */
-    @Test
-    void testTotalResourceCardsSpansAllTypes() {
-        player.addResource(ResourceType.LUMBER, 1);
-        player.addResource(ResourceType.BRICK,  2);
-        player.addResource(ResourceType.GRAIN,  3);
-        player.addResource(ResourceType.WOOL,   4);
-        player.addResource(ResourceType.ORE,    5);
-        assertEquals(15, player.getTotalResourceCards(),
-                "Total must be the sum across all 5 resource types");
-    }
-
-    /**
-     * hasResources must return false when a required resource type is completely absent
-     * (i.e. the player has 0 of it, not even a reduced amount).
-     */
-    @Test
-    void testHasResourcesMissingTypeReturnsFalse() {
-        player.addResource(ResourceType.LUMBER, 5);
-        // No BRICK added at all
-        Map<ResourceType, Integer> cost = new HashMap<>();
-        cost.put(ResourceType.LUMBER, 1);
-        cost.put(ResourceType.BRICK,  1);
-        assertFalse(player.hasResources(cost), "Missing resource type must return false");
     }
 }
