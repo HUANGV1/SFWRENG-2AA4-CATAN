@@ -54,20 +54,6 @@ public class BuildingService {
 	}
 
 	/**
-	 * Check if the player already has any non-empty building on the board
-	 */
-	private boolean playerHasAnyBuilding(int playerID) {
-		for (Node node : board.getAllNodes()) {
-			if (node.getOccupant() != null &&
-			    node.getOccupant().getPlayerID() == playerID &&
-			    node.getType() != BuildingType.NONE) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
 	 * Attempt to build a road
 	 * @param playerID The player ID
 	 * @param edgeID The edge location

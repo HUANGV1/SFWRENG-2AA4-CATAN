@@ -62,9 +62,6 @@ public class CatanEngine implements IGameController {
 		// Initialize services
 		this.resourceDistributor = new ResourceDistributor(board, board.getTopology());
 		this.buildingService = new BuildingService(board, settlementValidator, roadValidator);
-
-		// Initialize observers
-		this.observers = new ArrayList<>();
 	}
 
 	/**
@@ -74,7 +71,6 @@ public class CatanEngine implements IGameController {
 	 */
 	public void setPlayers(List<Player> players) {
 		this.players = players;
-		notifyObservers();
 	}
 
 	/**
