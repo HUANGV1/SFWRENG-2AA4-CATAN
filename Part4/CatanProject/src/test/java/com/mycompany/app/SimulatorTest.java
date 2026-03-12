@@ -33,21 +33,32 @@ class SimulatorTest {
      * Running a 2-round simulation must complete without throwing.
      * This exercises: initialSetup, rollDice, distributeResources,
      * player.takeTurn, victory-point check, and score printing.
+     * Uses a Scanner with preloaded input so the test does not block on "go".
      */
     @Test
     void testShortSimulationRunsWithoutException() {
-        Simulator sim = new Simulator(2);
-        assertDoesNotThrow(sim::runSimulation,
+        // 2 rounds × 4 players: each turn needs "go"; human (player 0) also needs "end turn"
+        String input = "go\nend turn\ngo\ngo\ngo\ngo\nend turn\ngo\ngo\ngo\n";
+        Scanner scanner = new Scanner(input);
+        Simulator sim = new Simulator(2, scanner);
+        assertDoesNotThrow(() -> sim.runSimulation(),
                 "A 2-round simulation must run to completion without exceptions");
     }
 
     /**
      * Running with a large round count must also not throw (stress/stability check).
+     * Uses a Scanner with preloaded input so the test does not block on "go".
      */
     @Test
     void testLargeRoundCountDoesNotThrow() {
-        Simulator sim = new Simulator(100);
-        assertDoesNotThrow(sim::runSimulation,
+        StringBuilder sb = new StringBuilder();
+        for (int round = 0; round < 100; round++) {
+            sb.append("go\nend turn\n");  // player 0 (human)
+            sb.append("go\ngo\ngo\n");    // players 1, 2, 3
+        }
+        Scanner scanner = new Scanner(sb.toString());
+        Simulator sim = new Simulator(100, scanner);
+        assertDoesNotThrow(() -> sim.runSimulation(),
                 "Simulator must handle 100 rounds without error");
     }
 
