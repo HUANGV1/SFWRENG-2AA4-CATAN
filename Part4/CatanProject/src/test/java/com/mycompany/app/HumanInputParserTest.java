@@ -60,5 +60,19 @@ class HumanInputParserTest {
         ICommand cmd = parser.parse("build potato");
         assertTrue(cmd instanceof InvalidCommand, "Unrecognized input should produce InvalidCommand");
     }
+
+    /** Boundary: null input must not throw; must return InvalidCommand. */
+    @Test
+    void testParseNullReturnsInvalidCommand() {
+        ICommand cmd = parser.parse(null);
+        assertTrue(cmd instanceof InvalidCommand, "null input must produce InvalidCommand");
+    }
+
+    /** Boundary: empty or whitespace-only input must return InvalidCommand. */
+    @Test
+    void testParseEmptyOrWhitespaceReturnsInvalidCommand() {
+        assertTrue(parser.parse("") instanceof InvalidCommand, "empty string must produce InvalidCommand");
+        assertTrue(parser.parse("   ") instanceof InvalidCommand, "whitespace-only must produce InvalidCommand");
+    }
 }
 
