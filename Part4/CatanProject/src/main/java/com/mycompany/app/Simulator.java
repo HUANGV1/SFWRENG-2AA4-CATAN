@@ -30,33 +30,38 @@ public class Simulator {
 	 */
 	private int maxRounds;
 
+	private final java.util.Scanner stepScanner = new java.util.Scanner(System.in);
+
+
 	/**
 	 * Constructor for Simulator
 	 * @param maxRounds Maximum number of rounds to run (1-8192)
 	 */
 	public Simulator(int maxRounds) {
+		
 		// Create board with topology
-		IBoardGraph topology = new CatanBoardGraph();
-		Board board = new Board(topology);
+    	IBoardGraph topology = new CatanBoardGraph();
+
+    	Board board = new Board(topology);
 
 		// Create dice
-		IRandomDice dice = new StandardDice();
+    	IRandomDice dice = new StandardDice();
 
 		// Create engine
-		this.engine = new CatanEngine(board, dice);
+    	this.engine = new CatanEngine(board, dice);
 
-		// Create players: player 0 is a human, the rest are random agents
-		this.players = new ArrayList<>();
-		Scanner scanner = new Scanner(System.in);
-		players.add(new HumanPlayer(0, new HumanInputParser(), scanner));
-		for (int i = 1; i < 4; i++) {
-			players.add(new RandomAgent(i));
-		}
+    	this.players = new ArrayList<>();
 
-		engine.setPlayers(players);
+    	players.add(new HumanPlayer(0, new HumanInputParser(), stepScanner));
+    	players.add(new RandomAgent(1));
+    	players.add(new RandomAgent(2));
+    	players.add(new RandomAgent(3));
 
-		this.maxRounds = maxRounds;
-		this.currRound = 0;
+    	engine.setPlayers(players);
+
+    	this.maxRounds = maxRounds;
+
+    	this.currRound = 0;
 	}
 
 	/**
@@ -87,9 +92,13 @@ public class Simulator {
 		// Main game loop
 		while (currRound < maxRounds) {
 			currRound++;
+			System.out.println("\n=== Round " + currRound + " ===");
 
 			// Each player takes a turn
 			for (Player player : players) {
+				System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Ready to take turn.");
+				waitForGo();
+
 				// Roll dice
 				int roll = engine.rollDice();
 				System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled " + roll);
@@ -124,16 +133,17 @@ public class Simulator {
 
 				// Player takes turn (attempts to build)
 				player.takeTurn(engine);
+				System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Turn finished.");
 
 				// Check for victory
 				if (player.getVictoryPoints() >= 10) {
 					System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Reached 10 victory points! Game over.");
 					printFinalScores();
-					return; // Terminate (R1.5)
+					return; // Terminate
 				}
 			}
 
-			// End of round: print victory points (R1.7)
+			// End of round: print victory points
 			printRoundScores();
 		}
 
@@ -165,6 +175,23 @@ public class Simulator {
 		for (Player player : players) {
 			System.out.println("Player " + player.getPlayerID() + ": " +
 				player.getVictoryPoints() + " victory points");
+		}
+	}
+
+
+	private void waitForGo() {
+		while (true) {
+			System.out.print("Type \"go\" to continue: ");
+			String line;
+			try {
+				line = stepScanner.nextLine();
+			} catch (Exception e) {
+				return;
+			}
+			if (line != null && line.trim().equalsIgnoreCase("go")) {
+				return;
+			}
+			System.out.println("Unrecognized input. Please type exactly \"go\".");
 		}
 	}
 }
