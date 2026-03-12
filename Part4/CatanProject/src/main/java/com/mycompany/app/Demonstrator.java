@@ -12,7 +12,7 @@ public class Demonstrator {
 	public static void main(String[] args) {
 		System.out.println("===========================================");
 		System.out.println("  Settlers of Catan Simulator");
-		System.out.println("  SFWRENG 2AA4 - Assignment 1");
+		System.out.println("  SFWRENG 2AA4 - Assignment 2");
 		System.out.println("===========================================\n");
 
 		// Read configuration
@@ -27,7 +27,7 @@ public class Demonstrator {
 
 		System.out.println("\n--- Game Configuration ---");
 		System.out.println("Max turns: " + maxTurns);
-		System.out.println("Players: 4 (RandomAgents)");
+		System.out.println("Players: 4 (1 Human, 3 RandomAgents)");
 		System.out.println("Win condition: 10 Victory Points");
 		System.out.println("Board: Standard Catan (19 tiles, 54 nodes, 72 edges)");
 
@@ -39,12 +39,13 @@ public class Demonstrator {
 		System.out.println("✓ Distance-2 rule for settlements");
 		System.out.println("✓ Road connectivity validation");
 		System.out.println("✓ Victory point tracking");
+		System.out.println("✓ Roll 7: no production, discard half if >7 cards, move robber and steal");
 
 		System.out.println("\n--- Game Rules (Excluded per R1.3) ---");
 		System.out.println("✗ Harbour tiles");
 		System.out.println("✗ Trading (domestic and maritime)");
 		System.out.println("✗ Development cards");
-		System.out.println("✗ Robber movement (roll 7 = no resources)");
+		System.out.println("✗ Player-chosen robber tile (random placement used on roll 7)");
 
 		System.out.println("\n===========================================");
 		System.out.println("Starting simulation...");
