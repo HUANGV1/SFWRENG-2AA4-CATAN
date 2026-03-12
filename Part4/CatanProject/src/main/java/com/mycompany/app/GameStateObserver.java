@@ -129,11 +129,32 @@ public class GameStateObserver implements IObserver {
 		StringBuilder json = new StringBuilder();
 		json.append("{\n");
 
-		// Roads are omitted from JSON to avoid conflicts between our engine's
-		// road placement rules/topology and the catanatron visualizer's rules.
-		// This keeps visualization focused on buildings (settlements/cities)
-		// without causing invalid road placement errors.
-		json.append("  \"roads\": [],\n");
+		// Roads: export edge (node pair) + owner for each road.
+		// May conflict with the Python visualizer if our topology (node/edge IDs)
+		// differs from catanatron's, or if apply order makes some roads "invalid"
+		// per catanatron's build_road() validation.
+		json.append("  \"roads\": [\n");
+		boolean firstRoad = true;
+		for (Edge edge : board.getAllEdges()) {
+			if (!edge.hasRoad()) {
+				continue;
+			}
+			int[] endpoints = topology.getEdgeEndpoints(edge.getEdgeID());
+			if (endpoints == null || endpoints.length != 2) {
+				continue;
+			}
+			int a = endpoints[0];
+			int b = endpoints[1];
+			String ownerColor = getColorForPlayer(edge.getOccupant().getPlayerID());
+			if (!firstRoad) {
+				json.append(",\n");
+			}
+			firstRoad = false;
+			json.append("    { \"a\": ").append(a)
+				.append(", \"b\": ").append(b)
+				.append(", \"owner\": \"").append(ownerColor).append("\" }");
+		}
+		json.append("\n  ],\n");
 
 		// Buildings
 		json.append("  \"buildings\": [\n");
