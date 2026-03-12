@@ -6,6 +6,7 @@ package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /************************************************************/
 /**
@@ -28,12 +29,27 @@ public class Simulator {
 	 * Maximum number of rounds to simulate
 	 */
 	private int maxRounds;
+	/**
+	 * Shared scanner for console input (step-forward)
+	 */
+	private Scanner scanner;
 
 	/**
 	 * Constructor for Simulator
+	 * 
 	 * @param maxRounds Maximum number of rounds to run (1-8192)
 	 */
 	public Simulator(int maxRounds) {
+		this(maxRounds, new Scanner(System.in));
+	}
+
+	/**
+	 * Constructor for Simulator with a shared Scanner
+	 * 
+	 * @param maxRounds Maximum number of rounds to run (1-8192)
+	 * @param scanner   Shared Scanner for console input
+	 */
+	public Simulator(int maxRounds, Scanner scanner) {
 		// Create board with topology
 		IBoardGraph topology = new CatanBoardGraph();
 		Board board = new Board(topology);
@@ -44,12 +60,10 @@ public class Simulator {
 		// Create engine
 		this.engine = new CatanEngine(board, dice);
 
-		// Attach game state observer for visualization exports
-		new GameStateObserver(this.engine);
-
-		// Create 4 random agents
+		// Create players: player 0 is a human, the rest are random agents
 		this.players = new ArrayList<>();
-		for (int i = 0; i < 4; i++) {
+		players.add(new HumanPlayer(0, new HumanInputParser(), scanner));
+		for (int i = 1; i < 4; i++) {
 			players.add(new RandomAgent(i));
 		}
 
@@ -57,6 +71,7 @@ public class Simulator {
 
 		this.maxRounds = maxRounds;
 		this.currRound = 0;
+		this.scanner = scanner;
 	}
 
 	/**
@@ -90,21 +105,23 @@ public class Simulator {
 
 			// Each player takes a turn
 			for (Player player : players) {
+				// Step-forward: wait for 'go' command before proceeding
+				waitForGo(player);
+
 				// Roll dice
 				int roll = engine.rollDice();
 				System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled " + roll);
 
 				// Handle robber on 7
 				if (roll == 7) {
-					System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled 7, no resources produced");
+					System.out.println(
+							"[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled 7, no resources produced");
 
-					// Each player with >7 cards must handle it
-					for (Player p : players) {
-						if (p.getTotalResourceCards() > 7) {
-							System.out.println("[" + currRound + "] / [" + p.getPlayerID() + "]: Has " + p.getTotalResourceCards() + " cards, attempting to build...");
-							p.handleOverSevenCards();
-						}
-					}
+					// Each player with >7 cards must discard half (rounded down)
+					engine.getDistributor().handleOverSevenCardsPhase(players);
+
+					// Move robber and steal
+					engine.getDistributor().handleRobber(player);
 				} else {
 					// Distribute resources
 					engine.distributeResources(roll, players);
@@ -124,7 +141,8 @@ public class Simulator {
 
 				// Check for victory
 				if (player.getVictoryPoints() >= 10) {
-					System.out.println("[" + currRound + "] / [" + player.getPlayerID() + "]: Reached 10 victory points! Game over.");
+					System.out.println("[" + currRound + "] / [" + player.getPlayerID()
+							+ "]: Reached 10 victory points! Game over.");
 					printFinalScores();
 					return; // Terminate (R1.5)
 				}
@@ -146,7 +164,7 @@ public class Simulator {
 		StringBuilder sb = new StringBuilder("End of round " + currRound + ": ");
 		for (int i = 0; i < players.size(); i++) {
 			sb.append("Player ").append(i).append(": ")
-			  .append(players.get(i).getVictoryPoints()).append(" VP");
+					.append(players.get(i).getVictoryPoints()).append(" VP");
 			if (i < players.size() - 1) {
 				sb.append(", ");
 			}
@@ -161,7 +179,23 @@ public class Simulator {
 		System.out.println("\n=== Final Scores ===");
 		for (Player player : players) {
 			System.out.println("Player " + player.getPlayerID() + ": " +
-				player.getVictoryPoints() + " victory points");
+					player.getVictoryPoints() + " victory points");
+		}
+	}
+
+	/**
+	 * Wait for the user to type 'go' before proceeding to the next turn.
+	 * Implements the step-forward functionality (R2.4).
+	 * 
+	 * @param player The player whose turn is about to begin
+	 */
+	private void waitForGo(Player player) {
+		System.out.println("\nType 'go' to proceed to Player " + player.getPlayerID() + "'s turn...");
+		while (scanner.hasNextLine()) {
+			String input = scanner.nextLine().trim();
+			if (input.equalsIgnoreCase("go")) {
+				break;
+			}
 		}
 	}
 }

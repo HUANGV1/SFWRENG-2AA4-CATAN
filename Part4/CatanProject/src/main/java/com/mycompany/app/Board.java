@@ -3,6 +3,7 @@
 // --------------------------------------------------------
 
 package com.mycompany.app;
+
 import java.util.*;
 import java.util.Collection;
 
@@ -18,7 +19,7 @@ public class Board {
 	/**
 	 * 
 	 */
-	private Map<Integer, Node>  nodes;
+	private Map<Integer, Node> nodes;
 	/**
 	 * 
 	 */
@@ -27,9 +28,14 @@ public class Board {
 	 * 
 	 */
 	private IBoardGraph topology;
+	/**
+	 * Tile ID where the robber is currently located
+	 */
+	private int robberTileID;
 
 	/**
 	 * Constructor for Board
+	 * 
 	 * @param topology Board topology defining node and edge adjacencies
 	 */
 	public Board(IBoardGraph topology) {
@@ -37,6 +43,7 @@ public class Board {
 		this.tiles = new HashMap<>();
 		this.nodes = new HashMap<>();
 		this.edges = new HashMap<>();
+		this.robberTileID = 11; // Desert tile
 		initializeBoard();
 	}
 
@@ -65,7 +72,7 @@ public class Board {
 		tiles.put(8, new HexTile(8, TileType.WHEAT, 12));
 		tiles.put(9, new HexTile(9, TileType.SHEEP, 2));
 		tiles.put(10, new HexTile(10, TileType.BRICK, 6));
-		tiles.put(11, new HexTile(11, TileType.DESERT, 0));  // Desert has no token
+		tiles.put(11, new HexTile(11, TileType.DESERT, 0)); // Desert has no token
 		tiles.put(12, new HexTile(12, TileType.ORE, 3));
 		tiles.put(13, new HexTile(13, TileType.WOOD, 8));
 		tiles.put(14, new HexTile(14, TileType.BRICK, 4));
@@ -87,6 +94,7 @@ public class Board {
 
 	/**
 	 * Get a specific node by ID
+	 * 
 	 * @param nodeID The node identifier
 	 * @return The Node object, or null if not found
 	 */
@@ -96,6 +104,7 @@ public class Board {
 
 	/**
 	 * Get a specific edge by ID
+	 * 
 	 * @param edgeID The edge identifier
 	 * @return The Edge object, or null if not found
 	 */
@@ -105,6 +114,7 @@ public class Board {
 
 	/**
 	 * Get a specific tile by ID
+	 * 
 	 * @param tileID The tile identifier
 	 * @return The HexTile object, or null if not found
 	 */
@@ -114,6 +124,7 @@ public class Board {
 
 	/**
 	 * Get all tiles on the board
+	 * 
 	 * @return Collection of all HexTiles
 	 */
 	public Collection<HexTile> getAllTiles() {
@@ -122,6 +133,7 @@ public class Board {
 
 	/**
 	 * Get all nodes on the board
+	 * 
 	 * @return Collection of all Nodes
 	 */
 	public Collection<Node> getAllNodes() {
@@ -130,6 +142,7 @@ public class Board {
 
 	/**
 	 * Get all edges on the board
+	 * 
 	 * @return Collection of all Edges
 	 */
 	public Collection<Edge> getAllEdges() {
@@ -138,9 +151,28 @@ public class Board {
 
 	/**
 	 * Get the board topology
+	 * 
 	 * @return The IBoardGraph defining adjacencies
 	 */
 	public IBoardGraph getTopology() {
 		return topology;
+	}
+
+	/**
+	 * Get the current robber location
+	 * 
+	 * @return The tile ID where the robber is located
+	 */
+	public int getRobberLocation() {
+		return robberTileID;
+	}
+
+	/**
+	 * Set the robber location to a new tile
+	 * 
+	 * @param tileID The tile ID to move the robber to
+	 */
+	public void setRobberLocation(int tileID) {
+		this.robberTileID = tileID;
 	}
 }

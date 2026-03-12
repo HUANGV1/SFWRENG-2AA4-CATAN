@@ -6,200 +6,156 @@ package com.mycompany.app;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.*;
 
 /************************************************************/
 /**
- * 
+ * Observer that exports the game state to external JSON files.
+ * Implements IObserver to react to game state changes.
  */
 public class GameStateObserver implements IObserver {
-	/**
-	 * 
-	 */
-	private String initFilePath;
-	/**
-	 * 
-	 */
-	private String stateFilePath;
-	/**
-	 * 
-	 */
-	public CatanEngine engine;
+    /**
+     * File path for the initial board configuration
+     */
+    private String initFilePath;
+    /**
+     * File path for the current game state
+     */
+    private String stateFilePath;
+    /**
+     * Reference to the game engine
+     */
+    public CatanEngine engine;
 
-	/**
-	 * 
-	 */
-	@Override
-	public void update() {
+    /**
+     * Constructor for GameStateObserver
+     * 
+     * @param controller Game controller reference (must be a CatanEngine)
+     */
+    public GameStateObserver(IGameController controller) {
+        this.engine = (CatanEngine) controller;
+        this.initFilePath = "initial_board.json";
+        this.stateFilePath = "game_state.json";
         exportInitialBoard();
+    }
+
+    /**
+     * Called when the game state changes. Exports the current state to JSON.
+     */
+    @Override
+    public void update() {
         exportGameState();
-	}
+    }
 
-	/**
-	 * 
-	 * @param engine 
-	 */
-	public GameStateObserver(CatanEngine engine) {
-		this.engine = engine;
-        // Paths are resolved relative to the working directory at runtime.
-        // When running the JAR from Part4/CatanProject/target,
-        // ../../../visualize points back to the repo's visualize folder.
-        this.initFilePath = "../../../visualize/base_map.json";
-        this.stateFilePath = "../../../visualize/state.json";
-        this.engine.attach(this);
-	}
+    /**
+     * Export the initial board configuration to a JSON file.
+     * Writes tile types, number tokens, and board layout.
+     */
+    private void exportInitialBoard() {
+        StringBuilder json = new StringBuilder();
+        json.append("{\n");
+        json.append("  \"type\": \"initial_board\",\n");
+        json.append("  \"tiles\": [\n");
 
-	private static final int[][] TILE_COORDS = new int[][]{
-		{0, 0, 0},
-		{0, -1, 1},
-		{-1, 0, 1},
-		{-1, 1, 0},
-		{0, 1, -1},
-		{1, 0, -1},
-		{1, -1, 0},
-		{0, -2, 2},
-		{-1, -1, 2},
-		{-2, 0, 2},
-		{-2, 1, 1},
-		{-2, 2, 0},
-		{-1, 2, -1},
-		{0, 2, -2},
-		{1, 1, -2},
-		{2, 0, -2},
-		{2, -1, -1},
-		{2, -2, 0},
-		{1, -2, 1}
-	};
+        Board board = engine.getBoard();
+        Collection<HexTile> tiles = board.getAllTiles();
+        int tileCount = 0;
+        int totalTiles = tiles.size();
 
-	/**
-	 * 
-	 */
-	private void exportInitialBoard() {
-		Board board = engine.getBoard();
+        for (HexTile tile : tiles) {
+            json.append("    {\n");
+            json.append("      \"tileID\": ").append(tile.getTileID()).append(",\n");
+            json.append("      \"type\": \"").append(tile.getType()).append("\",\n");
+            json.append("      \"numberToken\": ").append(tile.getNumberToken()).append("\n");
+            json.append("    }");
+            tileCount++;
+            if (tileCount < totalTiles) {
+                json.append(",");
+            }
+            json.append("\n");
+        }
 
-		StringBuilder json = new StringBuilder();
-		json.append("{\n");
-		json.append("  \"tiles\": [\n");
+        json.append("  ]\n");
+        json.append("}\n");
 
-		for (int tileID = 0; tileID < TILE_COORDS.length; tileID++) {
-			HexTile tile = board.getTile(tileID);
-			if (tile == null) {
-				continue;
-			}
+        writeToFile(initFilePath, json.toString());
+    }
 
-			int[] coords = TILE_COORDS[tileID];
-			int q = coords[0];
-			int s = coords[1];
-			int r = coords[2];
+    /**
+     * Export the current game state to a JSON file.
+     * Writes node occupancy, edge roads, and player resources.
+     */
+    private void exportGameState() {
+        StringBuilder json = new StringBuilder();
+        json.append("{\n");
+        json.append("  \"type\": \"game_state\",\n");
 
-			TileType type = tile.getType();
-			boolean isDesert = type == TileType.DESERT;
+        Board board = engine.getBoard();
 
-			json.append("    { \"q\": ").append(q)
-				.append(", \"s\": ").append(s)
-				.append(", \"r\": ").append(r)
-				.append(", \"resource\": ");
+        // Export nodes
+        json.append("  \"nodes\": [\n");
+        Collection<Node> nodes = board.getAllNodes();
+        int nodeCount = 0;
+        int totalNodes = nodes.size();
 
-			if (isDesert) {
-				json.append("null, \"number\": null }");
-			} else {
-				json.append("\"").append(type.name()).append("\", \"number\": ")
-					.append(tile.getNumberToken()).append(" }");
-			}
+        for (Node node : nodes) {
+            json.append("    {\n");
+            json.append("      \"nodeID\": ").append(node.getNodeID()).append(",\n");
+            json.append("      \"type\": \"").append(node.getType()).append("\",\n");
+            if (node.getOccupant() != null) {
+                json.append("      \"occupant\": ").append(node.getOccupant().getPlayerID()).append("\n");
+            } else {
+                json.append("      \"occupant\": null\n");
+            }
+            json.append("    }");
+            nodeCount++;
+            if (nodeCount < totalNodes) {
+                json.append(",");
+            }
+            json.append("\n");
+        }
+        json.append("  ],\n");
 
-			if (tileID < TILE_COORDS.length - 1) {
-				json.append(",\n");
-			} else {
-				json.append("\n");
-			}
-		}
+        // Export edges
+        json.append("  \"edges\": [\n");
+        Collection<Edge> edges = board.getAllEdges();
+        int edgeCount = 0;
+        int totalEdges = edges.size();
 
-		json.append("  ]\n");
-		json.append("}\n");
+        for (Edge edge : edges) {
+            json.append("    {\n");
+            json.append("      \"edgeID\": ").append(edge.getEdgeID()).append(",\n");
+            json.append("      \"hasRoad\": ").append(edge.hasRoad()).append(",\n");
+            if (edge.getOccupant() != null) {
+                json.append("      \"occupant\": ").append(edge.getOccupant().getPlayerID()).append("\n");
+            } else {
+                json.append("      \"occupant\": null\n");
+            }
+            json.append("    }");
+            edgeCount++;
+            if (edgeCount < totalEdges) {
+                json.append(",");
+            }
+            json.append("\n");
+        }
+        json.append("  ]\n");
 
-		writeToFile(initFilePath, json.toString());
-	}
+        json.append("}\n");
 
-	/**
-	 * 
-	 */
-	private void exportGameState() {
-		Board board = engine.getBoard();
-		IBoardGraph topology = board.getTopology();
+        writeToFile(stateFilePath, json.toString());
+    }
 
-		StringBuilder json = new StringBuilder();
-		json.append("{\n");
-
-		// Roads: export edge (node pair) + owner for each road.
-		// May conflict with the Python visualizer if our topology (node/edge IDs)
-		// differs from catanatron's, or if apply order makes some roads "invalid"
-		// per catanatron's build_road() validation.
-		json.append("  \"roads\": [\n");
-		boolean firstRoad = true;
-		for (Edge edge : board.getAllEdges()) {
-			if (!edge.hasRoad()) {
-				continue;
-			}
-			int[] endpoints = topology.getEdgeEndpoints(edge.getEdgeID());
-			if (endpoints == null || endpoints.length != 2) {
-				continue;
-			}
-			int a = endpoints[0];
-			int b = endpoints[1];
-			String ownerColor = getColorForPlayer(edge.getOccupant().getPlayerID());
-			if (!firstRoad) {
-				json.append(",\n");
-			}
-			firstRoad = false;
-			json.append("    { \"a\": ").append(a)
-				.append(", \"b\": ").append(b)
-				.append(", \"owner\": \"").append(ownerColor).append("\" }");
-		}
-		json.append("\n  ],\n");
-
-		// Buildings
-		json.append("  \"buildings\": [\n");
-		boolean firstBuilding = true;
-		for (Node node : board.getAllNodes()) {
-			if (node.getOccupant() == null) {
-				continue;
-			}
-			BuildingType type = node.getType();
-			if (type != BuildingType.SETTLEMENT && type != BuildingType.CITY) {
-				continue;
-			}
-
-			if (!firstBuilding) {
-				json.append(",\n");
-			}
-			firstBuilding = false;
-
-			String ownerColor = getColorForPlayer(node.getOccupant().getPlayerID());
-			json.append("    { \"node\": ").append(node.getNodeID())
-				.append(", \"owner\": \"").append(ownerColor).append("\"")
-				.append(", \"type\": \"").append(type.name()).append("\" }");
-		}
-		json.append("\n  ]\n");
-		json.append("}\n");
-
-		writeToFile(stateFilePath, json.toString());
-	}
-
-	private String getColorForPlayer(int playerID) {
-		int idx = Math.floorMod(playerID, 4);
-		switch (idx) {
-			case 0: return "RED";
-			case 1: return "BLUE";
-			case 2: return "ORANGE";
-			case 3: return "WHITE";
-			default: return "RED";
-		}
-	}
-
-	private void writeToFile(String path, String contents) {
-		try (FileWriter writer = new FileWriter(path)) {
-			writer.write(contents);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * Write a string to a file
+     * 
+     * @param filePath Path to the output file
+     * @param content  Content to write
+     */
+    private void writeToFile(String filePath, String content) {
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(content);
+        } catch (IOException e) {
+            System.err.println("Error writing to " + filePath + ": " + e.getMessage());
+        }
+    }
 }

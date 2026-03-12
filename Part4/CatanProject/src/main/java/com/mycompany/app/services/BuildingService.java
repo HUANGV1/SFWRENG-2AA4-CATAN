@@ -28,13 +28,9 @@ public class BuildingService {
 	 * @param player The player object
 	 * @return true if successful
 	 */
-	public boolean buildSettlement(int playerID, int nodeID, Player player) {
-		// Treat first building for this player as initial placement:
-		// initial placements skip the "adjacent road" requirement.
-		boolean hasExistingBuilding = playerHasAnyBuilding(playerID);
-
+	public boolean buildSettlement(int playerID, int nodeID, Player player, boolean isInitialPlacement) {
 		// Validate location
-		if (!settlementValidator.isValid(playerID, nodeID, !hasExistingBuilding)) {
+		if (!settlementValidator.isValid(playerID, nodeID, isInitialPlacement)) {
 			return false;
 		}
 
