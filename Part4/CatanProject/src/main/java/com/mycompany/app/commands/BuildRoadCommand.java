@@ -19,6 +19,10 @@ public class BuildRoadCommand implements ICommand {
         this.edgeId = edgeId;
     }
 
+    public int getEdgeId() {
+        return edgeId;
+    }
+
     @Override
     public void execute(IGameController controller, Player currentPlayer) {
         boolean success = controller.requestBuildRoad(currentPlayer.getPlayerID(), edgeId);
