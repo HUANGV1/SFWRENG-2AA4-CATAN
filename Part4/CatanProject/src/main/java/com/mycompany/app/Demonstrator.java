@@ -27,7 +27,7 @@ public class Demonstrator {
 
 		System.out.println("\n--- Game Configuration ---");
 		System.out.println("Max turns: " + maxTurns);
-		System.out.println("Players: 4 (1 Human, 3 RandomAgents)");
+		System.out.println("Players: 4 (all RandomAgents)");
 		System.out.println("Win condition: 10 Victory Points");
 		System.out.println("Board: Standard Catan (19 tiles, 54 nodes, 72 edges)");
 

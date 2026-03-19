@@ -6,6 +6,15 @@ package com.mycompany.app;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 /************************************************************/
 /**
@@ -132,30 +141,17 @@ public class GameStateObserver implements IObserver {
 		StringBuilder json = new StringBuilder();
 		json.append("{\n");
 
-		// Roads: export edge (node pair) + owner for each road.
-		// May conflict with the Python visualizer if our topology (node/edge IDs)
-		// differs from catanatron's, or if apply order makes some roads "invalid"
-		// per catanatron's build_road() validation.
+		// Roads: export in BFS order from settlements so visualizer receives valid dependency order
 		json.append("  \"roads\": [\n");
-		boolean firstRoad = true;
-		for (Edge edge : board.getAllEdges()) {
-			if (!edge.hasRoad()) {
-				continue;
-			}
-			int[] endpoints = topology.getEdgeEndpoints(edge.getEdgeID());
-			if (endpoints == null || endpoints.length != 2) {
-				continue;
-			}
-			int a = endpoints[0];
-			int b = endpoints[1];
-			String ownerColor = getColorForPlayer(edge.getOccupant().getPlayerID());
-			if (!firstRoad) {
+		List<int[]> orderedRoads = collectRoadsInBfsOrder(board, topology);
+		for (int i = 0; i < orderedRoads.size(); i++) {
+			int[] r = orderedRoads.get(i);
+			if (i > 0) {
 				json.append(",\n");
 			}
-			firstRoad = false;
-			json.append("    { \"a\": ").append(a)
-				.append(", \"b\": ").append(b)
-				.append(", \"owner\": \"").append(ownerColor).append("\" }");
+			json.append("    { \"a\": ").append(r[1])
+				.append(", \"b\": ").append(r[2])
+				.append(", \"owner\": \"").append(getColorForPlayer(r[0])).append("\" }");
 		}
 		json.append("\n  ],\n");
 
@@ -185,6 +181,46 @@ public class GameStateObserver implements IObserver {
 		json.append("}\n");
 
 		writeToFile(stateFilePath, json.toString());
+	}
+
+	/**
+	 * Collect roads in BFS order from each player's settlements/cities so the visualizer receives
+	 * a valid dependency order (each road after the settlement or road it connects to).
+	 */
+	private List<int[]> collectRoadsInBfsOrder(Board board, IBoardGraph topology) {
+		List<int[]> orderedRoads = new ArrayList<>();
+		for (int playerID = 0; playerID < 4; playerID++) {
+			Set<Integer> buildingNodes = new HashSet<>();
+			for (Node node : board.getAllNodes()) {
+				if (node.getOccupant() != null &&
+						node.getOccupant().getPlayerID() == playerID &&
+						node.getType() != BuildingType.NONE) {
+					buildingNodes.add(node.getNodeID());
+				}
+			}
+			Set<Integer> visitedNodes = new HashSet<>(buildingNodes);
+			Set<Integer> outputEdgeIds = new HashSet<>();
+			Queue<Integer> queue = new ArrayDeque<>(buildingNodes);
+			while (!queue.isEmpty()) {
+				int nodeID = queue.poll();
+				int[] adjEdges = topology.getAdjacentEdges(nodeID);
+				for (int edgeID : adjEdges) {
+					if (outputEdgeIds.contains(edgeID)) continue;
+					Edge edge = board.getEdge(edgeID);
+					if (!edge.hasRoad() || edge.getOccupant().getPlayerID() != playerID) continue;
+					int[] ep = topology.getEdgeEndpoints(edgeID);
+					if (ep == null || ep.length != 2) continue;
+					outputEdgeIds.add(edgeID);
+					orderedRoads.add(new int[]{playerID, ep[0], ep[1]});
+					int other = ep[0] == nodeID ? ep[1] : ep[0];
+					if (!visitedNodes.contains(other)) {
+						visitedNodes.add(other);
+						queue.add(other);
+					}
+				}
+			}
+		}
+		return orderedRoads;
 	}
 
 	private String getColorForPlayer(int playerID) {

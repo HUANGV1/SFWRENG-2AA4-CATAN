@@ -66,12 +66,14 @@ public class Simulator {
 
     	this.players = new ArrayList<>();
 
-    	players.add(new HumanPlayer(0, new HumanInputParser(), stepScanner));
+    	players.add(new RandomAgent(0));
     	players.add(new RandomAgent(1));
     	players.add(new RandomAgent(2));
     	players.add(new RandomAgent(3));
 
     	engine.setPlayers(players);
+
+    	new GameStateObserver(engine);
 
     	this.maxRounds = maxRounds;
 
@@ -79,13 +81,46 @@ public class Simulator {
 	}
 
 	/**
-	 * Initial setup phase - give each player starting resources and positions
+	 * Initial setup phase - hardcoded 2 settlements + 2 roads per player, then starting resources.
+	 * Matches Catan rules: placement is free (no resource cost) and happens before any dice rolls.
 	 */
 	private void initialSetup() {
-		// Give each player some starting resources for initial builds
-		// This is a simplified initial setup
+		Board board = engine.getBoard();
+
+		// Player 0 (RED): settlements at 0, 11; roads at 5, 13
+		Player p0 = players.get(0);
+		board.getNode(0).buildSettlement(p0);
+		board.getNode(11).buildSettlement(p0);
+		board.getEdge(5).buildRoad(p0);
+		board.getEdge(13).buildRoad(p0);
+		p0.addVictoryPoints(2);
+
+		// Player 1 (BLUE): settlements at 3, 39; roads at 2, 52
+		Player p1 = players.get(1);
+		board.getNode(3).buildSettlement(p1);
+		board.getNode(39).buildSettlement(p1);
+		board.getEdge(2).buildRoad(p1);
+		board.getEdge(52).buildRoad(p1);
+		p1.addVictoryPoints(2);
+
+		// Player 2 (ORANGE): settlements at 15, 27; roads at 19, 35
+		Player p2 = players.get(2);
+		board.getNode(15).buildSettlement(p2);
+		board.getNode(27).buildSettlement(p2);
+		board.getEdge(19).buildRoad(p2);
+		board.getEdge(35).buildRoad(p2);
+		p2.addVictoryPoints(2);
+
+		// Player 3 (WHITE): settlements at 22, 46; roads at 29, 64
+		Player p3 = players.get(3);
+		board.getNode(22).buildSettlement(p3);
+		board.getNode(46).buildSettlement(p3);
+		board.getEdge(29).buildRoad(p3);
+		board.getEdge(64).buildRoad(p3);
+		p3.addVictoryPoints(2);
+
+		// Give each player starting resources for additional builds
 		for (Player player : players) {
-			// Give starting resources (2 of each for initial builds)
 			player.addResource(ResourceType.LUMBER, 4);
 			player.addResource(ResourceType.BRICK, 4);
 			player.addResource(ResourceType.GRAIN, 2);
@@ -93,7 +128,8 @@ public class Simulator {
 			player.addResource(ResourceType.ORE, 2);
 		}
 
-		System.out.println("Initial setup: Each player receives starting resources");
+		engine.notifyObservers();
+		System.out.println("Initial setup: 2 settlements + 2 roads per player placed; starting resources granted.");
 	}
 
 	/**
@@ -122,11 +158,7 @@ public class Simulator {
 					System.out.println(
 							"[" + currRound + "] / [" + player.getPlayerID() + "]: Rolled 7, no resources produced");
 
-					// Each player with >7 cards must discard half (rounded down)
-					engine.getDistributor().handleOverSevenCardsPhase(players);
-
-					// Move robber and steal
-					engine.getDistributor().handleRobber(player);
+					engine.handleRollSeven(player);
 				} else {
 					// Distribute resources
 					engine.distributeResources(roll, players);

@@ -9,13 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Tests for RoadValidator.
  *
- * Board topology used:
- *   Center hex edges (0-5): edge 0={0,1}, edge 1={1,2}, ..., edge 5={5,0}
- *   Center-to-inner edges: edge 6={0,6}, edge 7={0,7}, edge 8={1,8}, edge 9={1,9}, ...
- *   Inner ring edges: edge 18={6,7}, edge 21={9,10}, edge 22={10,11}, ...
- *   Outer ring edges: edge 30={18,19}, ...
- *
- * Node 0 adjacent edges: {0, 5, 6, 7}
+ * Uses CatanBoardGraph topology (matches visualizer).
+ * Node 0 adjacent edges: {4, 5, 23}
+ * Edge 4: {5, 0}, Edge 5: {0, 1}, Edge 23: {20, 0}
  */
 class RoadValidatorTest {
 
@@ -33,14 +29,14 @@ class RoadValidatorTest {
 
     /**
      * A road adjacent to a player's own settlement must be valid.
-     * Edge 0 connects nodes {0,1}; player has settlement at node 0.
+     * Node 0 adjacent edges in CatanBoardGraph: 4, 5, 23.
      */
     @Test
     void testRoadValidAdjacentToSettlement() {
         board.getNode(0).buildSettlement(player);
-        assertTrue(validator.isValid(0, 0), "Edge 0 connects to node 0 (player's settlement) - must be valid");
+        assertTrue(validator.isValid(0, 4), "Edge 4 connects to node 0 (player's settlement) - must be valid");
         assertTrue(validator.isValid(0, 5), "Edge 5 connects to node 0 (player's settlement) - must be valid");
-        assertTrue(validator.isValid(0, 6), "Edge 6 connects to node 0 (player's settlement) - must be valid");
+        assertTrue(validator.isValid(0, 23), "Edge 23 connects to node 0 (player's settlement) - must be valid");
     }
 
     /**

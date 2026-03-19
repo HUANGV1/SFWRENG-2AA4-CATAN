@@ -24,93 +24,98 @@ public class RandomAgent extends Player {
 	}
 
 	/**
-	 * Take a turn by making random valid moves
-	 * 
+	 * Take a turn by making random valid moves.
+	 * Loops until no valid builds remain or safety cap is hit, to drain excess resources.
+	 *
 	 * @param controller Game controller interface
 	 */
 	@Override
 	public void takeTurn(IGameController controller) {
-		// Try to build something random if possible
-		List<String> possibleActions = new ArrayList<>();
+		final int maxBuildsPerTurn = 10;
+		int buildsThisTurn = 0;
 
-		// Check if can build city (upgrade settlement)
-		if (controller instanceof CatanEngine) {
-			CatanEngine engine = (CatanEngine) controller;
-			// Check nodes for player's settlements that could be upgraded
-			for (Node node : engine.getBoard().getAllNodes()) {
-				if (node.getOccupant() != null &&
-						node.getOccupant().getPlayerID() == this.playerID &&
-						node.getType() == BuildingType.SETTLEMENT) {
-					// Check if player has resources for city
-					Map<ResourceType, Integer> cityCost = new HashMap<>();
-					cityCost.put(ResourceType.ORE, 3);
-					cityCost.put(ResourceType.GRAIN, 2);
-					if (hasResources(cityCost)) {
-						possibleActions.add("CITY:" + node.getNodeID());
+		while (buildsThisTurn < maxBuildsPerTurn) {
+			List<String> possibleActions = new ArrayList<>();
+
+			// Check if can build city (upgrade settlement)
+			if (controller instanceof CatanEngine) {
+				CatanEngine engine = (CatanEngine) controller;
+				for (Node node : engine.getBoard().getAllNodes()) {
+					if (node.getOccupant() != null &&
+							node.getOccupant().getPlayerID() == this.playerID &&
+							node.getType() == BuildingType.SETTLEMENT) {
+						Map<ResourceType, Integer> cityCost = new HashMap<>();
+						cityCost.put(ResourceType.ORE, 3);
+						cityCost.put(ResourceType.GRAIN, 2);
+						if (hasResources(cityCost)) {
+							possibleActions.add("CITY:" + node.getNodeID());
+						}
 					}
 				}
 			}
-		}
 
-		// Check if can build settlement
-		int[] validSettlements = controller.getValidSettlementLocations(playerID);
-		for (int nodeID : validSettlements) {
-			Map<ResourceType, Integer> settlementCost = new HashMap<>();
-			settlementCost.put(ResourceType.LUMBER, 1);
-			settlementCost.put(ResourceType.BRICK, 1);
-			settlementCost.put(ResourceType.GRAIN, 1);
-			settlementCost.put(ResourceType.WOOL, 1);
-			if (hasResources(settlementCost)) {
-				possibleActions.add("SETTLEMENT:" + nodeID);
-			}
-		}
-
-		// Check if can build road
-		int[] validRoads = controller.getValidRoadLocations(playerID);
-		for (int edgeID : validRoads) {
-			Map<ResourceType, Integer> roadCost = new HashMap<>();
-			roadCost.put(ResourceType.LUMBER, 1);
-			roadCost.put(ResourceType.BRICK, 1);
-			if (hasResources(roadCost)) {
-				possibleActions.add("ROAD:" + edgeID);
-			}
-		}
-
-		// If no actions possible, end turn
-		if (possibleActions.isEmpty()) {
-			return;
-		}
-
-		// Pick random action
-		String action = possibleActions.get(random.nextInt(possibleActions.size()));
-
-		// Execute action
-		String[] parts = action.split(":");
-		String type = parts[0];
-		int locationID = Integer.parseInt(parts[1]);
-
-		boolean success = false;
-		switch (type) {
-			case "SETTLEMENT":
-				success = controller.requestBuildSettlement(playerID, locationID);
-				if (success) {
-					System.out.println("[0] / [" + playerID + "]: Built settlement at node " + locationID);
+			// Check if can build settlement
+			int[] validSettlements = controller.getValidSettlementLocations(playerID);
+			for (int nodeID : validSettlements) {
+				Map<ResourceType, Integer> settlementCost = new HashMap<>();
+				settlementCost.put(ResourceType.LUMBER, 1);
+				settlementCost.put(ResourceType.BRICK, 1);
+				settlementCost.put(ResourceType.GRAIN, 1);
+				settlementCost.put(ResourceType.WOOL, 1);
+				if (hasResources(settlementCost)) {
+					possibleActions.add("SETTLEMENT:" + nodeID);
 				}
-				break;
-			case "ROAD":
-				success = controller.requestBuildRoad(playerID, locationID);
-				if (success) {
-					System.out.println("[0] / [" + playerID + "]: Built road on edge " + locationID);
+			}
+
+			// Check if can build road
+			int[] validRoads = controller.getValidRoadLocations(playerID);
+			for (int edgeID : validRoads) {
+				Map<ResourceType, Integer> roadCost = new HashMap<>();
+				roadCost.put(ResourceType.LUMBER, 1);
+				roadCost.put(ResourceType.BRICK, 1);
+				if (hasResources(roadCost)) {
+					possibleActions.add("ROAD:" + edgeID);
 				}
-				break;
-			case "CITY":
-				if (controller instanceof CatanEngine) {
-					success = ((CatanEngine) controller).requestBuildCity(playerID, locationID);
+			}
+
+			if (possibleActions.isEmpty()) {
+				return;
+			}
+
+			String action = possibleActions.get(random.nextInt(possibleActions.size()));
+			String[] parts = action.split(":");
+			String type = parts[0];
+			int locationID = Integer.parseInt(parts[1]);
+
+			boolean success = false;
+			switch (type) {
+				case "SETTLEMENT":
+					success = controller.requestBuildSettlement(playerID, locationID);
 					if (success) {
-						System.out.println("[0] / [" + playerID + "]: Upgraded to city at node " + locationID);
+						System.out.println("[0] / [" + playerID + "]: Built settlement at node " + locationID);
 					}
-				}
-				break;
+					break;
+				case "ROAD":
+					success = controller.requestBuildRoad(playerID, locationID);
+					if (success) {
+						System.out.println("[0] / [" + playerID + "]: Built road on edge " + locationID);
+					}
+					break;
+				case "CITY":
+					if (controller instanceof CatanEngine) {
+						success = ((CatanEngine) controller).requestBuildCity(playerID, locationID);
+						if (success) {
+							System.out.println("[0] / [" + playerID + "]: Upgraded to city at node " + locationID);
+						}
+					}
+					break;
+			}
+
+			if (success) {
+				buildsThisTurn++;
+			} else {
+				return;
+			}
 		}
 	}
 

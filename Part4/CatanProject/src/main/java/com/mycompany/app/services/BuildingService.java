@@ -34,6 +34,11 @@ public class BuildingService {
 			return false;
 		}
 
+		// Catan limit: max 5 settlements per player
+		if (countSettlements(playerID) >= 5) {
+			return false;
+		}
+
 		// Check resources
 		Map<ResourceType, Integer> cost = BuildingCost.SETTLEMENT.getCost();
 		if (!player.hasResources(cost)) {
@@ -79,6 +84,11 @@ public class BuildingService {
 			return false;
 		}
 
+		// Catan limit: max 15 roads per player
+		if (countRoads(playerID) >= 15) {
+			return false;
+		}
+
 		Map<ResourceType, Integer> cost = BuildingCost.ROAD.getCost();
 		if (!player.hasResources(cost)) {
 			return false;
@@ -107,6 +117,11 @@ public class BuildingService {
 			return false;
 		}
 
+		// Catan limit: max 4 cities per player
+		if (countCities(playerID) >= 4) {
+			return false;
+		}
+
 		Map<ResourceType, Integer> cost = BuildingCost.CITY.getCost();
 		if (!player.hasResources(cost)) {
 			return false;
@@ -128,5 +143,37 @@ public class BuildingService {
 		for (Map.Entry<ResourceType, Integer> entry : cost.entrySet()) {
 			player.deductResource(entry.getKey(), entry.getValue());
 		}
+	}
+
+	private int countSettlements(int playerID) {
+		int count = 0;
+		for (Node node : board.getAllNodes()) {
+			if (node.getOccupant() != null && node.getOccupant().getPlayerID() == playerID
+					&& node.getType() == BuildingType.SETTLEMENT) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	private int countCities(int playerID) {
+		int count = 0;
+		for (Node node : board.getAllNodes()) {
+			if (node.getOccupant() != null && node.getOccupant().getPlayerID() == playerID
+					&& node.getType() == BuildingType.CITY) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	private int countRoads(int playerID) {
+		int count = 0;
+		for (Edge edge : board.getAllEdges()) {
+			if (edge.hasRoad() && edge.getOccupant().getPlayerID() == playerID) {
+				count++;
+			}
+		}
+		return count;
 	}
 }

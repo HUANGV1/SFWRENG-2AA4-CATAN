@@ -48,6 +48,13 @@ public class RoadValidator {
 			Node node = board.getNode(nodeID);
 			if (node == null) continue;
 
+			// If node has opponent's building, cannot extend through it
+			if (node.getOccupant() != null &&
+				node.getOccupant().getPlayerID() != playerID &&
+				node.getType() != BuildingType.NONE) {
+				continue; // blocked by opponent
+			}
+
 			// Check if node has player's building
 			if (node.getOccupant() != null &&
 				node.getOccupant().getPlayerID() == playerID &&
