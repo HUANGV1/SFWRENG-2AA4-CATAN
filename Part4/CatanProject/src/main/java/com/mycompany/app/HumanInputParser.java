@@ -42,6 +42,19 @@ public class HumanInputParser implements IParser {
             Pattern.compile("^status\\s*$", Pattern.CASE_INSENSITIVE);
     private static final Pattern HELP =
             Pattern.compile("^help\\s*$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern UNDO =
+            Pattern.compile("^undo\\s*$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern REDO =
+            Pattern.compile("^redo\\s*$", Pattern.CASE_INSENSITIVE);
+
+    private final IHistoryIterator iterator;
+
+    /**
+     * Create parser with iterator for undo/redo support.
+     */
+    public HumanInputParser(IHistoryIterator iterator) {
+        this.iterator = iterator;
+    }
 
     @Override
     public ICommand parse(String input) {
@@ -141,6 +154,16 @@ public class HumanInputParser implements IParser {
         m = HELP.matcher(trimmed);
         if (m.matches()) {
             return new HelpCommand();
+        }
+
+        m = UNDO.matcher(trimmed);
+        if (m.matches()) {
+            return new UndoCommand(iterator);
+        }
+
+        m = REDO.matcher(trimmed);
+        if (m.matches()) {
+            return new RedoCommand(iterator);
         }
 
         return new InvalidCommand("Unrecognized command: '" + input + "'");

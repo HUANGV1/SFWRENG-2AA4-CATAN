@@ -6,10 +6,7 @@ import java.util.Scanner;
 
 /**
  * Human-controlled player that issues commands via the command line.
- *
- * The HumanPlayer delegates parsing of raw input lines to an IParser
- * and executes the resulting ICommand objects
- * against the provided IGameController.
+ * Invoker for Command pattern; creates CommandHistory and HistoryIterator for undo/redo.
  */
 public class HumanPlayer extends Player {
 
@@ -20,12 +17,13 @@ public class HumanPlayer extends Player {
 		ACTION_PHASE
 	}
 
-	private final IParser parser;
+	private final CommandHistory history = new CommandHistory();
+	private final IHistoryIterator iterator = history.createIterator();
+	private final IParser parser = new HumanInputParser(iterator);
 	private final Scanner scanner;
 
-	public HumanPlayer(int playerID, IParser parser, Scanner scanner) {
+	public HumanPlayer(int playerID, Scanner scanner) {
 		super(playerID);
-		this.parser = parser;
 		this.scanner = scanner;
 	}
 
@@ -85,8 +83,18 @@ public class HumanPlayer extends Player {
 
 					actionCommand.execute(controller, this);
 
+					// Push successful build commands to history for undo/redo
+					if (actionCommand.wasSuccessful() &&
+							(actionCommand instanceof BuildSettlementCommand ||
+							 actionCommand instanceof BuildRoadCommand ||
+							 actionCommand instanceof BuildCityCommand)) {
+						history.push(actionCommand, iterator.getPosition());
+						iterator.advance();
+					}
+
 					// If the player explicitly ends their turn, or issues a build
 					// command (settlement/road/city/dev card), we terminate the turn.
+					// Undo/Redo do NOT end the turn.
 					if (actionCommand instanceof EndTurnCommand ||
 							actionCommand instanceof BuildSettlementCommand ||
 							actionCommand instanceof BuildRoadCommand ||
