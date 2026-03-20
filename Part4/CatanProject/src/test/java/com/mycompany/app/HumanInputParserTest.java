@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HumanInputParserTest {
 
-    private final HumanInputParser parser = new HumanInputParser();
+    private final HumanInputParser parser = new HumanInputParser(new CommandHistory().createIterator());
 
     @Test
     void testParseRoll() {
@@ -73,6 +73,12 @@ class HumanInputParserTest {
     void testParseEmptyOrWhitespaceReturnsInvalidCommand() {
         assertTrue(parser.parse("") instanceof InvalidCommand, "empty string must produce InvalidCommand");
         assertTrue(parser.parse("   ") instanceof InvalidCommand, "whitespace-only must produce InvalidCommand");
+    }
+
+    @Test
+    void testParseUndoAndRedo() {
+        assertTrue(parser.parse("undo") instanceof UndoCommand, "undo must produce UndoCommand");
+        assertTrue(parser.parse("redo") instanceof RedoCommand, "redo must produce RedoCommand");
     }
 }
 

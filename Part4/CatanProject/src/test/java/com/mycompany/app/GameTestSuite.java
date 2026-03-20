@@ -14,6 +14,9 @@ import org.junit.platform.suite.api.Suite;
         CatanEngineTest.class,
         RoadValidatorTest.class,
         RandomAgentTest.class,
+        RuleBasedAgentTest.class,
+        AgentConstraintFacadeTest.class,
+        CommandHistoryTest.class,
         SimulatorTest.class
 })
 public class GameTestSuite {
