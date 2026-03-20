@@ -1,17 +1,25 @@
 package com.mycompany.app;
 
+import com.mycompany.app.commands.BuildCityCommand;
+import com.mycompany.app.commands.BuildRoadCommand;
+import com.mycompany.app.commands.BuildSettlementCommand;
+import com.mycompany.app.commands.BuyDevCardCommand;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Random agent that makes random valid moves each turn.
- * Extends ComputerPlayer and scores every command 0.0 so the template tie-breaker
- * produces uniformly random selection.
+ * Rule-based agent: R3.3 constraints via AgentConstraintFacade, then R3.2
+ * scoring via Template Method (evaluateCommand).
  */
-public class RandomAgent extends ComputerPlayer {
+public class RuleBasedAgent extends ComputerPlayer {
 
-    public RandomAgent(int playerID) {
+    private final AgentConstraintFacade facade;
+
+    public RuleBasedAgent(int playerID, CatanEngine engine) {
         super(playerID);
+        this.facade = new AgentConstraintFacade(engine);
     }
 
     @Override
@@ -20,6 +28,13 @@ public class RandomAgent extends ComputerPlayer {
         int buildsThisTurn = 0;
 
         while (buildsThisTurn < maxBuildsPerTurn) {
+            ICommand priority = facade.getPriorityConstraintAction(this);
+            if (priority != null) {
+                priority.execute(controller, this);
+                buildsThisTurn++;
+                continue;
+            }
+
             List<ICommand> candidates = buildCandidateList(controller);
             ICommand best = chooseBestAction(candidates);
             if (best == null) {
@@ -32,23 +47,37 @@ public class RandomAgent extends ComputerPlayer {
 
     @Override
     protected double evaluateCommand(ICommand command) {
+        if (command instanceof BuildSettlementCommand || command instanceof BuildCityCommand) {
+            return 1.0;
+        }
+        if (command instanceof BuildRoadCommand || command instanceof BuyDevCardCommand) {
+            return 0.8;
+        }
+        if (estimateCardsAfterSpend(command) < 5) {
+            return 0.5;
+        }
         return 0.0;
+    }
+
+    private int estimateCardsAfterSpend(ICommand command) {
+        int current = getTotalResourceCards();
+        Map<ResourceType, Integer> cost = null;
+        if (command instanceof BuildSettlementCommand) {
+            cost = BuildingCost.SETTLEMENT.getCost();
+        } else if (command instanceof BuildCityCommand) {
+            cost = BuildingCost.CITY.getCost();
+        } else if (command instanceof BuildRoadCommand) {
+            cost = BuildingCost.ROAD.getCost();
+        }
+        if (cost == null) {
+            return current;
+        }
+        int totalCost = cost.values().stream().mapToInt(Integer::intValue).sum();
+        return current - totalCost;
     }
 
     @Override
     public void handleOverSevenCards() {
-        int attempts = 0;
-        while (getTotalResourceCards() > 7 && attempts < 10) {
-            attempts++;
-            if (hasResources(java.util.Map.of(ResourceType.LUMBER, 1, ResourceType.BRICK, 1))) {
-                break;
-            }
-            if (hasResources(java.util.Map.of(ResourceType.LUMBER, 1, ResourceType.BRICK, 1,
-                    ResourceType.GRAIN, 1, ResourceType.WOOL, 1))) {
-                break;
-            }
-            break;
-        }
     }
 
     @Override

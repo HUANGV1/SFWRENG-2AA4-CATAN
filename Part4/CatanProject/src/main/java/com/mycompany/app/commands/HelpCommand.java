@@ -25,6 +25,7 @@ public class HelpCommand implements ICommand {
         System.out.println("  play yearofplenty <resource1> <resource2>");
         System.out.println("  play victorypoint");
         System.out.println("  status");
+        System.out.println("  undo | redo");
         System.out.println("  end | end turn | go");
     }
 }

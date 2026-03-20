@@ -7,6 +7,7 @@ package com.mycompany.app;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 
 /************************************************************/
 /**
@@ -78,6 +79,30 @@ public class Simulator {
     	this.maxRounds = maxRounds;
 
     	this.currRound = 0;
+	}
+
+	/**
+	 * Constructor with player factory (for custom agent mix: HumanPlayer, RuleBasedAgent, etc.).
+	 *
+	 * @param maxRounds Maximum number of rounds to run (1-8192)
+	 * @param scanner Shared scanner for step-forward + human input
+	 * @param playerFactory Creates the player list given the engine (engine must be set before creating RuleBasedAgent)
+	 */
+	public Simulator(int maxRounds, Scanner scanner, Function<CatanEngine, List<Player>> playerFactory) {
+		this.stepScanner = scanner;
+
+		IBoardGraph topology = new CatanBoardGraph();
+		Board board = new Board(topology);
+		IRandomDice dice = new StandardDice();
+		this.engine = new CatanEngine(board, dice);
+
+		this.players = playerFactory.apply(this.engine);
+		engine.setPlayers(players);
+
+		new GameStateObserver(engine);
+
+		this.maxRounds = maxRounds;
+		this.currRound = 0;
 	}
 
 	/**

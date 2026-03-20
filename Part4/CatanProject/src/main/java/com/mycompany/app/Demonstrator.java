@@ -1,8 +1,11 @@
 package com.mycompany.app;
 
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Demonstrator class - Main entry point for the Catan simulator
- * Runs a sample simulation demonstrating the game mechanics
+ * Runs a sample simulation demonstrating R3.1 (undo/redo), R3.2 (Template Method), and R3.3 (Facade).
  */
 public class Demonstrator {
 	/**
@@ -27,7 +30,7 @@ public class Demonstrator {
 
 		System.out.println("\n--- Game Configuration ---");
 		System.out.println("Max turns: " + maxTurns);
-		System.out.println("Players: 4 (all RandomAgents)");
+		System.out.println("Players: 1 HumanPlayer (undo/redo), 1 RuleBasedAgent (R3.2/R3.3), 2 RandomAgents");
 		System.out.println("Win condition: 10 Victory Points");
 		System.out.println("Board: Standard Catan (19 tiles, 54 nodes, 72 edges)");
 
@@ -49,10 +52,18 @@ public class Demonstrator {
 
 		System.out.println("\n===========================================");
 		System.out.println("Starting simulation...");
-		System.out.println("===========================================\n");
+		System.out.println("===========================================");
+		System.out.println("During Player 0 (HumanPlayer) turns: type 'undo' or 'redo' to reverse/replay build commands.");
+		System.out.println();
 
-		// Create and run simulator
-		Simulator sim = new Simulator(maxTurns);
+		// Shared scanner for step-forward and human input
+		Scanner consoleScanner = new Scanner(System.in);
+		Simulator sim = new Simulator(maxTurns, consoleScanner, engine -> List.of(
+				new HumanPlayer(0, consoleScanner),
+				new RuleBasedAgent(1, engine),
+				new RandomAgent(2),
+				new RandomAgent(3)
+		));
 		sim.runSimulation();
 
 		System.out.println("\n===========================================");
