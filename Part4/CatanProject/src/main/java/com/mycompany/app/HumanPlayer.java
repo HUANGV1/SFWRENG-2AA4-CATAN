@@ -92,14 +92,9 @@ public class HumanPlayer extends Player {
 						iterator.advance();
 					}
 
-					// If the player explicitly ends their turn, or issues a build
-					// command (settlement/road/city/dev card), we terminate the turn.
-					// Undo/Redo do NOT end the turn.
-					if (actionCommand instanceof EndTurnCommand ||
-							actionCommand instanceof BuildSettlementCommand ||
-							actionCommand instanceof BuildRoadCommand ||
-							actionCommand instanceof BuildCityCommand ||
-							actionCommand instanceof BuyDevCardCommand) {
+					// Only explicit end-turn ends the turn. Build commands stay in
+					// action phase so the player can undo/redo before ending.
+					if (actionCommand instanceof EndTurnCommand) {
 						return;
 					}
 					// Otherwise, remain in ACTION_PHASE to allow further commands.
