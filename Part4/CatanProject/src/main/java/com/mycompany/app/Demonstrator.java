@@ -15,7 +15,7 @@ public class Demonstrator {
 	public static void main(String[] args) {
 		System.out.println("===========================================");
 		System.out.println("  Settlers of Catan Simulator");
-		System.out.println("  SFWRENG 2AA4 - Assignment 2");
+		System.out.println("  SFWRENG 2AA4 - Assignment 3");
 		System.out.println("===========================================\n");
 
 		// Read configuration
@@ -30,30 +30,10 @@ public class Demonstrator {
 
 		System.out.println("\n--- Game Configuration ---");
 		System.out.println("Max turns: " + maxTurns);
-		System.out.println("Players: 1 HumanPlayer (undo/redo), 1 RuleBasedAgent (R3.2/R3.3), 2 RandomAgents");
-		System.out.println("Win condition: 10 Victory Points");
-		System.out.println("Board: Standard Catan (19 tiles, 54 nodes, 72 edges)");
-
-		System.out.println("\n--- Game Rules (Implemented) ---");
-		System.out.println("✓ Settlement building (1 LUMBER, 1 BRICK, 1 GRAIN, 1 WOOL)");
-		System.out.println("✓ Road building (1 LUMBER, 1 BRICK)");
-		System.out.println("✓ City upgrades (3 ORE, 2 GRAIN)");
-		System.out.println("✓ Resource distribution on dice roll");
-		System.out.println("✓ Distance-2 rule for settlements");
-		System.out.println("✓ Road connectivity validation");
-		System.out.println("✓ Victory point tracking");
-		System.out.println("✓ Roll 7: no production, discard half if >7 cards, move robber and steal");
-
-		System.out.println("\n--- Game Rules (Excluded per R1.3) ---");
-		System.out.println("✗ Harbour tiles");
-		System.out.println("✗ Trading (domestic and maritime)");
-		System.out.println("✗ Development cards");
-		System.out.println("✗ Player-chosen robber tile (random placement used on roll 7)");
 
 		System.out.println("\n===========================================");
 		System.out.println("Starting simulation...");
 		System.out.println("===========================================");
-		System.out.println("During Player 0 (HumanPlayer) turns: type 'undo' or 'redo' to reverse/replay build commands.");
 		System.out.println();
 
 		// Shared scanner for step-forward and human input
