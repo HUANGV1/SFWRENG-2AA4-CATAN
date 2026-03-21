@@ -51,6 +51,7 @@ public class BuildSettlementCommand implements ICommand {
             currentPlayer.addResource(e.getKey(), e.getValue());
         }
         wasBuilt = false;
+        engine.notifyObservers();
     }
 
     @Override
